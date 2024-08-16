@@ -40,6 +40,12 @@ const cancelAll = document.querySelector(".signin-part1 #Cancel");
 const loginSend = document.querySelector("#login_part12");
 const signinSend = document.querySelector("#signin-part123");
 
+document.querySelector("#signin-part123").addEventListener("click",()=>{
+  window.location.href="homepage.php?id=<?php echo`$_GET['id']` ?>"
+ 
+})
+
+
 function firstPage() {
   var tl = gsap.timeline();
 
@@ -222,3 +228,15 @@ document.querySelectorAll(".elem").forEach(function (elem) {
     });
   });
 });
+
+document.querySelector("#logout").addEventListener("click",()=>{
+  window.location.href="config/logout.php "
+ 
+})
+
+document.querySelector("#account").addEventListener("click",()=>{
+  window.location.href="./profile/profile.php"
+ 
+})
+
+

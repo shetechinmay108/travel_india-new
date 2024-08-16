@@ -21,14 +21,14 @@ body{
     display: flex;
     background-color: #101720;
 }
-.input-section{
+.input-section form{
     /* background-color: red; */
     width: 50%;
     height: 70vh;
     color: #fbfbfb;
 }
 
-.input-section input{
+.input-section input {
     background-color: transparent;
     padding: 1.5vw;
     border: none;

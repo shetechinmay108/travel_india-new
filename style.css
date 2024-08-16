@@ -64,7 +64,7 @@ body {
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.24);
   backdrop-filter: blur(30px);
-  color: #0B0500;
+  color: #0b0500;
   position: absolute;
   top: 0%;
   right: -42%;
@@ -163,7 +163,7 @@ body {
   color: white;
 }
 
-.signin {
+  .signin  {
   width: 100%;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.24);
@@ -383,7 +383,7 @@ body {
   padding-bottom: 10vw;
   height: 35vw;
   font-size: 1.5vw;
-
+  
 }
 
 .photo-section3 img {
