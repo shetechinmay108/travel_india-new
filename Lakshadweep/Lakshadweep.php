@@ -1,3 +1,9 @@
+<?php
+     
+   // include("../config/user_auth_acces.php");
+     
+    // include("config/alert.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,6 +34,7 @@
         />
         <div class="navbar">
           <h3 id="logo">travel india</h3>
+           
           <h3 id="menu">menu</h3>
         </div>
         <div class="heading">
@@ -37,7 +44,7 @@
       <div class="menu-part1">
 
         <h3 id="home">Home </h3>
-        <h3>logOut </h3>
+        <h3 id="logout">logout</h3>
         <h3 id="button">Booking </h3>
       </div>
      </div>

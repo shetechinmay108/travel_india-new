@@ -1,3 +1,21 @@
+<?php
+   include("config/connection.php");
+   //include("config/user_auth_acces.php");
+   //include("./config/logout.php");
+ 
+  
+  
+?>
+
+<?php       
+
+//echo $_SESSION["email"];
+ 
+
+
+                ?>
+               
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,12 +40,13 @@
       
 
         <div class="navbar">
-          <h3>travel india</h3>
+          <h3>travel india     </h3>
 
           <h3 id="menu">menu</h3>
         </div>
         <div class="heading-section">
           <div class="heading-part1">
+             
             <h1>welcome to</h1>
           </div>
           <div class="heading-part2">
@@ -37,61 +56,111 @@
         </div>
         <div class="menu-section">
           <div class="menu-part1">
-            <h2>home</h2>
-            <h2 id="signin">sign in</h2>
-            <h2 id="Login-part2">login</h2>
-            <h2>about</h2>
+             <h2 id="account" style="color:chartreuse;"><?php echo $_SESSION["email"]; ?></h2>
+            <h2 id="home">home</h2>
+            <h2 id="#">Services</h2>
+            <h2 id="#"> <a href="Lakshadweep/tourlist.php"> Packages</a></h2>
+            <h2 id="#"><a href="Book_data.php">Booking</a></h2>
+            <h2 id="logout">Logout</h2>
+            <h2 id="signin"></h2>
+            <h2 id="Login-part2"></h2>
             <i class="ri-close-circle-line"></i>
           </div>
         </div>
-        <div class="login">
-          <i class="ri-close-line"></i>
-          <div class="login-part1">
-            <h1>login</h1>
-            <input
-              type="email"
-              name=""
-              placeholder="email . . . . ."
-            /><br /><br />
-            <input
-              type="password"
-              name=""
-              placeholder="password . . . . . ."
-            /><br /><br />
-            <button>login</button>
-            <button id="signin-part123">signin</button><br />
-            <a href="#">forget password</a>
-          </div>
-        </div>
+
+
+
+          
+ 
+        <!-- *******Login form****** -->
+        <?php  
+          
+        //     if(isset($_POST['Login'])){
+        //       extract($_POST);
+         
+        //       //Sql query to login
+         
+        //       //$Pass = md5($password);
+         
+        //       $sql = "select * from users where email='$email' AND password='$password'";
+              
+        //       $result = $conn->query($sql);
+        //       if($result->num_rows){
+        //           $_SESSION['is_user_loggedin'] = true;
+        //           $_SESSION['user_data'] = mysqli_fetch_assoc(($result));
+         
+        //          header("location:Lakshadweep/Lakshadweep.php");         
+        //       }
+        //       else{
+        //           $_SESSION['error'] = "<script>alert('Invalid Login info..!')</script>";
+        //       }
+         
+             
+        //  }
+
+         ?>
+
+
+        
+        
+        <form action="" method="POST">
+        <?php  include("config/alert.php"); ?>
+           <div class="login" id="login"   >
+               <i class="ri-close-line"></i>
+              <div class="login-part1">
+                 <h1>login</h1>
+                 <input
+                   type="email"
+                   name="email"
+                  placeholder="email . . . . ." required
+                  /><br /><br />
+                 <input
+                   type="password"
+                   name="password"
+                  placeholder="password . . . . . ." required
+                 /><br /><br />
+                 <button type="submit" name="Login">login</button>
+                 <button id="signin-part123">signin</button><br />
+                 <a href="#">forget password</a>
+              </div>
+           </div>
+        </form>
+
+
+        <form action=" login " method="post">
         <div class="signin">
-          <i class="ri-close-circle-fill"></i>
-          <div class="signin-part1">
-            <h1>Sign in</h1>
-            <input
-              type="text"
-              name=""
-              placeholder="FirstName . . . . . ."
-            /><br /><br />
-            <input
-              type="text"
-              name=""
-              placeholder="LastName . . . . . ."
-            /><br /><br />
-            <input
-              type="email"
-              name=""
-              placeholder="Email . . . . . ."
-            /><br /><br />
-            <input
-              type="password"
-              name=""
-              placeholder="Password . . . . . ."
-            /><br /><br />
-            <button id="login_part12">Login in</button>
-            <button>signin</button>
-            <button id="Cancel">Cancel</button>
-          </div>
+           
+               <i class="ri-close-circle-fill"></i>
+             <div class="signin-part1">
+               <h1>Sign in</h1>
+               <input
+                 type="text"
+                 name="fname"
+                 placeholder="FirstName . . . . . ." required
+               /><br /><br />
+               <input
+                 type="text"
+                 name="lname"
+                 placeholder="LastName . . . . . ." required
+               /><br /><br />
+               <input
+                 type="email"
+                 name="email"
+                 placeholder="Email . . . . . ." required
+               /><br /><br />
+               <input
+                 type="password"
+                 name="password"
+                 placeholder="Password . . . . . ." required
+                /><br /><br />
+               <button id="login_part12">Login in</button>
+               <button type="submit" name="submit">signin</button>
+               <button id="Cancel">Cancel</button>
+              </div>
+
+           
         </div>
+        </form>
        
         <div class="bottom-section">
           <div class="bottom-part1">

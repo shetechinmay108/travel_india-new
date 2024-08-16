@@ -77,6 +77,14 @@ body {
   text-transform: uppercase;
   font-weight: 800;
 }
+
+.navbar h3 a{
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-decoration: none;
+}
+
 .heading{
     text-align: center;
     /* background-color: red; */
@@ -121,6 +129,14 @@ body {
   overflow: hidden;
   cursor: pointer;
   font-size: 1.5vw;
+}
+
+.bottom-part1 h3 a{
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 1.5vw;
+  text-decoration: none;
+   color:black;
 }
 
 .page2 {
