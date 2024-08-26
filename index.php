@@ -216,7 +216,6 @@ if(isset($_POST['submit'])){
               // $result = $conn->query($sql);
               $result = mysqli_query($conn,$sql);
              $row = mysqli_fetch_array($result);
-
              
               if($row["user_type"]=="user" )
               {
@@ -318,7 +317,7 @@ if(isset($_POST['submit'])){
                  <button type="submit" name="Login">login</button>
                  <button id="signin-part123">signin</button><br />
                  <a href="password_reset.php">forget password</a><br>
-                 <!-- <a href="resend_otp.php">Verify Email_Id </a> -->
+                 <a href="resend_otp.php">Verify Email_Id </a>
               </div>
            </div>
         </form>

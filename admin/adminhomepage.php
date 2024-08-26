@@ -224,6 +224,34 @@ body{
     
 }
 
+.contener2 .hotel_booking{
+    width: 180px;
+    height: 50px;
+    background-color:crimson;
+    padding-top: 9px;
+    display: inline-block;
+    margin-right: 9px; 
+    overflow: hidden;
+}
+
+.contener2 .hotel_booking:hover{
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    
+}
+
+.contener2 .hotel_booking a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    
+}
+
+
+
+
+
 .contener2 .contact{
     width: 180px;
     height: 50px;
@@ -269,10 +297,11 @@ body{
     <div class="h1">hi ,<span>admin</span> </div>
     <div class="p">this is an admin page</div> 
     
-    <div class="user"> <a href="user_data.php">User data</a></div>
-    <div class="package"> <a href="add_packages.php">Add Packages</a></div>
-    <div class="hotel"> <a href="add_hotels.php">Add Hotels</a></div>
-    <div class="booking"> <a href="booking_approvel/book.php">Booking data</a></div>
+    <div class="user"> <a href="user_data.php">User Record</a></div>
+    <div class="package"> <a href="add_packages.php">Add New Tour</a></div>
+    <div class="hotel"> <a href="add_hotels.php">Add New Hotels</a></div>
+    <div class="booking"> <a href="booking_approvel/book.php">Tour Record</a></div>
+    <div class="hotel_booking"> <a href="booking_approvel/hotel_book.php">Hotel Record</a></div>
     <div class="contact"> <a href="feedbackdata.php">Feedback data</a></div>
 </div>
  </body>
