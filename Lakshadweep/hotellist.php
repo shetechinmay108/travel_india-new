@@ -1,5 +1,5 @@
 <?php
-   include("../config/connection.php");
+  // include("../config/connection.php");
    include("../config/feedback.php");
    //include("config/user_auth_acces.php");
    error_reporting(0);

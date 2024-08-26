@@ -221,7 +221,7 @@
 
 
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -247,12 +247,12 @@
                        
                        type="number"
                        name="otp"
-                       value="<?php  echo $otp; ?>"
+                       value="<?php  //echo $otp; ?>"
                       placeholder="enter email address . . . . ." required
                       /><br /><br /><input
                        type="text"
                        name="token"
-                       value="<?php  echo $activation_token; ?>"
+                       value="<?php  //echo $activation_token; ?>"
                       placeholder="enter email address . . . . ." required
                       /><br /><br />
                      <input
@@ -267,4 +267,4 @@
                </div>
             </form>
 </body>
-</html> -->
+</html>

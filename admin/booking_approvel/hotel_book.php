@@ -5,14 +5,14 @@
 
 
     //email send///////////
-    use PHPMailer\PHPMailer\PHPMailer;
+   use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\Exception;
    
    require '../../PHPMailer/src/Exception.php';
    require '../../PHPMailer/src/PHPMailer.php';
    require '../../PHPMailer/src/SMTP.php';
     
-   function Sendemail_approvel($email){
+   function Sendemail_hotel_approvel($email){
       
        
     //Create an instance; passing `true` enables exceptions
@@ -50,8 +50,8 @@
     //  $feedback_data = $conn->query($sql_query);
      //Content
      $mail->isHTML(true);                                  //Set email format to HTML
-     $mail->Subject = ' Congratulation Your Tour Package has been Approved..!';
-     $mail->Body    = "<h3>Welcome ".$_POST['fname']." in Travel_India.com</h3><h3> Your Booking Package has been Succesfully Approved..!</h3>
+     $mail->Subject = ' Congratulation Your Hotel Book has been Approved..!';
+     $mail->Body    = "<h3>Welcome ".$_POST['fname']." in Travel_India.com</h3><h3> Your Hotel Booking has been Succesfully Approved..!</h3>
                <h3>Please check Your Account..!";
                //  <a href='http://localhost/travel_india-new/verify_email.php?fname=$fname&email=$email&verify_token=$otp'>Click me </a> ";
               
@@ -114,16 +114,16 @@
   <thead>
     <tr>
     <th scope="col">#</th>
-     <th scope="col">Package Name</th>
+     <th scope="col">Hotel Name</th>
      <th scope="col">User Name</th>
      <th scope="col">Email_Id</th>
      <th scope="col">Mobile-No</th>
-     <th scope="col">Package-Type</th>
-     <th scope="col">Tour-Date</th>
-     <th scope="col">Package-Duration</th>
+     <th scope="col">Hotel Address</th>
+     <th scope="col">Date</th>
+     <th scope="col">Duration</th>
      <th scope="col">Booking-Date</th>
      <!-- <th>Package Name</th> -->
-     <th scope="col">Package-Price</th>
+     <th scope="col">Hotel-Price</th>
      <!-- <th>Package-Duration</th> -->
      <!-- <th>Package-Type</th> -->
      <!-- <th>Booking-Date</th> -->
@@ -133,7 +133,7 @@
 
 <?php 
 
-$query = "SELECT * FROM  booking WHERE status = 'pending' ORDER BY user_Id";
+$query = "SELECT * FROM  hotel_booking WHERE status = 'pending' ORDER BY user_Id";
 $result = mysqli_query($conn,$query);
 while($row = mysqli_fetch_array($result))  { ?>
 
@@ -142,15 +142,15 @@ while($row = mysqli_fetch_array($result))  { ?>
     <tr>
      
       <th scope="row"><?php echo $row['user_Id']; ?></th>
-      <td><?php echo $row['Package_Name']; ?></td>
+      <td><?php echo $row['Hotel_Name']; ?></td>
     <td><?php echo $row['User_Name']; ?></td>
     <td><?php echo $row['Email_Id']; ?></td>
     <td> <?php echo $row['Mobile_No']; ?></td>
-     <td><?php echo $row['Package_Type']; ?> </td>
-    <td><?php echo $row['Tour_Date']; ?></td>  
-    <td><?php echo $row['Package_Duration']; ?></td>
-     <td><?php echo $row['Booking_Date']; ?></td>
-      <td><?php echo $row['Package_Price']; ?> Rs</td>
+     <td><?php echo $row['Hotel_Address']; ?> </td>
+    <td><?php echo $row['date']; ?></td>  
+    <td><?php echo $row['Duration']; ?></td>
+     <td><?php echo $row['created_booking']; ?></td>
+      <td><?php echo $row['Price']; ?> Rs</td>
        
 
      <td>
@@ -176,9 +176,9 @@ if(isset($_POST['approve'])){
 	$id = $_POST['id'];
   $fname = $_POST['fname'];
   $email = $_POST['email'];
-	$select = "UPDATE booking SET status = 'Approved' WHERE user_Id = '$id' ";
+	$select = "UPDATE hotel_booking SET status = 'Approved' WHERE user_Id = '$id' ";
 	$result = mysqli_query($conn,$select);
-  Sendemail_approvel($email);
+  Sendemail_hotel_approvel($email);
 	//header("location:book.php");
   if($result){
    
@@ -198,7 +198,7 @@ if(isset($_POST['approve'])){
 if(isset($_POST['delete'])){
 
 	$id = $_POST['id'];
-	$select = "DELETE  FROM booking  WHERE user_Id = '$id' ";
+	$select = "DELETE  FROM hotel_booking  WHERE user_Id = '$id' ";
 	$resut = mysqli_query($conn,$select);
 	//header("location:book.php");
   if($result){
@@ -234,18 +234,18 @@ if(isset($_POST['delete'])){
 
 <table class="table table-bordered col-md-12">
   <thead>
-    <tr>
+  <tr>
     <th scope="col">#</th>
-     <th scope="col">Package Name</th>
+     <th scope="col">Hotel Name</th>
      <th scope="col">User Name</th>
      <th scope="col">Email_Id</th>
      <th scope="col">Mobile-No</th>
-     <th scope="col">Package-Type</th>
-     <th scope="col">Tour-Date</th>
-     <th scope="col">Package-Duration</th>
+     <th scope="col">Hotel Address</th>
+     <th scope="col">Date</th>
+     <th scope="col">Duration</th>
      <th scope="col">Booking-Date</th>
      <!-- <th>Package Name</th> -->
-     <th scope="col">Package-Price</th>
+     <th scope="col">Hotel-Price</th>
      <!-- <th>Package-Duration</th> -->
      <!-- <th>Package-Type</th> -->
      <!-- <th>Booking-Date</th> -->
@@ -254,7 +254,7 @@ if(isset($_POST['delete'])){
   </thead>
 
 <?php 
-$query = "SELECT * FROM  booking";
+$query = "SELECT * FROM  hotel_booking";
 $result = mysqli_query($conn,$query);
 while($row = mysqli_fetch_array($result)) { ?>
 
@@ -264,15 +264,15 @@ while($row = mysqli_fetch_array($result)) { ?>
       
 
       <th scope="row"><?php echo $row['user_Id']; ?></th>
-      <td><?php echo $row['Package_Name']; ?></td>
+      <td><?php echo $row['Hotel_Name']; ?></td>
     <td><?php echo $row['User_Name']; ?></td>
     <td><?php echo $row['Email_Id']; ?></td>
     <td> <?php echo $row['Mobile_No']; ?></td>
-     <td><?php echo $row['Package_Type']; ?> </td>
-    <td><?php echo $row['Tour_Date']; ?></td>  
-    <td><?php echo $row['Package_Duration']; ?></td>
-     <td><?php echo $row['Booking_Date']; ?></td>
-      <td><?php echo $row['Package_Price']; ?> Rs</td>
+     <td><?php echo $row['Hotel_Address']; ?> </td>
+    <td><?php echo $row['date']; ?></td>  
+    <td><?php echo $row['Duration']; ?></td>
+     <td><?php echo $row['created_booking']; ?></td>
+      <td><?php echo $row['Price']; ?> Rs</td>
       <td style=color:green; font-weight:bold;><?php echo $row['Status']; ?></td>
 
 

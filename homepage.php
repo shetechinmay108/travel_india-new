@@ -56,7 +56,7 @@
         </div>
         <div class="menu-section">
           <div class="menu-part1">
-             <h2 id="account" style="color:chartreuse;"><?php echo $_SESSION["email"]; ?></h2>
+             <h2 id="account" style="color:chartreuse;"><a href="profile/profile.php"><?php echo $_SESSION["email"]; ?></a> </h2>
             <h2 id="home">home</h2>
             <h2 id="#">Services</h2>
             <h2 id="#"> <a href="Lakshadweep/tourlist.php"> Packages</a></h2>

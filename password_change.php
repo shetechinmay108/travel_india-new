@@ -1,6 +1,6 @@
 <?php
 include("config/connection.php");
-   echo "hello harsh";
+   //echo "hello harsh";
   // echo $_GET['email'];
 ?>
 <!DOCTYPE html>

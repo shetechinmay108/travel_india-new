@@ -1,6 +1,6 @@
 <?php
  session_start();
- 
+ //session_destroy();
 
  
 // connect Mysql with object orianted approches

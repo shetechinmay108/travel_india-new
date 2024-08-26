@@ -78,7 +78,7 @@
                 <h3>AMENITIES : <?php echo $data['amenities']; ?></h3>
                 <h3 class="price">ROOM PRICE : <?php echo $data['PriceOfRoom']; ?> Rs</h3> 
                 <!-- <p class="price"><b><?php echo $data['Price']; ?> Rs</b></p> -->
-                <a href="#" class="buy-button">Book Now</a>
+                <a href="book_hotel_form.php?pass_hotel_id=<?php echo $data['Hotel_Id'] ?>" class="buy-button">Book Now</a>
             </div>
 
             <?php
