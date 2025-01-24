@@ -1,0 +1,865 @@
+@font-face {
+  font-family: twl;
+  src: url(../font/66de30ccf3500ac59b739099_Aeonik-Regular.ttf);
+}
+@font-face {
+  font-family: regular;
+  src: url(../font/66bdbfd4186d4f1e46bc84ab_Tartuffo-Regular.ttf);
+}
+@font-face {
+  font-family: regular2;
+  src: url(../font/66bdbfce81e82ca87a30c297_Tartuffo-Light.ttf);
+}
+@font-face {
+  font-family: Aeonik;
+  src: url(../font/66de30cc396af3b5cc39c4b6_Aeonik-Medium.woff2);
+}
+@font-face {
+  font-family: pp;
+  src: url(../font/66de30cc730b040270305ffa_PPFragment-SerifRegular.ttf);
+}
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box; 
+  font-weight: 400;
+}
+  
+html,
+body {
+  height: 100%;
+  overscroll-behavior: none;
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.main {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #0b0a0e;
+}
+.page1 {
+  width: 100%;
+  height: 100vh;
+}
+
+.page1 .nav {
+  width: 100%;
+  height: 10vh;
+  color: #f3f1f1;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  padding: 2.5vw;
+  font-family: twl;
+}
+.nav-part1 h5 {
+  padding-left: 1vw;
+  border-left: 1px solid #f3f1f1;
+  text-transform: uppercase;
+  line-height: 1.3;
+  font-size: 0.8vw;
+}
+.nav i {
+  font-size: 2.5vw;
+  font-weight: 400;
+}
+.middle {
+  margin-top: 15vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: #f3f1f1;
+  flex-direction: column;
+  opacity: 0;
+  position: relative;
+}
+.middle h2 {
+  text-align: center;
+  font-family: regular;
+  line-height: 1.4; 
+  font-size: 2.5vw;
+}
+
+.middle h4 {
+  font-family: twl;
+  opacity: 0.5;
+  line-height: 1.3;
+  font-size: 1.2vw; 
+  text-align: center;
+}
+.backSide {
+  width: 100%;
+  height: 60vh;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.back-img1 img,
+.back-img2 img,
+.back-img3 img,
+.back-img4 img,
+.back-img5 img {
+  height: 100%;
+  transition: width 1ms;
+  border-radius: 0.2vw;
+  background-position: center;
+  background-size: contain;
+} 
+
+.back-img1 {
+  width: 20%;
+  height: 25vh;
+  padding: 2vw;
+  margin: 0 0 0 10vw;
+}
+.back-img2 {
+  width: 20%;
+  height: 20vh;
+  margin-bottom: 80vh;
+}
+
+.back-img3 {
+  width: 18%;
+  height: 20vh;
+}
+
+.back-img4 {
+  padding: 0 9vw;
+  width: 30%;
+  height: 30vh;
+  margin-bottom: 50vh;
+}
+
+.back-img5 {
+  width: 27%;
+  height: 19vh;
+  padding: 2vw 5vw;
+  margin-top: -50vh;
+}
+
+.header {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+.header h1 {
+  text-align: center;
+  color: #f3f1f1; 
+  font-size: 15vw; 
+  font-family: regular;
+}
+
+.page1-part1 {
+  width: 100%;
+  height: 100vh;
+  background-color: #f3f1f1;
+  color: #0b0a0e;
+  position: absolute;
+  top: -105vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.page1-part1 .nav {
+  color: #0b0a0e;
+}
+.page1-part1 .nav i {
+  color: #0b0a0e;
+}
+.menu-section {
+  width: 100%;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.menu {
+  width: 80%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  padding: 0 5vw;
+  flex-direction: column;
+}
+.menu h1 {
+  font-size: 5vw;
+  font-family: regular;
+  text-transform: capitalize;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.animate-text .char {
+  transform: translateY(115px);
+  opacity: 0;
+}
+.about {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5vw;
+  justify-content: center;
+}
+.text {
+  width: 100%;
+  height: 40vh;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: baseline;
+}
+.text h6 {
+  color: #0b0a0e;
+  text-transform: uppercase;
+  font-family: twl;
+  font-size: 1vw;
+  line-height: 1.3;
+  letter-spacing: 0.05vw;
+  line-height: 1.4;
+  font-weight: 300;
+}
+.ri-arrow-right-line {
+  opacity: 0;
+}
+.images {
+  width: 100%;
+  opacity: 1;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  padding: 1vw;
+}
+.images img {
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+}
+.images img.active {
+  display: block;
+}
+.page2 {
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.video {
+  width: 100%;
+  height: 100vh;
+  padding: 5vw;
+  position: absolute;
+}
+.video video {
+  width: 100%;
+  height: 100%;
+  border-radius: 2.5vw;
+  background-size: cover;
+  object-fit: cover;
+  opacity: 0.5;
+}
+.page2 .text {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 30%;
+  text-align: center;
+  position: relative;
+}
+.text h6 {
+  color: #f3f1f1;
+  font-size: 0.9vw;
+  font-family: twl;
+}
+.page3 {
+  width: 100%;
+  min-height: 200vh;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: #f3f1f1;
+  flex-direction: column;
+}
+.page3 h5 {
+  margin-top: 20vh;
+  font-family: twl;
+  font-size: 1vw;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+.location {
+  margin-top: 10vh;
+  width: 100%;
+  height: 100%;
+}
+.location h1 {
+  font-size: 10vw;
+  font-family: regular;
+  justify-content: center;
+  display: flex;
+}
+.pageImg{
+  width: 100%;
+  height: 100vh;
+  /* background-color: #ccc; */
+  position: fixed;
+  display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center; 
+  top: 0%;
+}
+.pageImg1{
+  width: 50%;
+  height: 100%;
+  /* background-color: yellow; */
+  align-items: center;
+  justify-content: left;
+  display: flex;
+}
+.pageImg2{
+  width: 50%;
+  height: 100%;
+  background-color: blue;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.pageImg .pageImg-part1{
+  width: 20%;
+  margin-left: 5vw;
+  height: 30vh;
+  background-color: red;
+}
+.pageImg-part2 img,
+.pageImg-part3 img,
+.pageImg-part1 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+}
+
+.pageImg .pageImg2 .pageImg-part2{
+  width: 15%;
+  height: 15vh;
+  /* margin-left: 10vw; */
+  background-color: red;
+}
+.pageImg2 .pageImg-part3{
+  width: 25%;
+  height: 20vh;
+  background-color: red;
+  /* margin-top: 50vh; */
+}
+ 
+
+a {
+  text-decoration: none;
+
+  color: white;
+}
+
+.page5 {
+  width: 100%;
+  height: 200vh;
+
+  background-color: transparent;
+}
+
+.page5 section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+}
+.page5 .gallery {
+  height: 50vh;
+}
+
+.page5 .img {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  background-size: cover;
+  object-fit: contain;
+  align-items: center;
+  justify-content: end;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  z-index: 1;
+
+  &:nth-of-type(1) {
+    background-image: url("https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/672d0043e9147b9cab9aadaf_RHOC_S18E14-16_The%20May%20Fair%20Hotel_1-topaz-upscale-2000w.avif");
+  }
+  &:nth-of-type(2) {
+    background-image: url("https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66e194f2e375a6029db9ceb1_RHOBH_S11E10-12_La%20Quinta-3-topaz.avif");
+  }
+  &:nth-of-type(3) {
+    background-image: url("https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66f44adc4ee8a07e24c81f1f_RHOC_S18E9-10_Dawn%20Ranch_1-topaz-upscale-2000w.avif");
+  }
+  &:nth-of-type(4) {
+    background-image: url("https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/672d05fb3d29a2341a311c13_RHONY_S15E3-5__Erin%27s_%20House_1-topaz-upscale-2000w.avif");
+  }
+  &:nth-of-type(5) {
+    background-image: url("https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66db195f408ef2ce2af4ad34_RHONY_S14E9-11_Long%20Bay%20Villas_1.avif");
+  }
+  &:nth-of-type(6) {
+    background-image: url("https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66db17d423125d804532d619_RHONY_S13E3-4_Hamptons-1.avif");
+  }
+  &:nth-of-type(7) {
+    background-image: url("https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66dec8d3d29edca5cf838055_RHOA_S15E11-12_Maybe%20the%20W%20Algarve%20-%20this%20article%20references%20the%20W%20Hotel_1-topaz.avif");
+  }
+  &:nth-of-type(8) {
+    background-image: url("https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66dec82688cc09463fd36a64_RHOA_S15E4-5_THE%20KELLY%20BIRMINGHAM%2C%20TAPESTRY%20COLLECTION%20BY%20HILTON_1-topaz.avif");
+  }
+  &:nth-of-type(9) {
+    background-image: url("https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66dec698c4b873329ff1aff5_RHOA_S14E10-11_Blue%20Ridge%20Mountains-1.avif");
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    border-right: 1px solid black;
+  }
+}
+
+.page5 .line {
+  border-right: 1px solid black;
+}
+
+.lastPage1 {
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: twl;
+  font-weight: 400;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: #f3f1f1;
+  flex-direction: column;
+}
+.lastPage1 h1 {
+  font-family: regular;
+  font-weight: 400;
+
+  font-size: 8vw;
+  margin-bottom: 5vh;
+}
+.lastPage1 h3 {
+  font-weight: 400;
+  font-size: 1.3vw;
+  margin-bottom: 13vh;
+}
+.lastPage1 form {
+  width: 90%;
+
+  height: 8vh;
+  padding: 0.5vw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.lastPage1 input {
+  width: 80%;
+  height: 100%;
+  font-size: 1vw;
+  outline: none;
+  font-family: twl;
+  padding: 0 2vw;
+  border-radius: 8vh;
+  color: #f3f1f1;
+  background-color: #1b1a1e;
+
+  border: none;
+}
+.lastPage1 button {
+  font-size: 2vw;
+  width: 8vw;
+  height: 100%;
+  margin-left: 1vw;
+  background-color: #f3f1f1;
+  border: 1px solid silver;
+  color: #0b0a0e;
+  border-radius: 5vw;
+}
+.lastPage2 {
+  width: 80%;
+  min-height: 30vh;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+.last-part1 {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-evenly;
+}
+.last-part11 h3 {
+  margin-bottom: 0.5vw;
+  text-transform: capitalize;
+  text-align: center;
+}
+.last-part2 {
+  border-left: 1px solid white;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-evenly;
+}
+.lastPage1 h5 {
+  font-weight: 400;
+  font-size: 1vw;
+  text-align: center;
+}
+
+#page6 {
+  gap: 10vh;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  width: 100%;
+  min-height: 150vh; 
+  position: relative;
+}
+
+.cards {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+#card-one {
+  top: 130%;
+  width: 100%;
+  background-image: url(https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66e194f2e375a6029db9ceb1_RHOBH_S11E10-12_La%20Quinta-3-topaz.avif);
+}
+
+#card-two {
+  top: 230%;
+  background-image: url(https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66f44adc4ee8a07e24c81f1f_RHOC_S18E9-10_Dawn%20Ranch_1-topaz-upscale-2000w.avif);
+}
+
+#card-three {
+  top: 250%;
+  background-image: url(https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/672d0043e9147b9cab9aadaf_RHOC_S18E14-16_The%20May%20Fair%20Hotel_1-topaz-upscale-2000w.avif);
+}
+
+#page6 .nav {
+  width: 100%;
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 5vh;
+  padding: 2vw;
+}
+#page6 .nav h2 {
+  font-family: regular;
+  font-size: 5vw;
+  color: black;
+}
+
+#page6 .middle {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  color: #0b0a0e;
+}
+#page6 .middle h1 {
+  font-size: 3vw;
+  font-family: regular;
+  color: #0b0a0e;
+}
+#page6 .header {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: #0b0a0e;
+  flex-direction: column;
+}
+#page6 .header h4 {
+  color: black;
+}
+
+#page6 button {
+  --color: black;
+  width: 8em;
+  height: 2.6em;
+  font-family: twl;
+  line-height: 2.5em;
+  margin: 1vw;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid var(--color);
+  transition: color 0.5s;
+  font-size: 1.2vw;
+  border-radius: 1vw;
+  text-transform: capitalize;
+  color: black; /* Default text color */
+}
+
+#page6 button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color); /* Button background color */
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+#page6 button:hover {
+  color: white; /* Keep text color black on hover */
+}
+
+#page6 button:hover:before {
+  top: -30px;
+  left: -30px; /* Animates the background into view */
+}
+.page-text {
+  position: absolute;
+  width: 100%;
+  top: 0%;
+  height: 80vh;
+  display: flex;
+  color: #f3f1f1;
+  /* background-color: red; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#page6 .page-text h1 {
+  font-family: regular;
+  font-size: 15vw;
+  text-transform: capitalize;
+  /* color: blue; */
+}
+#page6 .page-text h4 {
+  font-family: twl;
+  font-size: 1.3vw;
+}
+
+.page-text h1 {
+  font-size: 3vw;
+  color: #fff;
+  text-align: center;
+}
+
+.page-text p {
+  font-size: 1vw;
+  color: rgb(126, 126, 126);
+  text-align: center;
+}
+
+.signUpPage{
+  width: 100%;
+  height: 100vh;  
+  position: absolute;
+  top: 0%;
+  left: -100%;
+  font-family:Aeonik ;
+  background-color: #F3F1F1;
+
+}
+
+.signInPage{
+  width: 100%;
+  height: 100vh;  
+  position: absolute;
+  top: 0%;
+  left: -100%;
+  font-family:Aeonik ;
+  background-color: #F3F1F1;
+
+}
+.signUpPage .nav{
+  width: 100%;
+  height: 10vh; 
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  padding: 2vw;
+}
+.signUpPage .nav h3{
+  font-size: 1.2vw;
+  cursor: pointer;
+}
+.signUpPage .nav-part1{
+  display: flex;
+  align-items: center; 
+  gap: 10px;
+}
+.signUpPage .nav-part1 h3{
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.signUpPage-part1{
+  width: 100%;
+  position: relative;
+  height:90vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw;
+}
+.signUpPage-part11{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+position: relative; 
+}
+.signUpPage-part11 h3{
+  margin-top: 10vh;
+  font-family: pp;
+  overflow: hidden;
+  opacity: 1;
+  text-transform: uppercase;
+}
+.signUpPage-bottom{
+  width: 70%;
+  height: 30vh;
+  text-align: left;
+  align-items: center;
+  position: absolute;
+  bottom: 0%;
+  margin-bottom: 5vh;
+}
+.signUpPage-bottom h1{
+  font-weight: 200;
+  font-family: pp;
+  line-height: 1;
+  /* overflow: hidden; */
+  text-transform: uppercase;
+  font-size: 5vw;
+  opacity: 1;
+  /* clip-path: polygon(0 52%, 99% 52%, 100% 100%, 0% 100%); */
+}
+/* .signUpPage-bottom .lines{
+  transform: translateY(115px);
+} */
+.signUpPage .container {
+  padding: 2vw;
+ width: 45%;   
+}
+.signUpPage label {
+  display: block;
+  text-transform: uppercase; 
+  font-size: 1.2vw;
+  opacity: 1;
+}
+.signUpPage .container input,select {
+  width: 100%;
+  height: 10vh;
+  padding:0.5vw ; 
+  margin-bottom: 2vh;
+  border: none;
+  font-weight: 400;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 16px;
+  background-color: #F3F1F1;
+  transition: border-color 0.3s ease;  
+  opacity: 1;
+}
+.animated-hr {
+  width: 100%;    
+  border: 1px solid black; 
+}
+
+/* Keyframes for the animation */
+ 
+.container form{
+  opacity: 1; 
+}
+.signUpPage .container  input:focus {
+  border-bottom-color: #333; 
+}
+.required::after {
+  content: "*";
+  color: red;
+  margin-left: 3px;
+}
+
+.signUpPage ::placeholder {
+  color: #aaa;
+}
+ 
+.signUpPage .button-part1{
+  width: 100%;
+  margin-top: 2vh;
+  height: 6vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  justify-content: center;
+}
+.signUpPage button{
+  width: 100%;
+  height: 5vh; 
+  background-color: #F0F0F0;
+  margin: 2vh 0;
+  cursor: pointer; 
+  opacity: 1;
+  border: 1px solid silver;
+}
+
+@media (max-width:600px){
+.nav{
+  height: 2vh; 
+  background-color: red;
+}
+.nav .nav-part1 h5,i{
+  font-size: 1.5vh;
+}
+}
