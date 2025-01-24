@@ -1,168 +1,103 @@
-<?php 
+<?php
 
 include("../config/connection.php");
 error_reporting(0);
-    // include_once('./includes/navbar.php');
-    // include_once('./includes/restriction.php');
-    // if(!(isset($_SESSION['role']))){
-    //     header("Location:login.php?unauthorizedAccess");
-    //   }
+if (isset($_POST['submit'])) {
+    $Hotel_Name = $_POST['Hotel_Name'];
+    $Hotel_Address = $_POST['Hotel_Address'];
+    $phoneno = $_POST['phoneno'];
+    $email = $_POST['email'];
+    $NumberOfRooms = $_POST['NumberOfRooms'];
+    $PriceOfRoom = $_POST['PriceOfRoom'];
+    $amenities = $_POST['amenities'];
 
-
-    if(isset($_POST['submit'])){
-        $Hotel_Name = $_POST['Hotel_Name'];
-        $Hotel_Address= $_POST['Hotel_Address'];
-        $phoneno = $_POST['phoneno'];
-        $email = $_POST['email'];
-        $NumberOfRooms = $_POST['NumberOfRooms'];
-        $PriceOfRoom = $_POST['PriceOfRoom'];
-        $amenities = $_POST['amenities'];
-
-        $file = $_FILES['Hotel_Image']['name'];
-        $tempname = $_FILES['Hotel_Image']['tmp_name'];
-        $folder = '../hotel_image/'.$file;
-        move_uploaded_file( $tempname,$folder);
-
-    //    " insert into create_hotel( Hotel_Name, Hotel_Address, PhoneNo, email, NumberOfRooms, amenities, Hotel_Image)
-    //      values ('$Hotel_Name','$Hotel_Address','$phoneno','$email','$NumberOfRooms','$amenities',' $folder')";
-     
-        $sql = " insert into create_hotel( Hotel_Name, Hotel_Address, PhoneNo, email, NumberOfRooms, PriceOfRoom, amenities, Hotel_Image)
+    $file = $_FILES['Hotel_Image']['name'];
+    $tempname = $_FILES['Hotel_Image']['tmp_name'];
+    $folder = '../hotel_image/' . $file;
+    move_uploaded_file($tempname, $folder);
+    $sql = " insert into create_hotel( Hotel_Name, Hotel_Address, PhoneNo, email, NumberOfRooms, PriceOfRoom, amenities, Hotel_Image)
          values ('$Hotel_Name','$Hotel_Address','$phoneno','$email','$NumberOfRooms','$PriceOfRoom','$amenities',' $folder')";
-        $result = $conn->query($sql);
-     
-        if($result){
-           //echo "<script>alert('Your Registration succesfully..!')</script>";
-           //move_uploaded_file($_FILES['package-img']['tmp_name'], "$folder");
-           echo "<script>alert('New Hotel Info Add succesfully..!')</script>";
-           header("Refresh:0.5; url=hotellist.php");
-        }
-        else{
-           echo "Invalid Query..!";
-        }
-     
-     }
+    $result = $conn->query($sql);
+
+    if ($result) {
+        echo "<script>alert('New Hotel Info Add succesfully..!')</script>";
+        header("Refresh:0.5; url=hotellist.php");
+    } else {
+        echo "Invalid Query..!";
+    }
+}
 
 
 
- ?>
-  
+?>
 
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Hotel Creation Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .form-row {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-        }
-        .form-column {
-            flex: 1;
-            padding: 0 10px;
-            box-sizing: border-box;
-        }
-        .form-column:nth-child(8) {
-            flex: 1 0 100%;
-        }
-        .form-column label {
-            display: inline-block;
-            margin-bottom: 5px;
-        }
-        .form-column input, .form-column textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .form-column textarea {
-            resize: vertical;
-            height: 100px;
-        }
-        .form-row button {
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 23px;
-            margin-left: 30px;
-        }
-        .form-row button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/admin/hotel.css">
 </head>
+ 
 <body>
-    <div class="container">
-        <h1>Create New Hotel</h1>
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-row">
-                <div class="form-column">
-                    <label for="hotelName">Hotel Name:</label>
-                    <input type="text" id="hotelName" name="Hotel_Name" required><br>
-                </div><br>
-                <div class="form-column">
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="Hotel_Address" required>
-                </div><br>
-                <div class="form-column">
-                    <label for="phoneNumber">Phone Number:</label>
-                    <input type="tel" id="phoneNumber" name="phoneno" required>
-                </div>
-                <div class="form-column">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-column">
-                    <label for="numberOfRooms">Number of Rooms:</label>
-                    <input type="number" id="numberOfRooms" name="NumberOfRooms" required>
-                </div>
-                <div class="form-column">
-                    <label for="PriceOfRoom">Price of Rooms:</label>
-                    <input type="number" id="PriceOfRoom" name="PriceOfRoom" required>
-                </div>
+    <div class="signUpPage">
+        <div class="nav">
+            <div class="nav-part2">
 
-                <div class="form-column">
-                    <label for="amenities">Amenities:</label>
-                    <textarea id="amenities" name="amenities" required></textarea>
+                <h3 class="closeSignUp" style="align-items: center; justify-content: center; display: flex;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="1.2vw" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M11.708 19.273a.686.686 0 0 0-.05-.966l-6.121-5.55h14.71c.416 0 .753-.338.753-.756a.755.755 0 0 0-.752-.758H5.53l6.129-5.548a.69.69 0 0 0 .05-.969.676.676 0 0 0-.961-.05l-7.522 6.812a.69.69 0 0 0 0 1.017l7.52 6.82c.28.252.71.23.962-.052Z"></path>
+                    </svg>
+                    <a href="adminhomepage.php">to go Back</a></h3>
+                    <h3><a href="./hotellist.php">hotel list</a></h3>
                 </div>
-                <div class="form-column">
-                    <label for="hotelImage">Hotel Image:</label>
-                    <input type="file" id="hotelImage" name="Hotel_Image" accept="image/*" required>
-                </div>
-                <div class="form-column">
-                    <button type="submit" name="submit">Create Hotel</button>
-                </div>
+          <div class="nav-part1">
+             <h3>est-2024</h3>
+          </div>
+        </div>
+        <hr class="animated-hr" />
+        <div class="signUpPage-part1"> 
+          <div class="signUpPage-part11">
+            <h3>Build Hotel</h3>
+            <div class="signUpPage-bottom">
+              <h1>Start <br> Your <br> Journey</h1>
             </div>
-        </form>
-    </div>
-    <button><a href="adminhomepage.php">Home</a></button> &nbsp;&nbsp;<button><a href="hotellist.php">Hotel List</a></button>
+    
+          </div>
+          <div class="container"> 
+            <form action="" method="POST" enctype="multipart/form-data">
+              <label for="activity" class="required">Hotel name</label>
+              <input type="text" id="hotelName" name="Hotel_Name" placeholder="hotel name" required>
+              <label for="activity" class="required">hotel address</label>
+              <input type="text" id="address" name="Hotel_Address" placeholder="hotel address" required>
+    
+              <label for="activity" class="required">amenities</label>
+              <textarea id="amenities" name="amenities" placeholder="amenities" required></textarea>
+               
+              <label for="activity" class="required">phone no</label>
+              <input type="tel" id="phoneNumber" name="phoneno" placeholder="phone number" required>
+
+              <label for="activity" class="required">email</label>
+              <input type="email" id="email" name="email" placeholder="enter email" required>
+
+              <label for="activity" class="required">number of rooms</label>
+              <input type="number" id="numberOfRooms" name="NumberOfRooms" placeholder="number of rooms" required>
+                  
+              <label for="activity" class="required">Price</label>
+              <input type="number" id="PriceOfRoom" name="PriceOfRoom" placeholder="price" required>
+                 
+              <label for="activity" class="required">hotel image</label>
+              <input type="file" id="hotelImage" name="Hotel_Image" accept="image/*" placeholder="hotel image" required>
+                  
+              <button class="submitButton" type="submit" name="submit">Create Hotel</button>
+      
+            </form>
+ 
+            
+          </div> 
+        </div>
+      </div>
 </body>
 </html>
-
-
-
-

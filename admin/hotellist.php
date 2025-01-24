@@ -1,28 +1,15 @@
 <?php
    include("../config/connection.php");
-   //include("../config/");
-   //include("config/user_auth_acces.php");
    error_reporting(0);
-
    $sql = "select * from create_hotel ";
    $result = $conn->query($sql);
-
-
-   
-  ///*******Delete operation in this page ********* */
   if(isset($_GET['ID'])){
     extract($_GET);
        $sql = "DELETE FROM create_hotel WHERE Hotel_Id = " . $_GET['ID'];
        $Result = $conn->query($sql);
        if($Result){
-
         echo  "<script>alert('Data Deleted Successfully..!')</script>";
-       
-        // header("location:tourlist.php");
          header("Refresh:0.5; url=hotellist.php");
-        //echo"data has been deleted..!";
-         // echo  "<script>alert('Are you sure..!')</script>";
-          //header("location:tourlist.php");
       }
       else{
           echo "Not  Deleted..!";
@@ -34,213 +21,413 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tour Packages</title>
-    <link rel="stylesheet" href="tourlist.css">
-
+    <title>hotels</title>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+    <link rel="stylesheet" href="../css/pwd_update.css">
     <style>
-        * {
+    
+      @font-face {
+    font-family: twl;
+    src: url(/font/66bdbff11e188b5245c6ce47_TWKLausanne-400.ttf);
+  }
+  @font-face {
+    font-family: regular;
+    src: url(/font/66bdbfd4186d4f1e46bc84ab_Tartuffo-Regular.ttf);
+  }
+  @font-face {
+    font-family: regular2;
+    src: url(/font/66bdbfce81e82ca87a30c297_Tartuffo-Light.ttf);
+  }
+  * {
+    padding: 0%;
+    margin: 0%;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
-}
-
-header h1 {
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
+    /* background-color: #F3F1F1; */
+  }
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+ 
+  .page1 {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f3f1f1;
+  }
+  .nav {
+    width: 100%;
+    height: 10vh;
+    /* color: white; */
+    align-items: center;
+    justify-content: space-between;
     display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-section {
-    padding: 40px 0;
-}
-
-#home {
-    background: #007bff;
-    color: #fff;
-    text-align: center;
-    padding: 60px 0;
-}
-
-#home h2 {
-    font-size: 2.5em;
-}
-
-#packages {
-    background: #fff;
-}
-
-#packages h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.package {
+    padding: 2vw 4vw;
+  }
+  .nav1 {
+    width: 100%;
+    height: 10vh;
+    /* color: white; */
+    margin-top: 10vh;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    padding: 2vw 4vw;
+  }
+  .nav h3 {
+    font-family: regular;
+    font-size: 1.5vw;
+    font-weight: 400;
+  }
+  .nav-part1 {
+    padding: 1vh;
+    /* font-family: twl; */
+  
+    border-left: 0.2vw solid #f3f1f1;
+  }
+  .nav-part1 h2 {
+    font-weight: 400;
+    font-size: 2.5vw;
+    font-family: regular;
+    text-transform: capitalize;
+  }
+  
+  .nav h1 {
+    font-family: regular;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 2.5vw;
+  }
+  .nav1 h1 {
+    font-family: regular;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 2.5vw;
+  }
+  .nav-part2 {
+    gap: 2vw;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.package img {
-    width: 30%;
-    border-radius: 10px;
-    margin-right: 20px;
-}
-
-.package-info {
-    width: 70%;
-}
-
-.package-info h3 {
-    margin-bottom: 10px;
-}
-
-.package-info p {
-    margin-bottom: 15px;
-}
-
-.package-info a {
-    color: #007bff;
+    font-family: twl;
+    justify-content: space-between;
+  }
+  .nav-part2 h3 {
+    font-family: twl;
+    font-size: 1.5vw;
+    font-weight: 400;
+  }
+  .nav-part2 a {
     text-decoration: none;
-    font-weight: bold;
-}
+    text-transform: capitalize;
+    color: black;
+  }
+  .middle4 {
+    /* min-height: 100vh; */
+    width: 100%;
+    /* border-bottom: 1px solid rgb(155, 151, 151); */
+    /* padding: 4vw; */
+    padding: 1vw 1vw;
+  }
+  .booking{
+    width: 100%;
+    height: 35vh;
+      color: #0b0a0e;
+      border-top: 1px solid rgb(155, 151, 151);
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    /* padding: 0 1vw; */
+  }
+  .booking1{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+     height: 100%;
+    justify-content: center; 
+  }
+  .booking2{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex; 
+  }
+  .book-part11{
+    display: flex; 
 
-.package-info a:hover {
-    text-decoration: underline;
-}
-footer {
-    background: #333;
-    color: #fff;
+  }
+  .book-part1{
+    width: 50%;
+    height: 25vh;
+   
+  
+  }
+  .book-part1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+  }
+  .book-part2{
+    width: 50%;
+    height: 25vh;
+    /* align-items: center; */
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    /* text-align: left; */
+     
+  }
+  .book-part2 h2{
+    font-family: regular2;
+    font-weight: 400;
+    font-size: 2.5vw;
+  }
+  .book-part2 h4{
+    font-family: twl;
+    font-size: 1.3vw;
+    font-weight: 400;
+    opacity: 0.5;
+  }
+  .book-part3{
+    width: 60%;
+    margin-left: 2.5vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 25vh;
+   
+  }
+  .book-part3 h5{
+    font-family: twl;
+    font-size: 1.2vw;
+    font-weight: 200;
+    opacity: 0.5;
+  }
+
+
+  .book-part4 {
+    display: flex;
+    width: 30%;
+    padding: 2vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8vw;
+  }
+  
+  .book-part4 button {
+    width: 80%;
+    letter-spacing: 1px;
+    height: 5vh;
+    background-color: transparent;
     text-align: center;
-    padding: 20px 0;
-}
+    text-transform: uppercase;
+    padding: 0.5vw;
+    cursor: pointer;
+    border: 1px solid #0000003c;
+    font-weight: 500;
+    font-family: twl;
+    color: #000000bb;
+    transition: all ease 0.4s;
+    position: relative;
+    border-radius: 1.5vw;
+    overflow: hidden;
+    /* margin-bottom: 2vh; */
+    /* border-radius: 2vw; */
+    /* font-size: 18px; */
+  }
+  
+  .book-part4 button::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+  }
+  
+  .book-part4 button:hover::after {
+    bottom: 0;
+    border-radius: 0;
+  }
+  
+  .book-part4 button a {
+    color: #000000bb;
+    text-decoration: none;
+    position: relative;
+    z-index: 9;
+  }
+  
+  .book-part4 button:hover a {
+    color: #fff;
+  }
+       @media (max-width: 600px){
+          .page1{
+            min-height: 100vh;
+          }
+          .nav{
+            height: 10vh;
+            padding: 0 1vh;
+          }
+          .nav h1 {
+            display: none;
+          }
+          .nav-part1 h2 {
+             font-size: 3vh; 
+             letter-spacing: 1px;
+          }
+          .nav-part2 h3{
+            font-size: 2.5vh;
+          }
+          .part1{
+            justify-content: start;
+            align-items: start;
+          }
+          .part1 table{
+            padding: 0;
+          }
+          .part1 th,td,button{
+            padding: 0%;
+            font-size: 1.5vh;
+          }
+          .booking{
+            flex-direction: column;
+            gap: 0;
+            height: 50vh; 
+          }
+          .booking1{
+            width: 100%; 
+            justify-content: space-between; 
+            gap: 0;
+          }
+         .book-part1{
+          width: 40%;
+          padding: 2vw;
+          height: 25vh;
+         }
+         .book-part1 img{
+          border-radius: 1vw;
+         }
+         .book-part2{
+          width: 60%;
+          height: 25vh;
+          align-items: start;
+          justify-content: start; 
+          padding: 2vw;
+         }
+         .book-part2 h2{
+          font-size: 4vh;
+          text-transform: capitalize;
+         }
+         .book-part2 h4{
+          font-size: 2.5vh;
+          text-transform: capitalize;
+         }
+          .booking2{
+            width: 100%;
+            display: block; 
+          }
+          .book-part3{ 
+            width: 100%;
+            height: 15vh;
+            line-height: 2.5vh;
+            overflow: hidden; 
+            padding: 0 2vw;
+          }
+          .book-part3 h5{
+            font-size: 2vh;
+          }
+          .book-part4{
+            width: 70%;
+            flex-direction: row;
+             
+          }
+          .book-part4 button{
+            height: 5vh;
+            width: 80%;
+            letter-spacing: 0.6vw;
+            border-radius: 2.5vh;
+            align-items: center; 
+             
+          }
+          .book-part4>button:first-child{
+            background-color: black;
+            color: white;
+          }
+          .book-part4>button:first-child a{
+             
+            color: white;
+          }
+           
+
+         
+          
+           
+        }
     </style>
+    
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Explore Your Next Adventure</h1>
-            <nav>
-                <ul>
-                    <li><a href="adminhomepage.php">Home</a></li>
-                    <li><a href="tourlist.php">Packages</a></li>
-                    <li><a href="#">Hotels</a></li>
-                     
-                </ul>
-            </nav>
+   <div class="page1">
+    <div class="nav">
+        <div class="nav-part1">
+            <h2>hotels</h2>
         </div>
-    </header>
-
-    <section id="home">
-        <div class="container">
-            <h2>Welcome to Adventure Tours</h2>
-            <p>Your gateway to unforgettable travel experiences.</p>
+        <h1>the real travel</h1>
+        <div class="nav-part2">
+            <h3><a href="adminhomepage.php">Home</a></h3>
+            <h3><a href="#">Hotels</a></h3>
+            <h3><a href="tourlist.php">package</a></h3>
         </div>
-    </section>
+    </div>
 
-    <section id="packages">
-        <div class="container">
-            <h2>Our Hotel Packages</h2>
-             
-
-            <?php 
+    
+    <?php 
             if($result->num_rows > 0){
                 while($row = mysqli_fetch_assoc($result)){
            
           ?>
-            <div class="package">
-            <img src=" <?php echo $row['Hotel_Image']; ?>" alt="Product 1" alt="Mountain Adventure">
-                <div class="package-info">
-                    <h3><?php echo $row['Hotel_Name']; ?></h3>
-                    <p><?php echo $row['amenities']; ?></p>
-                    
-                    <a href="update_hotel.php?id=<?php echo $row['Hotel_Id'] ?>">Update</a> &nbsp;&nbsp;<a href="hotellist.php?ID=<?php echo $row['Hotel_Id'] ?>" style="color: red;">Delete</a>
+    <div class="middle4">
+        <div class="booking">
+            <div class="booking1">
+
+                <div class="book-part1">
+                    <img src="<?php echo $row['Hotel_Image']; ?>" alt="img">
                 </div>
-                
+                <div class="book-part2">
+                    <h2><?php echo $row['Hotel_Name']; ?></h2>
+                    <h4>Guerneville, California</h4>
+                </div>
             </div>
+            <div class="booking2">
 
-            <?php
-                  }
-                }
-                ?> 
-
+                <div class="book-part3"> 
+                    <h5><?php echo $row['amenities']; ?></h5>
+                </div>
+                <div class="book-part4"> 
+                    <button  ><a href="update_hotel.php?id=<?php echo $row['Hotel_Id'] ?>" >Update</a> </button>
+                    <button  ><a href="hotellist.php?ID=<?php echo $row['Hotel_Id'] ?>">Delete</a></button>
+                </div>
             </div>
-
-    </section>
-
-    <section id="contact">
-        <div class="container">
-
-        <?php
-            //  if(isset($_POST['send'])){
-            //     $name = $_POST['name'];                
-            //     $email = $_POST['email'];
-            //     $massage = $_POST['massage'];
-             
-            //     $sql = "insert into feedback (name, email, massage) 
-            //     values('$name','$email','$massage')";
-
-            //     $result = $conn->query($sql);
-             
-            //     if($result){
-            //        echo "<script>alert('Your Registration succesfully..!')</script>";
-            //     }
-            //     else{
-            //        echo "Invalid Query..!";
-            //     }
-             
-            //  }
-        ?>
-
-         <!-- <script src="msgsend.js"></script>
-             <script type="text/javascript"
-                 src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-             </script>
-             <script type="text/javascript">
-                 (function(){         
-                     emailjs.init( "C95kcLumMGrtKUJOB");
-                 })();
-         </script> -->
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Adventure Tours. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
+    <?php
+          }
+        }
+        ?> 
+</div>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+<script>
+    const locoScroll = new LocomotiveScroll({
+    el: document.querySelector(".page1"),
+    smooth: true,
+  });
+</script>
 </body>
 </html>

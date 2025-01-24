@@ -1,138 +1,109 @@
 <?php
-   include("../config/connection.php");
-   error_reporting(0);
+include("../config/connection.php");
+error_reporting(0);
 
-
-
-
-   //step 1 => Get users data by users id
-
-   if(isset($_GET['id'])){
+if(isset($_GET['id'])){
     $sql = "select * from tour_package where TourPackage_Id = " .  $_GET['id'];
-     $result = $conn->query($sql);
-     // echo"<pre>";
-     // print_r($result);
-     $data = mysqli_fetch_assoc($result);
-     // echo "<pre>";
-     // print_r($users);
-     if($data){
-         //echo "Data collected successes..!";
-     }
- }
- else{
-     echo "Invalid request..!";
-     exit;
- }
+    $result = $conn->query($sql);
+    $data = mysqli_fetch_assoc($result);
+    if(!$data){
+        echo "Invalid request..!";
+        exit;
+    }
+}
 
-
-
- //step 2 => update user data by from submit
-      
-
- if(isset($_POST['submit'])){
-   // extract($_POST);   
+if(isset($_POST['submit'])){
     $Package_Name = $_POST['package_name'];
     $Package_Type = $_POST['package_type'];
     $Package_Location = $_POST['Package_Location'];
     $Package_Price = $_POST['Package_price'];
     $Package_Features = $_POST['package_features'];
     $Package_Details = $_POST['package_details'];
-    //$folder = $_POST['package-img_old'];
+    $phone = $_POST['phone'];
     $file = $_FILES['package-img']['name'];
     $tempname = $_FILES['package-img']['tmp_name'];
     $folder = '../image/'.$file;
-    move_uploaded_file( $tempname,$folder);
+    move_uploaded_file($tempname, $folder);
 
-    
-// ('$Package_Name','$Package_Type','$Package_Location','$Package_Price','$Package_Features','$Package_Details','$folder ')";
-//$result = $conn->query($sql);
- //$sql=  "update stdinfo set name ='$name', number = '$number', address='$address' where id = ".$_POST['id'];
- //$sql ="UPDATE tour_package SET fname='$fname', lname='$lname',email='$email' where id = ".$_GET['id'] ; 
- $sql ="UPDATE tour_package SET Package_Name='$Package_Name', Package_Type='$Package_Type', Package_Location='$Package_Location', Price='$Package_Price', Package_Features='$Package_Features', Package_Details='$Package_Details', Package_Image='$folder' WHERE TourPackage_Id = " .  $_GET['id'];
-   $result = $conn->query($sql);
+    $sql ="UPDATE tour_package SET Package_Name='$Package_Name', Package_Type='$Package_Type', Package_Location='$Package_Location', Price='$Package_Price', Package_Features='$Package_Features', Package_Details='$Package_Details', Phone = '$phone' ,Package_Image='$folder' WHERE TourPackage_Id = " .  $_GET['id'];
+    $result = $conn->query($sql);
 
-   if($result){
-    echo  "<script>alert('Data updated Successfully..!')</script>";
-       
-      // header("location:tourlist.php");
-       header("Refresh:0.5; url=tourlist.php");
-   }
-   else{
-       echo "Not Updated..!";
-   }
- }     
+    if($result){
+        echo "<script>alert('Data updated Successfully..!')</script>";
+        header("Refresh:0.5; url=tourlist.php");
+    } else {
+        echo "Not Updated..!";
+    }
+}
+?>
 
-
- ?>
-
-
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-     <style>
-         .addpost{
-             width:40%;
-             position:absolute;
-             top:14%;            
-             left:29%;
-             background-color:rgb(60, 124, 197);
-             box-shadow:2px 2px 3px 2px skyblue;
-             font-size:20px;
-             font-weight:bold;
-             text-align:center;
-         }
-
-         a{
-            text-decoration: none;
-             
-         }
-          
-          
-
-     </style>
- </head>
-
-<body>
-
- <h4 class='adm-h4' style="text-align: center; font-size:24px; margin-top:40px;">Update Tour Package</h4>
-<div class="addpost">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/admin/hotel.css">
+</head>
  
-  <!-- Form -->
-  <form  action=" " method="POST" enctype="multipart/form-data">
-                     
-                         <div><label for="post_title"   >Package Name</label></div> 
-                          <input style="width:80%; height:35px" value="<?php echo $data['Package_Name'] ?>" type="text" name="package_name" placeholder="Create Package"  autocomplete="off" required> <br>
-                    
-                          <div> <label for="product-author">Package Type</label></div>
-                          <input style="width:80%; height:35px" value="<?php echo $data['Package_Type'] ?>" type="text" name="package_type"  placeholder="Pacakge type eg: Familly Package / Couple Package" required />
-                          
-                          <div> <label for="product-Location">Package Location</label></div>
-                          <input style="width:80%; height:35px" value="<?php echo $data['Package_Location'] ?>" type="text" name="Package_Location" placeholder="Package Location"  value="" required />
-                          
-                     
-                          <div> <label for="product-price">Price </label></div>
-                          <input style="width:80%; height:35px" value="<?php echo $data['Price'] ?>" type="number" name="Package_price" placeholder="Package price"  value="" required />
+<body>
+    <div class="signUpPage">
+        <div class="nav">
+            <div class="nav-part2">
 
-                          <div><label for="package_features">Package Features</label></div> 
-                          <input style="width:80%; height:35px" value="<?php echo $data['Package_Features'] ?>" type="text" name="package_features" placeholder="Package features..!" autocomplete="off" required> <br>
-                         
-                          <div><label for="package_details">Package Details</label></div>
-                          <textarea rows='4' cols='1' style="width:80%;"   name="package_details" placeholder="Package Details"  required><?php echo $data['Package_Details'] ?></textarea>  
-                           <!-- <input type="text" value="" style="width:80%;" name="package_details" placeholder="Package Details"  required> -->
+                <h3 class="closeSignUp" style="align-items: center; justify-content: center; display: flex;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="1.2vw" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M11.708 19.273a.686.686 0 0 0-.05-.966l-6.121-5.55h14.71c.416 0 .753-.338.753-.756a.755.755 0 0 0-.752-.758H5.53l6.129-5.548a.69.69 0 0 0 .05-.969.676.676 0 0 0-.961-.05l-7.522 6.812a.69.69 0 0 0 0 1.017l7.52 6.82c.28.252.71.23.962-.052Z"></path>
+                    </svg>
+                    <a href="adminhomepage.php">to go Back</a></h3>
+                    <h3><a href="tourlist.php">Tour List</a></h3>
+                </div>
+          <div class="nav-part1">
+             <h3>est-2024</h3>
+          </div>
+        </div>
+        <hr class="animated-hr" />
+        <div class="signUpPage-part1"> 
+          <div class="signUpPage-part11">
+            <h3>update tour</h3>
+            <div class="signUpPage-bottom">
+              <h1>Start <br> Your <br> Journey</h1>
+            </div>
+    
+          </div>
+          <div class="container"> 
+            <form action="" method="POST" enctype="multipart/form-data">
+              <label for="activity" class="required">pacakge name</label>
+              <input value="<?php echo $data['Package_Name'] ?>" type="text" name="package_name" placeholder="Create Package" autocomplete="off" required>
             
-                           <div > <label  for="image-post">Package Image</label>       
-                           <input style="width:50%;" name="package-img" type="file" required>
-                            
-                      <input style="width:100px;margin-top:5px" type="submit" name="submit"  value="Update" required /></div>
-                  </form>
-                  
-
-
- </div>
-
-
-     </body>
+              <label for="activity" class="required">package type </label>
+              <input value="<?php echo $data['Package_Type'] ?>" type="text" name="package_type" placeholder="Package Type (Family/Couple)" required />
+            
+              <label for="activity" class="required">Location</label>
+              <input value="<?php echo $data['Package_Location'] ?>" type="text" name="Package_Location" placeholder="Package Location" required />
+            
+              <label for="activity" class="required">price</label>
+              <input value="<?php echo $data['Price'] ?>" type="number" name="Package_price" placeholder="Package price" required />
+            
+              <label for="activity" class="required">features</label>
+              <input value="<?php echo $data['Package_Features'] ?>" type="text" name="package_features" placeholder="Package features..!" autocomplete="off" required>
+            
+              <label for="activity" class="required">phone no</label>
+              <input type="number" placeholder="Phone" name="phone" value="<?php echo $data['Phone'] ?>" required>
+            
+              <label for="activity" class="required">package img</label>
+              <input  name="package-img" type="file"  required> 
+            
+              <label for="activity" class="required">details</label>
+              <textarea rows='4' cols='1'  name="package_details" placeholder="Package Details" required><?php echo $data['Package_Details'] ?></textarea>  
+            
+              <input class="button-part1" type="submit" name="submit" value="Update" required />
+            </form>  
+               
+            
+          </div> 
+        </div>
+      </div>
+</body>
 </html>
-
-
+ 

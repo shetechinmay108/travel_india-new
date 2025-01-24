@@ -1,509 +1,425 @@
 <?php
-   include("config/connection.php");
-   //include('verify_email.php');
-   //session_start();
-   //include("config/user_auth_acces.php");
-   error_reporting(0);
+include("config/connection.php");
+error_reporting(0);
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-   //email send///////////
-   use PHPMailer\PHPMailer\PHPMailer;
-  use PHPMailer\PHPMailer\Exception;
-  
-  require 'PHPMailer/src/Exception.php';
-  require 'PHPMailer/src/PHPMailer.php';
-  require 'PHPMailer/src/SMTP.php';
-   
-  function Sendemail_Verify( $fname,$email, $otp){
-     
-      
-   //Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
-try {
-    //Server settings
-    $mail->SMTPDebug = 0;                      //Enable verbose debug output  //SMTP::DEBUG_SERVER
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'harsh1234vathare@gmail.com';                     //SMTP username
-    $mail->Password   = 'olfq duvu rucq tvsv';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+function Sendemail_Verify($fname, $email, $otp)
+{
+    $mail = new PHPMailer(true);
 
-    //Recipients
-    $mail->setFrom('travelindia9500@gmail.com', 'Travel_India.com');
-    //$mail->addAddress('tourism@mailinator.com');     //Add a recipient
-     $email = $_POST['email'];
-    $mail->addAddress( $email);      
-    
-    //Name is optional
-    $mail->addReplyTo('travelindia9500@gmail.com', 'Information');
-    // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
+    try {
+        $mail->SMTPDebug = 0;
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'harsh1234vathare@gmail.com';
+        $mail->Password = 'olfq duvu rucq tvsv';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port = 465;
 
-    //Attachments
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+        $mail->setFrom('travelindia9500@gmail.com', 'The Real_Travel.com');
+        $email = $_POST['email'];
+        $mail->addAddress($email);
+        $mail->addReplyTo('travelindia9500@gmail.com', 'Information');
 
+        $mail->isHTML(true);
+        $mail->Subject = 'Verification code for verify your email address..!';
+        $mail->Body = "<h3>hello " . $_POST['fname'] . "</h3><h3> You need to verify your account with this tourism website !</h3>
+                   <h3> Enter this verification code for activate your account : <b>" . $_POST['otp'] . "</b></h3>
+                   <br/><br/>";
 
-
-   //  $sql_query = "select * from feedback ";
-   //  $feedback_data = $conn->query($sql_query);
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = ' Verification code for verify your email address..!';
-    $mail->Body    = "<h3>hello ".$_POST['fname']."</h3><h3> You need to verify your account with this tourism website !</h3>
-              <h3> Enter this verification code for activate your account : <b>". $_POST['otp']."</b></h3>
-              <br/><br/>";
-              //  <a href='http://localhost/travel_india-new/verify_email.php?fname=$fname&email=$email&verify_token=$otp'>Click me </a> ";
-             
-    //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-    $res = $mail->send();
-    if($res){
-        // echo  "<script>alert('Your Messages succesfully Send..!')</script>";//'Message has been sent';
-        //header('location:verify_email.php'.$activation_code);
+        $res = $mail->send();
+        if (!$res) {
+            echo "<script>alert('Your Messages not Send..!')</script>";
+        }
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
-      
-    else 
-    echo  "<script>alert('Your Messages not Send..!')</script>";///'Message has been not sent';
-
- } 
-catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
+$otp_str = str_shuffle("0123456789");
+$otp = substr($otp_str, 0, 6);
 
+$act_str = rand(100000, 1000000);
+$activation_code = str_shuffle("abcdefghijklmno" . $act_str);
 
+if (isset($_POST['submit'])) {
+    $otp = $_POST['otp'];
+    $activation_code = $_POST['activation_code'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
+    $_SESSION["fname"] = $fname;
 
+    $email_check = "SELECT * FROM users WHERE email = '$email'";
+    $result = $conn->query($email_check);
 
+    if (mysqli_num_rows($result) > 0) {
+        echo "<script>alert('Email_Id Or Password already Exists..!')</script>";
+    } else {
+        $sql = "INSERT INTO users (fname, lname, email, password, otp, activation_code) VALUES('$fname','$lname','$email','$password', '$otp','$activation_code')";
+        $qury = $conn->query($sql);
 
-  }
-///Sign in Procces..!
-
-//echo "hello";
- $otp_str = str_shuffle("0123456789");
- $otp = substr($otp_str, 0, 6);
-
-  $act_str = rand(100000, 1000000);
- "<br>";
- $activation_code = str_shuffle("abcdefghijklmno".$act_str);
-
-
-if(isset($_POST['submit'])){
-   $otp = $_POST['otp'];
-   $activation_code = $_POST['activation_code'];
-   $fname = $_POST['fname'];
-   $lname = $_POST['lname'];
-   $email = $_POST['email'];
-   $password =$_POST['password'];
-   //$verify_token =  bin2hex(random_bytes(16));
-
-   $_SESSION["fname"]=$fname;
-
-
-  //  $sql = "insert into users (fname, lname, email, password) values('$fname','$lname','$email','$password')";
-  //  $result = $conn->query($sql);
-  $email_check = "SELECT * FROM users WHERE email = '$email' ";
-  $result = $conn->query($email_check);
-
-   if(mysqli_num_rows($result) > 0)
-   
-   {
-
-    echo "<script>alert('Email_Id Or Password already Exists..!')</script>";
-       
-    
-   }
-   else{
-    
-    $sql = "INSERT INTO users (fname, lname, email, password , otp , activation_code) VALUES('$fname','$lname','$email','$password', '$otp','$activation_code' )";
-     // echo "<script>alert('Your registration succesfully..!')</script>";
-
-     $qury = $conn->query($sql);
-     
-     if($qury)
-     {
-       
-      Sendemail_Verify("$fname","$email"," $otp");
-      //("$fname","$email"," $verify_Token");
-      echo "<script>alert('Your registration succesfully..! Please Verify your Email Address..!')</script>";
-      header("Refresh:0.5; url=otp_verify.php?code=".$activation_code);
-     // header("location:otp_verify.php?code=".$activation_code);
-      
-      //echo "<script>alert('Your registration succesfully..! Please Verify your Email Address..!')</script>";
-       
-     }
-     else{
-
-      $_SESSION['status'] = "Registration Failed..!";
-      //header('location:index.php');
-       
-     }
-  }
-
- }
-
-
+        if ($qury) {
+            Sendemail_Verify("$fname", "$email", " $otp");
+            echo "<script>alert('Your registration succesfully..! Please Verify your Email Address..!')</script>";
+            header("Refresh:0.5; url=Authentication/otp_verify.php?code=" . $activation_code);
+        } else {
+            $_SESSION['status'] = "Registration Failed..!";
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="curser"></div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the real hote</title>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body> 
     <div class="main">
-      <div class="overlay"></div>
-      <div class="page1">
-      
+        <div class="page1">
+            <div class="nav">
+                <div class="nav-part1">
+                    <h5>Curated hotels from <br> The Real Housewives</h5>
+                </div>
+                <i class="ri-menu-line open"></i>
+            </div>
+            <div class="middle">
+                <h2>Money can’t buy you class,<br> but it can buy you a vacation.</h2>
+                <br>
+                <h4>Check in to the iconic hotels and resorts <br> featured on The Real Housewives. </h4>
+                <div class="backSide">
+                    <div class="back-img1 backimg">
+                        <img src="https://cdn.prod.website-files.com/66bdbd95953ed41b630aa4ba/66c658c0fc8c1bc4501bcb52_sunset.avif" alt="">
+                    </div>
+                    <div class="back-img2 backimg">
+                        <img src="https://cdn.prod.website-files.com/66bdbd95953ed41b630aa4ba/66d6c595c70f3242c59d7e4d_Hero%20Visual-1.avif" alt="">
+                    </div>
+                    <div class="back-img3 backimg">
+                        <img src="https://cdn.prod.website-files.com/66bdbd95953ed41b630aa4ba/66d6c5951dac7641e38ec4f8_Hero%20Visual.avif" alt="">
+                    </div>
+                    <div class="back-img4 backimg">
+                        <img src="https://cdn.prod.website-files.com/66bdbd95953ed41b630aa4ba/66d6c59597a8522719a2cc1b_Hero%20Visual-3.avif" alt="">
+                    </div>
+                    <div class="back-img5 backimg">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/6786e90dbb20d6b0311567bf_RHOP_S9E12-14_The%20Buenaventura%20Golf%20%26%20Beach%20Resort_1-topaz-upscale-2000w.avif" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="header">
+                <h1>The Real Travel</h1>
+            </div>
+            <div class="page1-part1">
+                <div class="nav">
+                    <div class="nav-part1">
+                        <h5>Curated hotels from <br> The Real Housewives</h5>
+                    </div>
+                    <i class="ri-close-line close"></i>
+                </div>
+                <div class="menu-section">
+                    <div class="menu">
+                        <h1 class="animate-text" data-index="1">the real hotels</h1>
+                        <h1 class="animate-text signIn" data-index="2">sign in</h1>
+                        <h1 class="animate-text signUp" data-index="3">sign up</h1>
+                        <h1 class="animate-text" data-index="4">about us</h1>
+                        <h1 class="animate-text" data-index="5"> <a href="Get_in_Touch/contact_index.php"> get in touch</a></h1>
+                    </div>
 
-        <div class="navbar">
-          <h3>travel india</h3>
-
-          <h3 id="menu">menu</h3>
-        </div>
-        <div class="heading-section">
-          <div class="heading-part1">
-             
-            <h1>welcome to</h1>
-          </div>
-          <div class="heading-part2">
-            <h1>travel india</h1>
-            <h3>reach your destiny with us!</h3>
-          </div>
-        </div>
-        <div class="menu-section">
-          <div class="menu-part1">
-            <h2>home</h2>
-            <h2 id="signin">sign in</h2>
-            <h2 id="Login-part2">login</h2>
-            <h2>about</h2>
-            <i class="ri-close-circle-line"></i>
-          </div>
-        </div>
+                    <div class="about">
+                        <div class="text">
+                            <h6><i class="ri-arrow-right-line"></i>instagram</h6>
+                            <h6><i class="ri-arrow-right-line"></i>facebook</h6>
+                            <h6><i class="ri-arrow-right-line"></i>e-mail</h6>
+                        </div>
+                        <div class="images">
+                            <img src="https://cdn.prod.website-files.com/66bdbd95953ed41b630aa4ba/66bf66f79495e6d6e4419b14_bas-van-den-eijkhof-LchLjOB-XvE-unsplash.avif" alt="">
+                            <img src="https://cdn.prod.website-files.com/66bdbd95953ed41b630aa4ba/66cf2d46bf18c7280d2f49ac_menu-2.avif" alt="">
+                            <img src="https://cdn.prod.website-files.com/66bdbd95953ed41b630aa4ba/66cf2d4579c54a88014bc939_menu-1.avif" alt="">
+                            <img src="https://cdn.prod.website-files.com/66bdbd95953ed41b630aa4ba/66bf66f712f954b018e2680f_getty-images-jDdUlr0UBlw-unsplash.avif" alt="">
+                            <img src="https://cdn.prod.website-files.com/66bdbd95953ed41b630aa4ba/66bf66f7bc9a2f5fe688b26d_sj-objio-0WUa239Wm5s-unsplash.avif" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
            
-        <!-- *******Login form****** -->
-        <?php  
-          
-            if(isset($_POST['Login'])){
-              //extract($_POST) ;
-             $email =  $_POST['email'];
-             $password =  $_POST['password'];
 
-              
-             $sql = "select * from users where  email='$email' AND password = '$password'";
-              //$sql = "select * from users where  email='$email'";
-              $result = $conn->query($sql);
-
-              // $_SESSION['user_Id'] = $row['user_Id'];
-              // $_SESSION['Email_Id'] = $row['email'];
-
-              // $result = $conn->query($sql);
-              $result = mysqli_query($conn,$sql);
-             $row = mysqli_fetch_array($result);
              
-              if($row["user_type"]=="user" )
-              {
-                
-
-                // $_SESSION['user_Id']=$row['user_Id'];
-                // $_SESSION['Email_Id']=$row['email'];
-
-                  if($row['status']== 'active'){
-                    //$_SESSION['']=" echo $row['email']; ";
-
-                    //$row = mysqli_fetch_assoc($result);
-                    // $_SESSION['USER_ID']=$result['user_Id'];
-                    // $_SESSION['USER_EMAIL']=$result['email'];
-                    //$_SESSION["fname"]=$fname;
-                    $_SESSION["email"]=$email;
-
-                    echo "<script>alert('Welcome users, Explore this Travel_India-website..!')</script>";
-                    header("Refresh:0.3; url=homepage.php");
-                    //header('location:homepage.php');   $_GET['user_Id'] 
-                  }
-                  else{
-
-                    //Sendemail_Verify("$fname","$email"," $otp");
-                    echo "<script>alert('Your account is not verified , Please click Verify Email_ID..!')</script>";
-                   // Sendemail_Verify("$fname","$email"," $otp");
-                   // header("Refresh:0.5; url=otp_verify.php?code=".$activation_code);
-                    //header("location:otp_verify.php?code=".$activation_code);
-                  }
-                 //header('location:homepage.php');
-              }
-              
+             
+        </div>
+        <!-- sign In page -->
+        <div class="signUpPage signInPage">
+        <div class="nav">
+          <h3 class="closeSignIn" style="align-items: center; justify-content: center; display: flex;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="1.2vw" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M11.708 19.273a.686.686 0 0 0-.05-.966l-6.121-5.55h14.71c.416 0 .753-.338.753-.756a.755.755 0 0 0-.752-.758H5.53l6.129-5.548a.69.69 0 0 0 .05-.969.676.676 0 0 0-.961-.05l-7.522 6.812a.69.69 0 0 0 0 1.017l7.52 6.82c.28.252.71.23.962-.052Z"></path>
+        </svg>
+        back</h3>
+          <div class="nav-part1">
+             <h3>est-2024</h3>
+          </div>
+        </div>
+        <hr class="animated-hr" />
+        <div class="signUpPage-part1"> 
+          <div class="signUpPage-part11">
+            <h3>Log In to Continue</h3>
+            <div class="signUpPage-bottom"> 
+              <h1>Begin <br> Your <br> Adventure </h1>
+            </div>
     
-              else if($row["user_type"]=="admin")
-              {
-                
-                if($row['status']== 'active'){
-                  header('location:admin/adminhomepage.php');
-                }
-                else{
-                  echo "<script>alert('Your account is not verified , Please click Verify Email_Id..!')</script>";
-                }
-                // header('location:admin/adminhomepage.php');
-              }
-
-              // if($result->num_rows){
-              //     $_SESSION['is_user_loggedin'] = true;
-              //     $_SESSION['user_data'] = mysqli_fetch_assoc(($result));
-
-
-              //     if($result=["user_type"] == "user"){
-              //         header('location:homepage.php'); 
-              //     }
-              //     else if($result=["user_type"] == "admin"){
-              //         header("location:admin/adminhomepage.php");
-              //     }
-
-              else{
-                //$_SESSION['error'] = "<script>alert('Invalid Login info..!')</script>";
-                echo "<script>alert('Invalid Login info..!')</script>";
-               }
-
-                  
-         
-                         
-              }
-             
-         
-             
-         //}
-
-
-
-
-         ?>
-
-
-        
-        
-        <form action="" method="POST">
-        <?php  include("config/alert.php");  ?>
-          
-           <div class="login" id="login"   >
-               <i class="ri-close-line"></i>
-              <div class="login-part1">
-                 <h1>login</h1>
-                 <input
-                   type="email"
-                   name="email"
-                  placeholder="email . . . . ." required
-                  /><br /><br />
-                 <input
-                   type="password"
-                   name="password"
-                  placeholder="password . . . . . ." required
-                 /><br /><br />
-
-                 
-                 <button type="submit" name="Login">login</button>
-                 <button id="signin-part123">signin</button><br />
-                 <a href="password_reset.php">forget password</a><br>
-                 <a href="resend_otp.php">Verify Email_Id </a>
-              </div>
-           </div>
-        </form>
-
-
-        <form action="  " method="post">
-        <div class="signin">
-        <?php   
-        // if(isset($_SESSION['status'])){
-        //       echo "<h4>" .$_SESSION['status']. "</h4>";
-        //       unset($_SESSION['status']);
-        //   }
-          ?>   
-          <input type="hidden" name="otp" value="<?php echo "$act_str"; ?>">
-          <input type="hidden" name="activation_code" value="<?php echo "$activation_code"; ?>">
-          
- 
-               <i class="ri-close-circle-fill"></i>
-             <div class="signin-part1">
-               <h1>Sign in</h1>
-               <input
-                 type="text"
-                 name="fname"
-                 placeholder="FirstName . . . . . ." required
-               /><br /><br />
-               <input
-                 type="text"
-                 name="lname"
-                 placeholder="LastName . . . . . ." required
-               /><br /><br />
-               <input
-                 type="email"
-                 name="email"
-                 placeholder="Email . . . . . ." required
-               /><br /><br />
-               <input
-                 type="password"
-                 name="password"
-                 placeholder="Password . . . . . ." required
-                /><br /><br />
-                <!-- <input
-                 type="password"
-                 name="confirm_password"
-                 placeholder="Confirm_Password . . . . . ." required
-                /><br /><br /> -->
-               <button id="login_part12">Login in</button>
-               <button type="submit" name="submit">signin</button>
-               <button id="Cancel">Cancel</button>
-              </div>
-
-           
-        </div>
-        </form>
-       
-        <div class="bottom-section">
-          <div class="bottom-part1">
-            <div class="bottom-part2">
-              <a href="#"
-                >enjoymental <i class="ri-arrow-right-up-line"></i>
-              </a>
-            </div>
-            <div class="bottom-part2">
-              <a href="#"
-                >mythological <i class="ri-arrow-right-up-line"></i>
-              </a>
-            </div>
-            <div class="bottom-part2">
-              <a href="#"
-                >educational <i class="ri-arrow-right-up-line"></i>
-              </a>
-            </div>
           </div>
-        </div>
-      </div>
-      <div class="page2" data-scroll>
-        <div class="photo-parent">
-          <div class="photo-section">
-            <div class="photo-part1">
-              <div class="image1">
-                <img
-                data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal"
-                  src="https://images.unsplash.com/photo-1587922546307-776227941871?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA=="
-                  alt=""
-                />
-              </div>
-            </div>
-            <h2>lakshadweep</h2>
-            <h4>see a amazing beach</h4>
-          </div>
+          <div class="container"> 
+          <?php
+      if (isset($_POST['Login'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-          <div class="photo-section2">
-            <div class="photo-part2">
-              <img
-              data-scroll data-scroll-speed="1" data-scroll-direction="horizontal"
-                src="https://images.unsplash.com/photo-1616606484004-5ef3cc46e39d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA=="
-                alt=""
-              />
-            </div>
-            <h2>hampi</h2>
-            <h4>visit a historical site</h4>
-          </div>
-        </div>
-        <div class="photo-parent2">
-          <div class="photo-section3">
-            <img
-            data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal"
-              src="https://images.unsplash.com/photo-1679022581490-884295ed5d52?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA=="
-              alt=""
-            />
-            <h2>kerla</h2>
-            <h4>visit a nature site</h4>
-          </div>
-          <div class="photo-section4">
-            <img
-            data-scroll data-scroll-speed="1" data-scroll-direction="horizontal"
-              src="https://images.unsplash.com/photo-1569096610945-1a094be04c74?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA=="
-              alt=""
-            />
-            <h2>hampi</h2>
-            <h4>visit a historical site</h4>
-          </div>
-        </div>
-        <div class="parent-parent3">
-          <div
-            class="photo-section5"
-            data-scroll data-scroll-speed="2" data-scroll-direction="vertical"
-          >
-            <img
-              src="https://img.veenaworld.com/wp-content/uploads/2021/03/Konark-Sun-Temple-History-Architecture-and-Information.jpeg"
-              alt=""
-            />
-            <h2>konark</h2>
-            <h4>visit a historical sun temple</h4>
-          </div>
-        </div>
-      </div>
-      <div class="page3">
-        <h1>Explore</h1>
-      </div>
+        $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+        $result = $conn->query($sql);
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
+
+        if ($row["user_type"] == "user") {
+          if ($row['status'] == 'active') {
+            $_SESSION["email"] = $email;
+            echo "<script >alert('Welcome users, Explore this Real_Travel-website..!')</script>";
+            header("Refresh:0.3; url=other/homepage.php");
+          } else {
+            echo "<script>alert('Your account is not verified, Please click Verify Email_ID..!')</script>";
+          }
+        } else if ($row["user_type"] == "admin") {
+          if ($row['status'] == 'active') {
+            header('location:admin/adminhomepage.php');
+          } else {
+            echo "<script>alert('Your account is not verified, Please click Verify Email_Id..!')</script>";
+          }
+        } else {
+          echo "<script>alert('Invalid Login info..!')</script>";
+        }
+      }
+      ?>
+             <form action="" method="POST">
+                <?php include("config/alert.php"); ?> 
+              <label for="bravolebrity" class="required">email</label>
+              <input type="email"  name="email"  placeholder="email " required /> 
+              <label for="activity" class="required">password</label>
+              <input  type="password" name="password"  placeholder="password  " required />
+
+              <button class="button-part1" type="submit" name="Login">login</button> 
+      
+              <button class="button-part1"  id="xyz"><a href="Authentication/password_reset.php">forget password</a></button>
+              <button class="button-part1"  id="xyz"><a href="Authentication/resend_otp.php">Verify Email</a></button>
      
-      <div class="second">
-        <div class="elem one"  >
-            <img src="https://www.livemint.com/lm-img/img/2024/01/21/1600x900/AyodhyaRamMandir_1705830011571_1705849061281.jpg" alt="">
-            <h1 > ayodhya</h1>
-            <h5>jai shree ram</h5>
+            </form>
+          </div> 
         </div>
-        <div class="elem">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSArmtBam6dAdSqw_pgqdXUSd2KN1AK1iGW9g&s" alt="">
-            <h1> kedarnath</h1>
-            <h5>mahadev</h5>
-        </div>
-        <div class="elem elemlast">
-            <img src=https://hblimg.mmtcdn.com/content/hubble/img/dwarka/mmt/activities/t_ufs/m_Dwarkadhish%20Temple-1_l_498_640.jpg alt="">
-            <h1> dwarka</h1>
-            <h5>shree krishna</h5>
-        </div>
-        
-        
-    </div>
-    
-      
-    </div>
+      </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="script.js"></script>
-  </body>
+      <!-- Sign up page -->
+        <div class="signUpPage">
+    <div class="nav">
+      <h3 class="closeSignUp" style="align-items: center; justify-content: center; display: flex;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="1.2vw" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" d="M11.708 19.273a.686.686 0 0 0-.05-.966l-6.121-5.55h14.71c.416 0 .753-.338.753-.756a.755.755 0 0 0-.752-.758H5.53l6.129-5.548a.69.69 0 0 0 .05-.969.676.676 0 0 0-.961-.05l-7.522 6.812a.69.69 0 0 0 0 1.017l7.52 6.82c.28.252.71.23.962-.052Z"></path>
+    </svg>
+    back</h3>
+      <div class="nav-part1">
+         <h3>est-2024</h3>
+      </div>
+    </div>
+    <hr class="animated-hr" />
+    <div class="signUpPage-part1"> 
+      <div class="signUpPage-part11">
+        <h3>Create Your Profile</h3>
+        <div class="signUpPage-bottom">
+          <h1>Start <br> Your <br> Journey</h1>
+        </div>
+
+      </div>
+      <div class="container"> 
+        <form action="" method="post">
+          <?php include("config/alert.php"); ?>
+          <input type="hidden" name="otp" value="<?php echo "$act_str"; ?>">
+                    <input type="hidden" name="activation_code" value="<?php echo "$activation_code"; ?>">
+          <label for="bravolebrity" class="required">first name</label>
+          <input type="text" name="fname" placeholder="FirstName  " required />
+
+          <label for="activity" class="required">last Name</label>
+          <input type="text" name="lname" placeholder="LastName " required />
+
+          <label for="activity" class="required">email</label>
+          <input type="email" name="email" placeholder="Email " required />
+             
+          <label for="password" class="required">Password</label>
+          <input type="password" name="password" placeholder="Password " required />
+  
+          <button class="button-part1" type="submit" name="submit">create account</button>
+ 
+        </form>
+      </div> 
+    </div>
+  </div>
+        <div class="page2">
+            <div class="video">
+                <video autoplay muted loop src=" https://www.fourseasons.com/content/dam/fourseasons/video/FSH/FSH_festive_ambient_shorter.mp4"></video>
+            </div>
+            <div class="text">
+                <h6>Our collections span the globe, offering you <br>
+                    the chance to stay in the luxurious, beautiful, <br>
+                    and bizarre accommodations you see on The <br>
+                    Real Housewives. Get the gang together in the family <br>
+                    van and prepare to squabble over who <br>
+                    gets their own room.</h6>
+            </div>
+        </div>
+        <div class="page3">
+            <h5>browse hotels by <br>
+                your favorite series</h5>
+
+                <div class="pageImg">
+                    <div class="pageImg1">
+                        <div class="pageImg-part1">
+                            <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66daf6d5b7409c4b64695c92_1_SF-1-topaz.avif" alt="">
+                        </div>
+                    </div>
+                    <div class="pageImg2">
+                        <div class="pageImg-part2">
+                            <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66db01e4d0ef5ace65b5f1c0_RHONY_S6E9_Berkshires-2-topaz.avif" alt="">
+                        </div>
+                        <div class="pageImg-part3">
+                            <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66dafd5eb8c30c4d8a394aa5_RHONY_S4E7-10_Morocco-2-topaz.avif" alt="">
+                        </div>
+                    </div>
+                </div>
+            <div class="location">
+                <h1><a href="before_Login/Orange County.php">Orange County</a></h1>
+                <h1><a href="before_Login/new-york.php">new york</a></h1>
+                <h1><a href="before_Login/Atlanta.php">Atlanta</a></h1>
+                <h1><a href="before_Login/New Jersey.php">New Jersey</a></h1>
+                <h1><a href="before_Login/Dallas.php">Dallas</a></h1>
+                <h1><a href="before_Login/Salt Lake City.php">Salt Lake City</a></h1>
+            </div>
+        </div>
+        <div id="page6">
+            <div class="page-text">
+                <!-- <div class="page-text-img"></div> -->
+                <h1>the real travel </h1>
+                <h4>These curated collections of popular and highly-rated travel <br> experiences offer well-organized itineraries, premium accommodations, <br> guided tours, exclusive deals, memorable moments, exceptional services, <br> personalized options, and unique destinations for all travelers</h4>
+            </div>
+            <div class="cards" id="card-one">
+                <div class="nav">
+
+                    <h2 style="text-transform: capitalize;">The Real travel</h2>
+                </div>
+                <div class="middle">
+                    <h1>"Elizabeth Vargas's" Home</h1>
+                    <br>
+                    <h4>La Quinta, California</h4>
+                </div>
+                <div class="header">
+                    <h4> Real Housewives of Orange County <br> season 18 | episode(s) 14-16</h4>
+                    <button> <a href="#" onclick="redirect()">explore</a></button>
+                </div>
+            </div>
+            <div class="cards" id="card-two">
+                <div class="nav">
+
+                    <h2 style="text-transform: capitalize;">The Real travel</h2>
+                </div>
+                <div class="middle">
+                    <h1>"Elizabeth Vargas's" Home</h1>
+                    <br>
+                    <h4>La Quinta, California</h4>
+                </div>
+                <div class="header">
+                    <h4> Real Housewives of Orange County <br> season 18 | episode(s) 14-16</h4>
+                    <button> <a href="#" onclick="redirect()">explore</a></button>
+                </div>
+            </div>
+            <div class="cards" id="card-three">
+                <div class="nav">
+
+                    <h2 style="text-transform: capitalize;">The Real travel</h2>
+                </div>
+                <div class="middle">
+                    <h1>The May Fair Hotel</h1>
+                    <br>
+                    <h4>London, England</h4>
+                </div>
+                <div class="header">
+                    <h4> Real Housewives of Orange County <br> season 18 | episode(s) 14-16</h4>
+                    <button> <a href="#" onclick="redirect()">explore</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="lastPage1">
+            <h1>Stay in the know</h1>
+            <h3>Be the first to know about new hotels we’ve uncovered</h3>
+            <form action="">
+                <input type="email" name="" id="" placeholder="EMAIL ADDRESS">
+                <button>&rarr;</button>
+            </form>
+            <div class="lastPage2">
+                <div class="last-part1">
+                    <div class="last-part11">
+                        <h3>map</h3>
+                        <h3>Series </h3>
+                        <h3>About</h3>
+                    </div>
+                    <div class="last-part11">
+                        <h3>submit</h3>
+                        <h3>press</h3>
+                        <h3>contact</h3>
+                    </div>
+                </div>
+                <div class="last-part2">
+                    <div class="last-part11">
+                        <h3>credits</h3>
+                        <h3>accessibility </h3>
+                        <h3>privacy</h3>
+                    </div>
+                    <div class="last-part11">
+                        <h3>facebook</h3>
+                        <h3>instagram</h3>
+                        <h3>1ax consulting</h3>
+                    </div>
+                </div>
+
+            </div>
+            <h5>This site features affiliate links. When you click on a link and book a trip,<br> The Real Hotels may earn a small commission at no cost to you.</h5>
+        </div>
+    </div>
+    <script src="https://unpkg.com/split-type"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script> -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        let redirect = () => {
+            alert('Please Sign In..!')
+            //window.location.href="../index.php"
+        }
+    </script>
+</body>
+
 </html>
-
-
- 
- 

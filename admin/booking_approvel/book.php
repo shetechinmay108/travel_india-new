@@ -1,287 +1,442 @@
-<?php  
-    include("../../config/connection.php"); 
+<?php
+include("../../config/connection.php");
+error_reporting(0);
 
-    error_reporting(0);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../../PHPMailer/src/Exception.php';
+require '../../PHPMailer/src/PHPMailer.php';
+require '../../PHPMailer/src/SMTP.php';
+
+function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_Name, $Package_Duration, $Payment_Id, $Total_Price)
+{
+	$mail = new PHPMailer(true);
+
+	try {
+		$mail->SMTPDebug = 0;
+		$mail->isSMTP();
+		$mail->Host       = 'smtp.gmail.com';
+		$mail->SMTPAuth   = true;
+		$mail->Username   = 'harsh1234vathare@gmail.com';
+		$mail->Password   = 'olfq duvu rucq tvsv';
+		$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+		$mail->Port       = 465;
+
+		$mail->setFrom('travelindia9500@gmail.com', 'The Real-Travel.com');
+		$email = $_POST['email'];
+		$mail->addAddress($email);
+		$mail->addReplyTo('travelindia9500@gmail.com', 'Information');
+
+		$mail->isHTML(true);
+		$mail->Subject = 'Congratulation Your Tour Package has been Approved..!';
+		$mail->Body    = "<h3>Welcome " . $fname . " in The Real-Travel.com</h3><h3>Your Booking Package has been Succesfully Approved..!</h3><h3>Please check Your Account..!</h3><br>
+		        <html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f9f9f9;
+            }
+            .payment-slip {
+                width: 60%;
+                margin: 50px auto;
+                padding: 20px;
+                background: #fff;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .payment-slip h1 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 20px;
+            }
+            .payment-slip table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+            .payment-slip table th, .payment-slip table td {
+                text-align: left;
+                padding: 10px;
+                border: 1px solid #ddd;
+            }
+            .payment-slip table th {
+                background-color: #f4f4f4;
+                font-weight: bold;
+            }
+            .payment-slip table tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .payment-slip p {
+                text-align: center;
+                color: #555;
+                margin-top: 10px;
+            }
+
+            @media only screen and (max-width:500px){
+                .payment-slip {
+                width: 85%;
+                margin: 50px auto;
+                
+            }
+
+            .payment-slip table {
+                 font-size:14px;
+            }
+           }
+
+            @media only screen and (max-width:440px){
+                .payment-slip {
+                width: 85%;
+                margin: 50px auto;
+                  
+            }
+
+            .payment-slip table {
+                 font-size:14px;
+            }
+           }
 
 
-    //email send///////////
-    use PHPMailer\PHPMailer\PHPMailer;
-   use PHPMailer\PHPMailer\Exception;
-   
-   require '../../PHPMailer/src/Exception.php';
-   require '../../PHPMailer/src/PHPMailer.php';
-   require '../../PHPMailer/src/SMTP.php';
-    
-   function Sendemail_approvel($email){
-      
-       
-    //Create an instance; passing `true` enables exceptions
- $mail = new PHPMailer(true);
- 
- try {
-     //Server settings
-     $mail->SMTPDebug = 0;                      //Enable verbose debug output  //SMTP::DEBUG_SERVER
-     $mail->isSMTP();                                            //Send using SMTP
-     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-     $mail->Username   = 'harsh1234vathare@gmail.com';                     //SMTP username
-     $mail->Password   = 'olfq duvu rucq tvsv';                               //SMTP password
-     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
- 
-     //Recipients
-     $mail->setFrom('travelindia9500@gmail.com', 'Travel_India.com');
-     //$mail->addAddress('tourism@mailinator.com');     //Add a recipient
-      $email = $_POST['email'];
-     $mail->addAddress($email);      
-     
-     //Name is optional
-     $mail->addReplyTo('travelindia9500@gmail.com', 'Information');
-     // $mail->addCC('cc@example.com');
-     // $mail->addBCC('bcc@example.com');
- 
-     //Attachments
-     // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
- 
- 
- 
-    //  $sql_query = "select * from feedback ";
-    //  $feedback_data = $conn->query($sql_query);
-     //Content
-     $mail->isHTML(true);                                  //Set email format to HTML
-     $mail->Subject = ' Congratulation Your Tour Package has been Approved..!';
-     $mail->Body    = "<h3>Welcome ".$_POST['fname']." in Travel_India.com</h3><h3> Your Booking Package has been Succesfully Approved..!</h3>
-               <h3>Please check Your Account..!";
-               //  <a href='http://localhost/travel_india-new/verify_email.php?fname=$fname&email=$email&verify_token=$otp'>Click me </a> ";
-              
-     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
- 
-     $res = $mail->send();
-     if($res){
-         // echo  "<script>alert('Your Messages succesfully Send..!')</script>";//'Message has been sent';
-         //header('location:verify_email.php'.$activation_code);
-     }
-       
-     else 
-     echo  "<script>alert('Your Messages not Send..!')</script>";///'Message has been not sent';
- 
-  } 
- catch (Exception $e) {
-     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
- }
- 
- 
- 
- 
- 
- 
- 
-   }
 
 
-  //  $user = $_SESSION["email"];
-    
-  //   $query = mysqli_query($conn,"select * from users where email ='$user'");
-  //   $row = mysqli_fetch_array($query);
-  //  //print_r($row);
-  //  $id = $row['user_Id'];
+        </style>
+    </head>
+    <body>
+        <div class='payment-slip'>
+            <h1>Payment Received</h1>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>$fname</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>$email</td>
+                </tr>
+                <tr>
+                    <th>Mobile No</th>
+                    <td>$Mobile_No</td>
+                </tr>
+                <tr>
+                    <th>Tour Date</th>
+                    <td>$Package_Date</td>
+                </tr>
+                <tr>
+                    <th>Package Name</th>
+                    <td>$Package_Name</td>
+                </tr>
+				<tr>
+                    <th>Package Duration</th>
+                    <td>$Package_Duration</td>
+                </tr>
+				<tr>
+                    <th>Payment Id</th>
+                    <td>$Payment_Id</td>
+                </tr>
+				<tr>
+                    <th>Total Price</th>
+                    <td>$Total_Price Rs</td>
+                </tr>
+				<tr>
+                    <th>Payment Status</th>
+                    <td> <b style = color:green; >Success</b></td>
+                </tr>
+            </table>
+            <p><b>Thank you for booking with us!</b></p><br>
+			<p><b>Developed by The Real-Travel.com!</b></p>
+        </div>
+    </body>
+    </html>
+
+		";
+
+		$res = $mail->send();
+		if ($res) {
+			echo  "<script>alert('Your Messages succesfully Send..!')</script>";
+		} else {
+			echo  "<script>alert('Your Messages not Send..!')</script>";
+		}
+	} catch (Exception $e) {
+		echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+	}
+}
+?>
 
 
 
 
 
- ?>
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title></title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>package Record</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+	<link rel="stylesheet" href="../../Authentication/pwd_update.css">
+	<style>
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		.page1 {
+			width: 100%;
+			min-height: 100vh;
+			padding: 0 2vw;
+			overflow-x: hidden;
+		}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		.part1 {
+			width: 100%;
+			min-height: 10vh;
+			/* align-items: center; */
+			justify-content: center;
+			display: flex;
 
+			border: .2vw solid black;
+		}
+
+		table {
+			font-family: twl;
+			width: 100%;
+			border-collapse: collapse;
+			padding: 2vw;
+			/* background-color: aqua; */
+			/* text-transform: capitalize; */
+		}
+
+		th,
+		td {
+			padding: 1vw;
+			text-align: center;
+			/* background-color: black; */
+		}
+
+
+		th {
+			font-size: 1.2vw;
+			font-weight: 400;
+			text-transform: capitalize;
+			font-family: regular;
+			border-bottom: .2vw solid black;
+			/* background-color: blue; */
+		}
+
+		td {
+			font-size: 1.2vw;
+			border-bottom: 0.2vw solid black;
+		}
+
+		button {
+			font-size: 1.5vw;
+			background-color: transparent;
+			border: none;
+		}
+
+		#msg {
+			text-align: left;
+		}
+
+		.submitButton {
+			padding: 0.5vw;
+			background-color: transparent;
+			color: black;
+			border: none;
+			border-radius: 0.5vw;
+			cursor: pointer;
+			margin-bottom: 1vw;
+			font-size: 1.2vw;
+			border: 1px solid black;
+		}
+
+		.submitButton:hover {
+			background-color: black;
+			transition: 0.7s;
+			color: white;
+			border: 1px solid white;
+			border-radius: 0.8vw;
+		}
+	</style>
 </head>
+
 <body>
-	
+	<div class="page1">
+		<div class="nav">
+			<div class="nav-part1">
+				<h2 id="nav-part3">pending list</h2>
+			</div>
+			<h1>the real travel</h1>
+			<div class="nav-part2">
+				<h3><a href="../adminhomepage.php">Home</a></h3>
+				<h3><a href="../hotellist.php">hotels</a></h3>
+				<h3><a href="../tourlist.php">package</a></h3>
+			</div>
+		</div>
+		<div class="part1">
 
-<h1 class="text-center  text-white bg-dark col-md-12">PENDING LIST</h1>
+			<table>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Package Name</th>
+					<th scope="col">User Name</th>
+					<th scope="col">Email_Id</th>
+					<th scope="col">Mobile-No</th>
+					<th scope="col">Package-Type</th>
+					<th scope="col">Tour-Date</th>
+					<th scope="col">Package-Duration</th>
+					<th scope="col">Booking-Date</th>
+					<th scope="col">Package-Price</th>
+					<th scope="col">Status</th>
+				</tr>
+				<?php
+				$query = "SELECT * FROM  booking WHERE status = 'pending' ORDER BY user_Id";
+				$result = mysqli_query($conn, $query);
+				while ($row = mysqli_fetch_array($result)) { ?>
+					<tr>
+						<td scope="row"><?php echo $row['user_Id']; ?></td>
+						<td><?php echo $row['Package_Name']; ?></td>
+						<td><?php echo $row['User_Name']; ?></td>
+						<td><?php echo $row['Email_Id']; ?></td>
+						<td><?php echo $row['Mobile_No']; ?></td>
+						<td><?php echo $row['Package_Type']; ?></td>
+						<td><?php echo $row['Tour_Date']; ?></td>
+						<td><?php echo $row['Package_Duration']; ?></td>
+						<td><?php echo $row['Booking_Date']; ?></td>
+						<td><?php echo $row['Package_Price']; ?> Rs</td>
+						<td>
+							<form action="" method="POST">
+								<input type="hidden" name="id" value="<?php echo $row['user_Id']; ?>" />
+								<input type="hidden" name="fname" value="<?php echo $row['User_Name']; ?>">
+								<input type="hidden" name="email" value="<?php echo $row['Email_Id']; ?>">
+								<input class="submitButton" type="submit" name="approve" value="approve">
+								<input class="submitButton" type="submit" name="delete" value="delete">
+							</form>
+						</td>
+					</tr>
+				<?php } ?>
+			</table>
+		</div>
 
-<table class="table table-bordered col-md-12">
-  <thead>
-    <tr>
-    <th scope="col">#</th>
-     <th scope="col">Package Name</th>
-     <th scope="col">User Name</th>
-     <th scope="col">Email_Id</th>
-     <th scope="col">Mobile-No</th>
-     <th scope="col">Package-Type</th>
-     <th scope="col">Tour-Date</th>
-     <th scope="col">Package-Duration</th>
-     <th scope="col">Booking-Date</th>
-     <!-- <th>Package Name</th> -->
-     <th scope="col">Package-Price</th>
-     <!-- <th>Package-Duration</th> -->
-     <!-- <th>Package-Type</th> -->
-     <!-- <th>Booking-Date</th> -->
-     <th scope="col">Status</th>
-    </tr>
-  </thead>
+		<?php
 
-<?php 
-
-$query = "SELECT * FROM  booking WHERE status = 'pending' ORDER BY user_Id";
-$result = mysqli_query($conn,$query);
-while($row = mysqli_fetch_array($result))  { ?>
-
-
-  <tbody>
-    <tr>
-     
-      <th scope="row"><?php echo $row['user_Id']; ?></th>
-      <td><?php echo $row['Package_Name']; ?></td>
-    <td><?php echo $row['User_Name']; ?></td>
-    <td><?php echo $row['Email_Id']; ?></td>
-    <td> <?php echo $row['Mobile_No']; ?></td>
-     <td><?php echo $row['Package_Type']; ?> </td>
-    <td><?php echo $row['Tour_Date']; ?></td>  
-    <td><?php echo $row['Package_Duration']; ?></td>
-     <td><?php echo $row['Booking_Date']; ?></td>
-      <td><?php echo $row['Package_Price']; ?> Rs</td>
-       
-
-     <td>
-		<form action="" method="POST">
-		<input type="hidden" name="id" value="<?php echo $row['user_Id']; ?>"/>
-    <input type="hidden" name="fname" value="<?php echo $row['User_Name']; ?>" placeholder="fname">
-    <input type="hidden" name="email" placeholder="email" value="<?php echo $row['Email_Id']; ?>">
-		<input type="submit" name="approve" value="approve"> &nbsp &nbsp <br>
-		<input type="submit" name="delete" value="delete"> 
-
-		</form>
-   </td>
-    </tr>
-   
-  </tbody>
-  <?php } ?>
-</table>
-
-
-<?php 
-if(isset($_POST['approve'])){
-
-	$id = $_POST['id'];
-  $fname = $_POST['fname'];
-  $email = $_POST['email'];
-	$select = "UPDATE booking SET status = 'Approved' WHERE user_Id = '$id' ";
-	$result = mysqli_query($conn,$select);
-  Sendemail_approvel($email);
-	//header("location:book.php");
-  if($result){
-   
-   
-
-    echo "<script>alert('Your Package Approved Succesfully..!')</script>";
-    header("Refresh:0.5s; url=../adminhomepage.php");
-  }
-
-  else{
-    echo "<script>alert('Your Package Not Approved ..!')</script>";
-    header("Refresh:0.5s; url=../adminhomepage.php");
-  }
-}
-
-
-if(isset($_POST['delete'])){
-
-	$id = $_POST['id'];
-	$select = "DELETE  FROM booking  WHERE user_Id = '$id' ";
-	$resut = mysqli_query($conn,$select);
-	//header("location:book.php");
-  if($result){
-    echo "<script>alert('Your Package Deleted Succesfully..!')</script>";
-    header("Refresh:0.5s; url=../adminhomepage.php");
-  }
-
-  else{
-    echo "<script>alert('Your Package Not Deleted ..!')</script>";
-    header("Refresh:0.5s; url=../adminhomepage.php");
-  }
-}
+		//access the data by using session
+		$Mobile_No = $_SESSION["phone"];
+		$Package_Date = $_SESSION["Package_Date"];
+		$Package_Name = $_SESSION["Package_Name"];
+		$Package_Duration = $_SESSION["Package_Duration"];
+		$Payment_Id = $_SESSION['Payment_Id'];
+		$Total_Price = $_SESSION['rate'];
 
 
 
- ?>
+		if (isset($_POST['approve'])) {
+			$id = $_POST['id'];
+			$fname = $_POST['fname'];
+			$email = $_POST['email'];
+			$select = "UPDATE booking SET status = 'Approved' WHERE user_Id = '$id' ";
+			$result = mysqli_query($conn, $select);
 
 
+			if ($result) {
+				Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_Name, $Package_Duration, $Payment_Id, $Total_Price);
+				echo "<script>alert('Your Package Approved Succesfully..!')</script>";
+				header("Refresh:0.5s; url=../adminhomepage.php");
+			} else {
+				echo "<script>alert('Your Package Not Approved ..!')</script>";
+				header("Refresh:0.5s; url=../adminhomepage.php");
+			}
+		}
 
+		if (isset($_POST['delete'])) {
+			$id = $_POST['id'];
+			$select = "DELETE FROM booking WHERE user_Id = '$id' ";
+			$result = mysqli_query($conn, $select);
 
+			if ($result) {
+				echo "<script>alert('Your Package Deleted Succesfully..!')</script>";
+				header("Refresh:0.5s; url=../adminhomepage.php");
+			} else {
+				echo "<script>alert('Your Package Not Deleted ..!')</script>";
+				header("Refresh:0.5s; url=../adminhomepage.php");
+			}
+		}
+		?>
+		<div class="nav1">
+			<div class="nav-part1">
+				<h2 id="nav-part3">Approve list</h2>
+			</div>
+			<h1>the real travel</h1>
+			<div class="nav-part2">
+				<h3><a href="../adminhomepage.php">Home</a></h3>
+				<h3><a href="../hotellist.php">hotels</a></h3>
+				<h3><a href="../tourlist.php">package</a></h3>
+			</div>
+		</div>
+		<div class="part1">
 
+			<table>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Package Name</th>
+					<th scope="col">User Name</th>
+					<th scope="col">Email_Id</th>
+					<th scope="col">Mobile-No</th>
+					<th scope="col">Package-Type</th>
+					<th scope="col">Tour-Date</th>
+					<th scope="col">Package-Duration</th>
+					<th scope="col">Booking-Date</th>
+					<th scope="col">Package-Price</th>
+					<th scope="col">Status</th>
+				</tr>
+				<?php
+				$query = "SELECT * FROM  booking";
+				$result = mysqli_query($conn, $query);
+				while ($row = mysqli_fetch_array($result)) { ?>
+					<tr>
+						<td scope="row"><?php echo $row['user_Id']; ?></td>
+						<td><?php echo $row['Package_Name']; ?></td>
+						<td><?php echo $row['User_Name']; ?></td>
+						<td><?php echo $row['Email_Id']; ?></td>
+						<td><?php echo $row['Mobile_No']; ?></td>
+						<td><?php echo $row['Package_Type']; ?></td>
+						<td><?php echo $row['Tour_Date']; ?></td>
+						<td><?php echo $row['Package_Duration']; ?></td>
+						<td><?php echo $row['Booking_Date']; ?></td>
+						<td><?php echo $row['Package_Price']; ?> Rs</td>
+						<td style="color:green; font-weight:bold;"><?php echo $row['Status']; ?></td>
+					</tr>
+				<?php } ?>
+			</table>
+		</div>
 
-<!-- ================================================================== -->
-
-
-
- 
-&nbsp &nbsp   &nbsp &nbsp   &nbsp &nbsp   &nbsp &nbsp   &nbsp &nbsp   &nbsp &nbsp  &nbsp 
-
-
- <h1 class="text-center  text-white bg-success col-md-12
-">APPROVED LIST </h1>
-
-<table class="table table-bordered col-md-12">
-  <thead>
-    <tr>
-    <th scope="col">#</th>
-     <th scope="col">Package Name</th>
-     <th scope="col">User Name</th>
-     <th scope="col">Email_Id</th>
-     <th scope="col">Mobile-No</th>
-     <th scope="col">Package-Type</th>
-     <th scope="col">Tour-Date</th>
-     <th scope="col">Package-Duration</th>
-     <th scope="col">Booking-Date</th>
-     <!-- <th>Package Name</th> -->
-     <th scope="col">Package-Price</th>
-     <!-- <th>Package-Duration</th> -->
-     <!-- <th>Package-Type</th> -->
-     <!-- <th>Booking-Date</th> -->
-     <th scope="col">Status</th>
-    </tr>
-  </thead>
-
-<?php 
-$query = "SELECT * FROM  booking";
-$result = mysqli_query($conn,$query);
-while($row = mysqli_fetch_array($result)) { ?>
-
-
-  <tbody>
-    <tr>
-      
-
-      <th scope="row"><?php echo $row['user_Id']; ?></th>
-      <td><?php echo $row['Package_Name']; ?></td>
-    <td><?php echo $row['User_Name']; ?></td>
-    <td><?php echo $row['Email_Id']; ?></td>
-    <td> <?php echo $row['Mobile_No']; ?></td>
-     <td><?php echo $row['Package_Type']; ?> </td>
-    <td><?php echo $row['Tour_Date']; ?></td>  
-    <td><?php echo $row['Package_Duration']; ?></td>
-     <td><?php echo $row['Booking_Date']; ?></td>
-      <td><?php echo $row['Package_Price']; ?> Rs</td>
-      <td style=color:green; font-weight:bold;><?php echo $row['Status']; ?></td>
-
-
-    </tr>
-  </tbody>
-
-  <?php } ?>
-
-</table>
-
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+	<script>
+		const locoScroll = new LocomotiveScroll({
+			el: document.querySelector(".page1"),
+			smooth: true,
+		});
+	</script>
 </body>
+
 </html>
