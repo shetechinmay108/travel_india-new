@@ -57,51 +57,69 @@
         </div>
         <div class="page2">
             <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/672d05fb3d29a2341a311c13_RHONY_S15E3-5__Erin%27s_%20House_1-topaz-upscale-2000w.avif" alt="">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/672d05fb3d29a2341a311c13_RHONY_S15E3-5__Erin%27s_%20House_1-topaz-upscale-2000w.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2>"Erin's" House</h2>
+                        <h4>The Hamptons, New York</h4>
+                    </div>
                 </div>
-                <div class="book-part2">
-                    <h2>"Erin's" House</h2>
-                    <h4>The Hamptons, New York</h4>
-                </div>
-                <div class="book-part3"> 
-                    <h5>What constitutes a “remodel?” Who can say, really? Has Erin’s kitchen been remodeled, as she claims? Or is this a new island and fixtures? Or, perhaps, this is not a freshening up, but the final</h5>
-                </div>
-                <div class="book-part4"  >
-                    <h4><a href="#" onclick="redirect()">read more</a></h4>
-                    <h4><a href="#" onclick="redirect()">explore</a></h4> 
-                </div>
-            </div>
-            <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66db195f408ef2ce2af4ad34_RHONY_S14E9-11_Long%20Bay%20Villas_1.avif" alt="">
-                </div>
-                <div class="book-part2">
-                    <h2>Long Bay Villas </h2>
-                    <h4>Long Bay Beach, Anguilla</h4>
-                </div>
-                <div class="book-part3"> 
-                    <h5>One might think that Jenna Lyons’ choice to fly first while the rest of the apples suffer in coach would make her the villain of the trip. Nope! Not with Erin here. This meeting of the We Hate Erin club kicked off with a lovely boat trip....</h5>
-                </div>
-                <div class="book-part4"  >
-                    <h4><a href="#" onclick="redirect()">read more</a></h4>
-                    <h4><a href="#" onclick="redirect()">explore</a></h4> 
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>What constitutes a “remodel?” Who can say, really? Has Erin’s kitchen been remodeled, as she claims? Or is this a new island and fixtures? Or, perhaps, this is not a freshening up, but the final</h5>
+                    </div>
+                    <div class="book-part4"  >
+                        <button><a href="#" onclick="redirect()">read more</a></button>
+                        <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
             </div>
             <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66db17d423125d804532d619_RHONY_S13E3-4_Hamptons-1.avif" alt="">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66db195f408ef2ce2af4ad34_RHONY_S14E9-11_Long%20Bay%20Villas_1.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2>Long Bay Villas </h2>
+                        <h4>Long Bay Beach, Anguilla</h4>
+                    </div>
                 </div>
-                <div class="book-part2">
-                    <h2>"Ramona's" Vacation House</h2>
-                    <h4>The Hamptons, New York</h4>
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>One might think that Jenna Lyons’ choice to fly first while the rest of the apples suffer in coach would make her the villain of the trip. Nope! Not with Erin here. This meeting of the We Hate Erin club kicked off with a lovely boat trip....</h5>
+                    </div>
+                    <div class="book-part4"  >
+                        <button><a href="#" onclick="redirect()">read more</a></button>
+                        <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
-                <div class="book-part3"> 
-                    <h5>This is one of the least aspirational trips a group of Housewives has ever taken. Not because Ramona’s mansion, decked out in an HGTV palette of white and light gray, is not comfortable....</h5>
+            </div>
+            <div class="booking">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66db17d423125d804532d619_RHONY_S13E3-4_Hamptons-1.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2>"Ramona's" Vacation House</h2>
+                        <h4>The Hamptons, New York</h4>
+                    </div>
                 </div>
-                <div class="book-part4"  >
-                    <h4><a href="#" onclick="redirect()">read more</a></h4>
-                    <h4><a href="#" onclick="redirect()">explore</a></h4> 
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>This is one of the least aspirational trips a group of Housewives has ever taken. Not because Ramona’s mansion, decked out in an HGTV palette of white and light gray, is not comfortable....</h5>
+                    </div>
+                    <div class="book-part4"  >
+                        <button><a href="#" onclick="redirect()">read more</a></button>
+                        <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
             </div>
         </div>

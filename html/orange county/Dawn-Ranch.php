@@ -118,7 +118,7 @@
                     <h2>The May Fair Hotel</h2>
                     <h4>London, England</h4>
                 </div>
-                <div class="book-part3"> 
+                <div class="book-pkart3"> 
                     <h5>Some intrepid reporter needs to do an in-depth exposé on what exactly is wrong with Shannon Storms Beador’s digestive system. This woman has been trying to poop for years. We have been</h5>
                 </div>
                 <div class="book-part4"  >

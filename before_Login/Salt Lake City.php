@@ -58,51 +58,69 @@
         </div>
         <div class="page2">
             <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66dec8d3d29edca5cf838055_RHOA_S15E11-12_Maybe%20the%20W%20Algarve%20-%20this%20article%20references%20the%20W%20Hotel_1-topaz.avif" alt="">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66dec8d3d29edca5cf838055_RHOA_S15E11-12_Maybe%20the%20W%20Algarve%20-%20this%20article%20references%20the%20W%20Hotel_1-topaz.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2>W Algarve</h2>
+                        <h4>Algarve, Portugal</h4>
+                    </div>
                 </div>
-                <div class="book-part2">
-                    <h2>W Algarve</h2>
-                    <h4>Algarve, Portugal</h4>
-                </div>
-                <div class="book-part3"> 
-                    <h5>Shereé planned this trip because she needed awareness and healing, to which the other Peaches said, “Best of luck to you.” Drew gets very worked up at the first dinner about a home</h5>
-                </div>
-                <div class="book-part4"> 
-                    <button onclick="redirect()">read more</button>
-                    <button onclick="redirect()">explore</button>
-                </div>
-            </div>
-            <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66dec82688cc09463fd36a64_RHOA_S15E4-5_THE%20KELLY%20BIRMINGHAM%2C%20TAPESTRY%20COLLECTION%20BY%20HILTON_1-topaz.avif" alt="">
-                </div>
-                <div class="book-part2">
-                    <h2>The Kelly Birmingham</h2>
-                    <h4>Birmingham, Alabama</h4>
-                </div>
-                <div class="book-part3"> 
-                    <h5>Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....</h5>
-                </div>
-                <div class="book-part4"> 
-                    <button onclick="redirect()">read more</button>
-                    <button onclick="redirect()">explore</button>
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>Shereé planned this trip because she needed awareness and healing, to which the other Peaches said, “Best of luck to you.” Drew gets very worked up at the first dinner about a home</h5>
+                    </div>
+                    <div class="book-part4"> 
+                    <button><a href="#" onclick="redirect()">read more</a></button>
+                    <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
             </div>
             <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66dec698c4b873329ff1aff5_RHOA_S14E10-11_Blue%20Ridge%20Mountains-1.avif" alt="">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66dec82688cc09463fd36a64_RHOA_S15E4-5_THE%20KELLY%20BIRMINGHAM%2C%20TAPESTRY%20COLLECTION%20BY%20HILTON_1-topaz.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2>The Kelly Birmingham</h2>
+                        <h4>Birmingham, Alabama</h4>
+                    </div>
                 </div>
-                <div class="book-part2">
-                    <h2>Blue Ridge Chalet</h2>
-                    <h4>Blue Ridge Mountains</h4>
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....</h5>
+                    </div>
+                    <div class="book-part4"> 
+                    <button><a href="#" onclick="redirect()">read more</a></button>
+                    <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
-                <div class="book-part3"> 
-                    <h5>Marlo and Kenya hate each other. They also love each other. They were both rejected by their mothers as little girls, and they can’t stop poking at each other's psychic pain, nor can they walk....</h5>
+            </div>
+            <div class="booking">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66dec698c4b873329ff1aff5_RHOA_S14E10-11_Blue%20Ridge%20Mountains-1.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2>Blue Ridge Chalet</h2>
+                        <h4>Blue Ridge Mountains</h4>
+                    </div>
                 </div>
-                <div class="book-part4"> 
-                    <button onclick="redirect()">read more</button>
-                    <button onclick="redirect()">explore</button>
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>Marlo and Kenya hate each other. They also love each other. They were both rejected by their mothers as little girls, and they can’t stop poking at each other's psychic pain, nor can they walk....</h5>
+                    </div>
+                    <div class="book-part4"> 
+                    <button><a href="#" onclick="redirect()">read more</a></button>
+                    <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
             </div>
         </div>

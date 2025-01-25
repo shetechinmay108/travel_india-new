@@ -197,7 +197,7 @@ if (isset($_POST['submit'])) {
         <hr class="animated-hr" />
         <div class="signUpPage-part1"> 
           <div class="signUpPage-part11">
-          <h3>Build tour</h3>
+          <h3>Build international tour</h3>
             <div class="signUpPage-bottom">
               <h1>Start <br> Your <br> Journey</h1>
             </div>

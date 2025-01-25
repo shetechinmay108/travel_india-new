@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orange County</title>
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
-    <link rel="stylesheet" href="../css/Orange County.css" />
+    <link rel="stylesheet" href="../css/new-york.css" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
 </head>
 <body>
@@ -20,7 +20,7 @@
             </div>
            
              <div class="header">
-                <h1>Orange County</h1>
+                <h1 class="header-part1" style="font-size: 15vw;" >Orange County</h1>
              </div>
              <div class="page1-part1">
                 <div class="nav">
@@ -57,51 +57,69 @@
         </div>
         <div class="page2">
             <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/672d0043e9147b9cab9aadaf_RHOC_S18E14-16_The%20May%20Fair%20Hotel_1-topaz-upscale-2000w.avif" alt="">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/672d0043e9147b9cab9aadaf_RHOC_S18E14-16_The%20May%20Fair%20Hotel_1-topaz-upscale-2000w.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2>The May Fair Hotel</h2>
+                        <h4>London, England</h4>
+                    </div>
                 </div>
-                <div class="book-part2">
-                    <h2>The May Fair Hotel</h2>
-                    <h4>London, England</h4>
-                </div>
-                <div class="book-part3"> 
-                    <h5>Some intrepid reporter needs to do an in-depth exposé on what exactly is wrong with Shannon Storms Beador’s digestive system. This woman has been trying to poop for years. We have been</h5>
-                </div>
-                <div class="book-part4"  >
-                    <h4><a href="#" onclick="redirect()">read more </a></h4>
-                    <h4><a href="#" onclick="redirect()">explore</a></h4> 
-                </div>
-            </div>
-            <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66e194f2e375a6029db9ceb1_RHOBH_S11E10-12_La%20Quinta-3-topaz.avif" alt="">
-                </div>
-                <div class="book-part2">
-                    <h2>"Elizabeth Vargas's" Home</h2>
-                    <h4>La Quinta, California</h4>
-                </div>
-                <div class="book-part3"> 
-                    <h5>It’s a Tale of Two Girl’s Trips. Tamra brings her anti-Shannon weapon Alexis Bellino, along with Katie and Jenn, to her Big Bear cabin. Meanwhile, Gina, Heather, Shannon, and Emily head out to...</h5>
-                </div>
-                <div class="book-part4"  >
-                    <h4><a href="#" onclick="redirect()">read more</a></h4>
-                    <h4><a href="#" onclick="redirect()">Explore</a></h4> 
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>Some intrepid reporter needs to do an in-depth exposé on what exactly is wrong with Shannon Storms Beador’s digestive system. This woman has been trying to poop for years. We have been</h5>
+                    </div>
+                    <div class="book-part4"  >
+                        <button><a href="#" onclick="redirect()">read more </a></button>
+                        <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
             </div>
             <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66f44adc4ee8a07e24c81f1f_RHOC_S18E9-10_Dawn%20Ranch_1-topaz-upscale-2000w.avif" alt="">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66e194f2e375a6029db9ceb1_RHOBH_S11E10-12_La%20Quinta-3-topaz.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2>"Elizabeth Vargas's" Home</h2>
+                        <h4>La Quinta, California</h4>
+                    </div>
                 </div>
-                <div class="book-part2">
-                    <h2>Dawn Ranch</h2>
-                    <h4>Guerneville, California</h4>
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>It’s a Tale of Two Girl’s Trips. Tamra brings her anti-Shannon weapon Alexis Bellino, along with Katie and Jenn, to her Big Bear cabin. Meanwhile, Gina, Heather, Shannon, and Emily head out to...</h5>
+                    </div>
+                    <div class="book-part4"  >
+                        <button><a href="#" onclick="redirect()">read more</a></button>
+                        <button><a href="#" onclick="redirect()">Explore</a></button> 
+                    </div>
                 </div>
-                <div class="book-part3"> 
-                    <h5>If only Heather could protect all of the ladies' feelings as well as she protects her clothing packed in individual sheets of white tissue paper....</h5>
+            </div>
+            <div class="booking">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66f44adc4ee8a07e24c81f1f_RHOC_S18E9-10_Dawn%20Ranch_1-topaz-upscale-2000w.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2>Dawn Ranch</h2>
+                        <h4>Guerneville, California</h4>
+                    </div>
                 </div>
-                <div class="book-part4"  >
-                    <h4><a href="#" onclick="redirect()">read more</a></h4>
-                    <h4><a href="#" onclick="redirect()">explore</a></h4> 
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>If only Heather could protect all of the ladies' feelings as well as she protects her clothing packed in individual sheets of white tissue paper....</h5>
+                    </div>
+                    <div class="book-part4"  >
+                        <button><a href="#" onclick="redirect()">read more</a></button>
+                        <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
             </div>
         </div>

@@ -58,51 +58,69 @@
         </div>
         <div class="page2">
             <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66ded66a8f366e142a21090c_RHONJ_S13E11-12_Ballinlough%20Castle_1-topaz.avif" alt="">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66ded66a8f366e142a21090c_RHONJ_S13E11-12_Ballinlough%20Castle_1-topaz.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2> Ballinlough Castle</h2>
+                        <h4>Algarve, Portugal</h4>
+                    </div>
                 </div>
-                <div class="book-part2">
-                    <h2> Ballinlough Castle</h2>
-                    <h4>Algarve, Portugal</h4>
-                </div>
-                <div class="book-part3"> 
-                    <h5>Season 13 brought audiences new cast members. Yes, yes, there is Rachel Fuda and Danielle Cabral and Jenn Fessler. More importantly, though, there is Claire, mother of</h5>
-                </div>
-                <div class="book-part4"  >
-                    <h4><a href="#" onclick="redirect()">read more</a></h4>
-                    <h4><a href="#" onclick="redirect()">explore</a></h4> 
-                </div>
-            </div>
-            <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66ded57add5f4cc4041c2347_RHONJ_S12E11-13_Nashville-1.avif" alt="">
-                </div>
-                <div class="book-part2">
-                    <h2>Nashville Pad  </h2>
-                    <h4>Birmingham, Alabama</h4>
-                </div>
-                <div class="book-part3"> 
-                    <h5>When Teresa packs her bags for a couple's trip to Nashville, she brings along her season-long beef with Margaret. Marge asked a question about Teresa’s new man, Louie, and now no one..</h5>
-                </div>
-                <div class="book-part4"  >
-                    <h4><a href="#" onclick="redirect()">read more</a></h4>
-                    <h4><a href="#" onclick="redirect()">explore</a></h4> 
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>Season 13 brought audiences new cast members. Yes, yes, there is Rachel Fuda and Danielle Cabral and Jenn Fessler. More importantly, though, there is Claire, mother of</h5>
+                    </div>
+                    <div class="book-part4"  >
+                        <button><a href="#" onclick="redirect()">read more</a></button>
+                        <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
             </div>
             <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66db17d423125d804532d619_RHONY_S13E3-4_Hamptons-1.avif" alt="">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66ded57add5f4cc4041c2347_RHONJ_S12E11-13_Nashville-1.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2>Nashville Pad  </h2>
+                        <h4>Birmingham, Alabama</h4>
+                    </div>
                 </div>
-                <div class="book-part2">
-                    <h2>Hamptons Estate</h2>
-                    <h4>Blue Ridge Mountains</h4>
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>When Teresa packs her bags for a couple's trip to Nashville, she brings along her season-long beef with Margaret. Marge asked a question about Teresa’s new man, Louie, and now no one..</h5>
+                    </div>
+                    <div class="book-part4"  >
+                        <button><a href="#" onclick="redirect()">read more</a></button>
+                        <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
-                <div class="book-part3"> 
-                    <h5>It’s driving distance from their homes, but somehow the Jersey Housewives just don’t look right in the Hamptons, like a Dunkin’ Donuts in a nature preserve. However, here they are,.</h5>
+            </div>
+            <div class="booking">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66db17d423125d804532d619_RHONY_S13E3-4_Hamptons-1.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2>Hamptons Estate</h2>
+                        <h4>Blue Ridge Mountains</h4>
+                    </div>
                 </div>
-                <div class="book-part4"  >
-                    <h4><a href="#" onclick="redirect()">read more</a></h4>
-                    <h4><a href="#" onclick="redirect()">explore</a></h4> 
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>It’s driving distance from their homes, but somehow the Jersey Housewives just don’t look right in the Hamptons, like a Dunkin’ Donuts in a nature preserve. However, here they are,.</h5>
+                    </div>
+                    <div class="book-part4"  >
+                        <button><a href="#" onclick="redirect()">read more</a></button>
+                        <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
             </div>
         </div>

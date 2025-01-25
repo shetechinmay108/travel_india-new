@@ -79,7 +79,7 @@
         <hr class="animated-hr" />
         <div class="signUpPage-part1"> 
           <div class="signUpPage-part11">
-            <h3>Create Your Profile</h3>
+            <h3>otp verification</h3>
             <div class="signUpPage-bottom">
               <h1>Start <br> Your <br> Journey</h1>
             </div>

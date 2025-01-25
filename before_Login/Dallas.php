@@ -58,51 +58,69 @@
         </div>
         <div class="page2">
             <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66e1b22f4dd9023c1a6a5ec0_RHOD_S5E7-8__The%20Echelon_%20Vacation%20home_1.avif" alt="">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66e1b22f4dd9023c1a6a5ec0_RHOD_S5E7-8__The%20Echelon_%20Vacation%20home_1.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2>"The Echelon" Vacation</h2>
+                        <h4>Algarve, Portugal</h4>
+                    </div>
                 </div>
-                <div class="book-part2">
-                    <h2>"The Echelon" Vacation</h2>
-                    <h4>Algarve, Portugal</h4>
-                </div>
-                <div class="book-part3"> 
-                    <h5>The lakeside setting was serene and peaceful, but the atmosphere was tense. Hostess Kary Brittingham tries to set the tone by apologizing to newcomer, and first Asian American Housewife</h5>
-                </div>
-                <div class="book-part4"  >
-                    <h4><a href="#" onclick="redirect()">read more</a></h4>
-                    <h4><a href="#" onclick="redirect()">explore</a></h4> 
-                </div>
-            </div>
-            <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66e1b1a469941e4384f43e8f_RHOD_S4E12-14_Thailand-1.avif" alt="">
-                </div>
-                <div class="book-part2">
-                    <h2> Banyan Tree Bangkok</h2>
-                    <h4>London, England</h4>
-                </div>
-                <div class="book-part3"> 
-                    <h5>It is too hot in Bangkok. These women have lost their minds. First, D’Andra brings one of her frenemy LeeAnne’s L’Infinity dresses with her and films a scene making fun of her and Kary’s</h5>
-                </div>
-                <div class="book-part4"  >
-                    <h4><a href="#" onclick="redirect()">read more</a></h4>
-                    <h4><a href="#" onclick="redirect()">explore</a></h4> 
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>The lakeside setting was serene and peaceful, but the atmosphere was tense. Hostess Kary Brittingham tries to set the tone by apologizing to newcomer, and first Asian American Housewife</h5>
+                    </div>
+                    <div class="book-part4"  >
+                        <button><a href="#" onclick="redirect()">read more</a></button>
+                        <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
             </div>
             <div class="booking">
-                <div class="book-part1">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66e1b082adea2670c0e66a3c_RHOD_S4E3-5_Careyes%2C%20Mexico-1.avif" alt="">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66e1b1a469941e4384f43e8f_RHOD_S4E12-14_Thailand-1.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2> Banyan Tree Bangkok</h2>
+                        <h4>London, England</h4>
+                    </div>
                 </div>
-                <div class="book-part2">
-                    <h2> "Eduardo's" Family Home</h2>
-                    <h4>Guerneville, California</h4>
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>It is too hot in Bangkok. These women have lost their minds. First, D’Andra brings one of her frenemy LeeAnne’s L’Infinity dresses with her and films a scene making fun of her and Kary’s</h5>
+                    </div>
+                    <div class="book-part4"  >
+                        <button><a href="#" onclick="redirect()">read more</a></button>
+                        <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
-                <div class="book-part3"> 
-                    <h5>Eduardo’s house is stunning, if two hours from the airport by bus. As per usual, there are room shenanigans. Kary, the hostess, thinks it will be fun to share beds. LeeAnne thinks that having a.</h5>
+            </div>
+            <div class="booking">
+                <div class="booking1">
+
+                    <div class="book-part1">
+                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66e1b082adea2670c0e66a3c_RHOD_S4E3-5_Careyes%2C%20Mexico-1.avif" alt="">
+                    </div>
+                    <div class="book-part2">
+                        <h2> "Eduardo's" Family Home</h2>
+                        <h4>Guerneville, California</h4>
+                    </div>
                 </div>
-                <div class="book-part4"  >
-                    <h4><a href="#" onclick="redirect()">read more</a></h4>
-                    <h4><a href="#" onclick="redirect()">explore</a></h4> 
+                <div class="booking2">
+
+                    <div class="book-part3"> 
+                        <h5>Eduardo’s house is stunning, if two hours from the airport by bus. As per usual, there are room shenanigans. Kary, the hostess, thinks it will be fun to share beds. LeeAnne thinks that having a.</h5>
+                    </div>
+                    <div class="book-part4"  >
+                        <button><a href="#" onclick="redirect()">read more</a></button>
+                        <button><a href="#" onclick="redirect()">explore</a></button> 
+                    </div>
                 </div>
             </div>
         </div>

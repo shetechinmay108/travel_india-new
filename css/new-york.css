@@ -47,8 +47,19 @@ body {
 
   border-left: 0.2vw solid #f3f1f1;
 }
+.nav-part1 h3{
+  display: none;
+}
 .nav-part1 h5 {
   font-weight: 400;
+}
+.nav h3{
+  display: none;
+}
+.nav h1{
+  display: none;
+  font-family: regular;
+  text-transform: capitalize;
 }
 .nav i {
   font-size: 2.5vw;
@@ -73,7 +84,7 @@ body {
 
 .header {
   position: absolute;
-  bottom: 15%;
+  bottom: 0;
   width: 100%;
   height: 40vh;
   /* margin-top: vh; */
@@ -194,72 +205,144 @@ body {
   background-color: #0b0a0e;
   padding: 4vw;
 }
-.booking {
+.booking{
   width: 100%;
   height: 35vh;
-  color: #f3f1f1;
-  border-top: 1px solid rgb(155, 151, 151);
+    color: white;
+    border-top: 1px solid rgb(155, 151, 151);
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  /* padding: 0 1vw; */
+}
+.booking1{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+   height: 100%;
+  justify-content: center; 
+}
+.booking2{
+  width: 50%;
+  height: 100%;
   align-items: center;
   justify-content: space-between;
-  display: flex;
-  padding: 0 1vw;
+  display: flex; 
 }
-.book-part1 {
-  width: 25%;
+.book-part11{
+  display: flex; 
+
+}
+.book-part1{
+  width: 50%;
   height: 25vh;
+ 
+
 }
-.book-part1 img {
+.book-part1 img{
   width: 100%;
   height: 100%;
-  background-size: cover;
-  object-fit: fill;
+  object-fit: cover;
   background-position: center;
+  background-size: cover;
 }
-.book-part2 {
-  width: 25%;
+.book-part2{
+  width: 50%;
   height: 25vh;
+  /* align-items: center; */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  /* text-align: left; */
+   
 }
-.book-part2 h2 {
+.book-part2 h2{
   font-family: regular2;
   font-weight: 400;
   font-size: 2.5vw;
 }
-.book-part2 h4 {
+.book-part2 h4{
   font-family: twl;
   font-size: 1.3vw;
   font-weight: 400;
   opacity: 0.5;
 }
-.book-part3 {
-  width: 30%;
-  height: 25vh;
-}
-.book-part3 h5 {
-  font-family: twl;
-  font-size: 1.3vw;
-  font-weight: 200;
-  opacity: 0.5;
-}
-.book-part4 {
-  width: 10%;
-  height: 25vh;
-
+.book-part3{
+  width: 60%;
+  margin-left: 2.5vw;
   align-items: center;
   justify-content: center;
   display: flex;
-  flex-direction: column;
+  height: 25vh;
+ 
 }
-.book-part4 button {
-  width: 100%;
-  height: 7vh;
+.book-part3 h5{
   font-family: twl;
-  font-weight: 400;
-  /* background-color: transparent; */
-  text-transform: capitalize;
-  /* outline: none; */
-  border-radius: 2vw;
-  margin-bottom: 2vh;
+  font-size: 1.2vw;
+  font-weight: 200;
+  opacity: 0.5;
+}
+
+
+.book-part4 {
+  display: flex;
+  width: 30%;
+  padding: 2vw;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8vw;
+}
+
+.book-part4 button {
+  width: 80%;
+  letter-spacing: 1px;
+  height: 5vh;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.5vw;
   cursor: pointer;
+  border: 1px solid silver;
+  font-weight: 500;
+  font-family: twl;
+  color: white;
+  transition: all ease 0.4s;
+  position: relative;
+  border-radius: 1.5vw;
+  overflow: hidden;
+  /* margin-bottom: 2vh; */
+  /* border-radius: 2vw; */
+  /* font-size: 18px; */
+}
+
+.book-part4 button::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  left: 0;
+  bottom: -100%;
+  border-radius: 50%;
+  transition: all ease 0.4s;
+}
+
+.book-part4 button:hover::after {
+  bottom: 0;
+  border-radius: 0;
+}
+
+.book-part4 button a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  z-index: 9;
+}
+
+.book-part4 button:hover a {
+  color: black;
 }
 /* .page3 {
   width: 100%;
@@ -361,56 +444,30 @@ body {
 }
 
 
-.book-part4 {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8vw;
-}
-
-.book-part4 h4 {
-  width: 100%;
-  text-align: center;
-  text-transform: capitalize;
-  padding: 1vw;
-  border: 1px solid silver;
-  font-weight: 500;
-  font-family: twl;
-  color: #000000bb;
-  transition: all ease 0.4s;
-  position: relative;
-  border-radius: 2vw;
-  overflow: hidden;
-  /* margin-bottom: 2vh; */
-  /* border-radius: 2vw; */
-  /* font-size: 18px; */
-}
-
-.book-part4 h4::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  left: 0;
-  bottom: -100%;
-  border-radius: 50%;
-  transition: all ease 0.4s;
-}
-
-.book-part4 h4:hover::after {
-  bottom: 0;
-  border-radius: 0;
-}
-
-.book-part4 h4 a {
-  color: white;
-  text-decoration: none;
-  position: relative;
-  z-index: 9;
-}
-
-.book-part4 h4:hover a {
-  color: black;
+@media (max-width: 600px){
+    .nav{
+      height: 10vh; 
+    }
+    .nav h3{
+      display: block;
+      text-transform: uppercase;
+      font-size: 3vh;
+      
+    }
+  .nav-part1{
+    display: none;
+  }
+    .nav i{
+      font-size: 4vh;
+    }
+    .nav h1{
+      display: block;
+      font-size: 4.5vh;
+    }
+    /* .page1{
+      height: 50vh;
+      background-color: blue;
+    } */
+  
+   
 }

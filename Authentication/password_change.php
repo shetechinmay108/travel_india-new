@@ -58,7 +58,7 @@ if(isset($_POST['update_password'])){
         <hr class="animated-hr" />
         <div class="signUpPage-part1"> 
           <div class="signUpPage-part11">
-            <h3>change password</h3>
+            <h3>password change</h3>
             <div class="signUpPage-bottom">
               <h1>Start <br> Your <br> Journey</h1>
             </div>
