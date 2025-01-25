@@ -12,7 +12,7 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hotels</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
-    <link rel="stylesheet" href="../Authentication/pwd_update.css">
+    <link rel="stylesheet" href="../css/pwd_update.css">
 </head>
 
 <body>
@@ -25,8 +25,7 @@ $result = $conn->query($sql);
             <div class="nav-part2">
                 <h3><a href="../other/homepage.php">Home</a></h3>
                 <h3><a href="tourlist.php">Packages</a></h3>
-                <h3><a href="hotellist.php">Hotels</a></h3>
-                <h3><a href="#contact">Contact</a></h3>
+                <h3><a href="hotellist.php">Hotels</a></h3> 
             </div>
         </div>
 

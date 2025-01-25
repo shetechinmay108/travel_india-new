@@ -1,0 +1,23 @@
+<?php
+ session_start();
+ //session_destroy();
+
+ 
+// connect Mysql with object orianted approches
+  $servername = "localhost:3306";
+  $username = "root";
+  $password = "";
+  $dbname = "mager_project";
+
+  //create connection
+ $conn = new mysqli($servername, $username, $password, $dbname);
+
+ //Check Connection
+ 
+ if($conn -> connect_error) {
+    die("connection failed : ". $conn -> connect_error);
+      
+ }
+
+ //echo "Connection Succesfull..!";
+ ?>

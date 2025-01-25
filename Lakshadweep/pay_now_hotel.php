@@ -135,126 +135,81 @@ $Total_Price = $Rooms_Price * $days;
 $_SESSION['hotel_price'] = $Total_Price;
 
 
-
-
-
-// $person = $_POST['no_of_person'];
-
-// $Package_Price = $_POST['Price'];
-
-// $Total_Price = $person * $Package_Price;
+ 
 
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Hotel Creation Form</title>
-    <link rel="stylesheet" href="../css/admin/package.css">
-    <style>
- .form-section .submitButton {
-  padding: 0.5vw;
-  /* background-color: white; */
-  color: black;
-  border: 1px solid silver;
-  border-radius: 0.5vw;
-  cursor: pointer;
-  font-size: 1.3vw;
-}
-.form-section .submitButton2 {
-  padding: 0.5vw;
-  /* background-color: white; */
-  color: black;
-  border: 1px solid silver;
-  border-radius: 0.5vw;
-  cursor: pointer;
-  font-size: 1.3vw;
-}
-
-.form-section .submitButton:hover {
-  background-color: green;
-  transition: 0.7s;
-  color: white;
-  border: 1px solid white;
-  border-radius: 0.8vw;
-}
-
-    </style>
-
-
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/admin/hotel.css">
 </head>
-
+ 
 <body>
-    <div class="main">
-        <div class="page1">
-            <div class="nav">
-                <div class="nav-part1">
-                    <h2>Book tour</h2>
-                </div>
-                <h1>the real travel</h1>
-                <div class="nav-part2">
-                    <h3><a href="../Lakshadweep/tourlist.php">Home</a></h3>
-                    <!-- <h3><a href="hotellist.php">Hotel List</a></h3> -->
-                </div>
-            </div>
-            <div class="package">
-                <div class="image-section">
-                    <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/672d0cf6cbb235763bab681f_RHOP_S6E5-8_The%20Estate%20At%20Kingsmill_1-topaz-upscale-2000w.avif" alt="">
-                </div>
-                <div class="form-section">
-                    <h2>Confirm Your Payment !</h2>
+    <div class="signUpPage">
+        <div class="nav">
+            <div class="nav-part2">
 
-
-
-
-                    <form id="booking-form" action="" method="post">
-                        <div style="display: flex; gap: 1vw;">
-                            <input type="text" id="name" name="name" placeholder="full name" value="<?php echo $_POST['name'] ?>" readonly>
-                            <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $_POST['email'] ?>" readonly>
-                        </div>
-                        <input type="number" name="no_of_person"   value="<?php echo $_POST['no_of_person'] ?>" readonly>
-                        <!-- <textarea id="message" name="massage" rows="4" placeholder="Enter Number of Persons" ><input type="number"></textarea> -->
-                        <div style="display: flex; gap: 1vw;">
-                            <input type="number" id="phone" name="Mobile_No" placeholder="phone-no" value="<?php echo $_POST['Mobile_No'] ?>" readonly>
-                            <input type="date" id="date" name="date" value="<?php echo $_POST['date'] ?>" readonly>
-                        </div>
-                        <div style="display: flex; gap: 1vw;">
-                            <input type="text"  id="name" name="package_name" placeholder="vaibhav tours" value="<?php echo $_POST['package_name'] ?>" readonly>
-                            <input type="text"  id="number" name="Price" value="<?php echo $Total_Price ?>" readonly>
-                        </div>
-                        Days : <input   id="name" name="days" placeholder="days" value="<?php echo $_POST['days'] ?>" readonly>
-                        <!-- <select class="submitButton2" id="destination" name="destination" >
-                            <option value="<?php // echo $_POST['destination'] ?>">Select your Choise</option>
-                            <option value="2 Days, 1 Night">2 Days, 1 Night</option>
-                            <option value="4 Days, 3 Night">4 Days, 3 Night</option>
-                            <option value="6 Days, 5 Night">6 Days, 5 Night</option>
-                        </select> -->
-                        Rooms : <input   id="name" name="total_room" placeholder="Select rooms" value="<?php echo $_POST['total_room'] ?>" readonly>
-                        <button class="submitButton" type="submit" class="submit-btn" name="submit">Pay Now</button>
-                        <!-- <button class="Back_Button"   class="Back-btn"  >Back</button> -->
-                    </form>
-                
-                    <!-- value="<?php //echo $_POST['destination'] ?>" readonly -->
-                
-                
-                
-                
-                
+                <h3 class="closeSignUp" style="align-items: center; justify-content: center; display: flex;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="1.2vw" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M11.708 19.273a.686.686 0 0 0-.05-.966l-6.121-5.55h14.71c.416 0 .753-.338.753-.756a.755.755 0 0 0-.752-.758H5.53l6.129-5.548a.69.69 0 0 0 .05-.969.676.676 0 0 0-.961-.05l-7.522 6.812a.69.69 0 0 0 0 1.017l7.52 6.82c.28.252.71.23.962-.052Z"></path>
+                    </svg>
+                    <a href="../Lakshadweep/tourlist.php">to go Back</a></h3> 
                 </div>
-            </div>
+          <div class="nav-part1">
+             <h3>est-2024</h3>
+          </div>
         </div>
+        <hr class="animated-hr" />
+        <div class="signUpPage-part1"> 
+          <div class="signUpPage-part11">
+            <h3>Confirm Payment </h3>
+            <div class="signUpPage-bottom">
+              <h1>Start <br> Your <br> Journey</h1>
+            </div>
+            
+          </div>
+          <div class="container"> 
+            <form id="booking-form" action="" method="post">
+              <label for="activity" class="required">full name</label>
+              <input type="text" id="name" name="name" placeholder="full name" value="<?php echo $_POST['name'] ?>" readonly>
+              
+              <label for="activity" class="required">email</label>
+              <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $_POST['email'] ?>" readonly>
+              
+              <label for="activity" class="required">no of person</label>
+              <input type="number" name="no_of_person"   value="<?php echo $_POST['no_of_person'] ?>" readonly> 
+              
+              <label for="activity" class="required">phone no </label>
+              <input type="number" id="phone" name="Mobile_No" placeholder="phone-no" value="<?php echo $_POST['Mobile_No'] ?>" readonly>
+              
+              <label for="activity" class="required">date</label>
+              <input type="date" id="date" name="date" value="<?php echo $_POST['date'] ?>" readonly>
+              
+              <label for="activity" class="required">package name</label>
+              <input type="text"  id="name" name="package_name" placeholder="vaibhav tours" value="<?php echo $_POST['package_name'] ?>" readonly>
+              
+              <label for="activity" class="required">price</label>
+              <input type="text"  id="number" name="Price" value="<?php echo $Total_Price ?>" readonly>
+              
+              <label for="activity" class="required">Days</label> 
+              <input   id="name" name="days" placeholder="days" value="<?php echo $_POST['days'] ?>" readonly>
+              
+              <label for="activity" class="required">rooms</label>
+              <input   id="name" name="total_room" placeholder="Select rooms" value="<?php echo $_POST['total_room'] ?>" readonly>
+              
+              <button class="submitButton" type="submit" class="submit-btn" name="submit">Pay Now</button> 
+              
+            </form>
+ 
+            
+          </div> 
+        </div>
+      </div>
 </body>
-
 </html>
-
-
-<!-- ./payment/razorpay.php?price=<?php // echo $Total_Price; ?> -->
-
-
-
-
-
-
