@@ -186,38 +186,108 @@ if (isset($_POST['submit'])) {
             </div>
     
           </div>
-          <div class="container"> 
-          <?php
-      if (isset($_POST['Login'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
 
-        $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-        $result = $conn->query($sql);
-        $result = mysqli_query($conn, $sql);
-        $row = mysqli_fetch_array($result);
 
-        if ($row["user_type"] == "user") {
-          if ($row['status'] == 'active') {
-            $_SESSION["email"] = $email;
-            echo "<script >alert('Welcome users, Explore this Real_Travel-website..!')</script>";
-            header("Refresh:0.3; url=other/homepage.php");
-          } else {
-            echo "<script>alert('Your account is not verified, Please click Verify Email_ID..!')</script>";
-          }
-        } else if ($row["user_type"] == "admin") {
-          if ($row['status'] == 'active') {
-            header('location:admin/adminhomepage.php');
-          } else {
-            echo "<script>alert('Your account is not verified, Please click Verify Email_Id..!')</script>";
-          }
+
+
+
+
+          <div class="container">
+  <?php
+  // Start the session
+  session_start();
+
+  // Include your database connection file
+  include("config/connection.php"); // Update with the correct path
+
+  if (isset($_POST['Login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Use prepared statements to prevent SQL injection
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
+    $stmt->bind_param("ss", $email, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+      $row = $result->fetch_assoc();
+
+      if ($row["user_type"] == "user") {
+        if ($row['status'] == 'active') {
+          $_SESSION["email"] = $email;
+          echo "<script>alert('Welcome users, Explore this Real_Travel website..!');</script>";
+          echo "<script>window.location.href = 'other/homepage.php';</script>";
         } else {
-          echo "<script>alert('Invalid Login info..!')</script>";
+          echo "<script>alert('Your account is not verified. Please click Verify Email_ID..!');</script>";
         }
+      } elseif ($row["user_type"] == "admin") {
+        if ($row['status'] == 'active') {
+          echo "<script>window.location.href = 'admin/adminhomepage.php';</script>";
+        } else {
+          echo "<script>alert('Your account is not verified. Please click Verify Email_ID..!');</script>";
+        }
+      } else {
+        echo "<script>alert('Invalid Login info..!');</script>";
       }
+    } else {
+      echo "<script>alert('Invalid email or password.');</script>";
+    }
+
+    // Close the prepared statement
+    $stmt->close();
+  }
+  ?>
+  <form action="" method="POST">
+    <?php include("config/alert.php"); ?>
+    <label for="bravolebrity" class="required">Email</label>
+    <input type="email" name="email" placeholder="email" required />
+    <label for="activity" class="required">Password</label>
+    <input type="password" name="password" placeholder="password" required />
+    <button class="button-part1" type="submit" name="Login">Login</button>
+    <button class="button-part1" id="xyz"><a href="Authentication/password_reset.php">Forget Password</a></button>
+    <button class="button-part1" id="xyz"><a href="Authentication/resend_otp.php">Verify Email</a></button>
+  </form>
+</div>
+
+
+
+
+
+
+          <!-- <div class="container"> 
+          <?php
+    //   if(isset($_POST['Login'])) {
+    //     $email = $_POST['email'];
+    //     $password = $_POST['password'];
+
+    //     $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+    //     $result = $conn->query($sql);
+    //     $result = mysqli_query($conn, $sql);
+    //     $row = mysqli_fetch_array($result);
+
+    //     if ($row["user_type"] == "user") {
+    //       if ($row['status'] == 'active') {
+    //        echo $_SESSION["email"] = $email;
+    //       // header("Refresh:0.3; url=other/homepage.php");
+    //         echo "<script >alert('Welcome users, Explore this Real_Travel-website..!')</script>";
+    //         header("Refresh:0.3; url=other/homepage.php");
+    //       } else {
+    //         echo "<script>alert('Your account is not verified, Please click Verify Email_ID..!')</script>";
+    //       }
+    //     } else if ($row["user_type"] == "admin") {
+    //       if ($row['status'] == 'active') {
+    //         header('location:admin/adminhomepage.php');
+    //       } else {
+    //         echo "<script>alert('Your account is not verified, Please click Verify Email_Id..!')</script>";
+    //       }
+    //     } else {
+    //       echo "<script>alert('Invalid Login info..!')</script>";
+    //     }
+    //   }
       ?>
              <form action="" method="POST">
-                <?php include("config/alert.php"); ?> 
+                <?php // include("config/alert.php"); ?> 
               <label for="bravolebrity" class="required">email</label>
               <input type="email"  name="email"  placeholder="email " required /> 
               <label for="activity" class="required">password</label>
@@ -229,7 +299,15 @@ if (isset($_POST['submit'])) {
               <button class="button-part1"  id="xyz"><a href="Authentication/resend_otp.php">Verify Email</a></button>
      
             </form>
-          </div> 
+          </div>  -->
+
+
+
+
+
+
+
+
         </div>
       </div>
 
