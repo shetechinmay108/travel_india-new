@@ -1,4 +1,4 @@
-<?php
+    <?php
    include("../config/connection.php");
    error_reporting(0);
    $sql = "select * from create_hotel ";

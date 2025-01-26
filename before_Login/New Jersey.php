@@ -13,21 +13,29 @@
     <div class="main">
         <div class="page1">
             
-            <div class="nav">
+        <div class="nav">
+        <h3 class="closeSignUp" style="align-items: center; justify-content: center; display: flex;">
+                    <a href="./index.php"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="5vh" viewBox="0 0 24 24">
+                        <path fill="white" fill-rule="evenodd" d="M11.708 19.273a.686.686 0 0 0-.05-.966l-6.121-5.55h14.71c.416 0 .753-.338.753-.756a.755.755 0 0 0-.752-.758H5.53l6.129-5.548a.69.69 0 0 0 .05-.969.676.676 0 0 0-.961-.05l-7.522 6.812a.69.69 0 0 0 0 1.017l7.52 6.82c.28.252.71.23.962-.052Z"></path>
+                      </svg>
+                    </a></h3>
                 <div class="nav-part1">
                     <h5>That's my opinion</h5>
                 </div>
+                <h1>the real travel</h1>
                 <i class="ri-menu-line open"></i>
             </div>
            
-             <div class="header" style="bottom: 18%;">
-                <h1 class="header-part1" style="font-size: 22vw;">New Jersey</h1>
+             <div class="header" >
+                <h1 style="font-size: 20vw;" >New Jersey</h1>
              </div>
              <div class="page1-part1">
-                <div class="nav">
+             <div class="nav">
                     <div class="nav-part1">
                         <h5>Curated hotels from <br> The Real Housewives</h5>
                     </div>
+                    <h1>the real travel</h1>
                     <i class="ri-close-line close"></i>
                 </div>
                 <div class="menu-section">
@@ -127,7 +135,7 @@
         <div class="page3"></div>
         <div class="lastPage1">
             <h1>Stay in the know</h1>
-            <h3>Be the first to know about new hotels we’ve uncovered</h3>
+            <h3>Be the first to know about new <br> hotels we’ve uncovered</h3>
             <form action="">
                 <input type="email" name="" id="" placeholder="EMAIL ADDRESS">
                 <button>&rarr;</button>
@@ -159,7 +167,7 @@
                 </div>
 
             </div>
-            <h5>This site features affiliate links. When you click on a link and book a trip,<br> The Real Hotels may earn a small commission at no cost to you.</h5>
+            <h5>This site features affiliate links. When you click on a  <br> link and book a trip, The Real Hotels may earn a small  <br> commission at no cost to you.</h5>
         </div>
     </div>
     <script src="https://unpkg.com/split-type"></script>
