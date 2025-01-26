@@ -15,13 +15,18 @@ if (isset($_GET['id'])) {
     exit;
 }
  
-echo $user = $_SESSION["email"];
+//echo $user = $_SESSION["email"];
+ $user = $_SESSION["email"];
 
 $query = mysqli_query($conn, "select * from users where email ='$user'");
 $row = mysqli_fetch_array($query);
-echo $id = $row['user_Id'];
+// echo $id = $row['user_Id'];
 
-echo $Package_Id = $_SESSION["CIPackage_Id"];
+// echo $Package_Id = $_SESSION["CIPackage_Id"];
+
+ $id = $row['user_Id'];
+
+ $Package_Id = $_SESSION["CIPackage_Id"];
 
 if (isset($_POST['submit'])) {
 

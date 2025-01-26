@@ -4,15 +4,15 @@ include("../config/connection.php");
 
 
 
-echo "hello ";
-echo $City_Id = $_GET['cityId'];
+ 
+ $City_Id = $_GET['cityId'];
 
 $sql = "select * from city where City_Id = $City_Id";
 $result = $conn->query($sql);
 
 $row = mysqli_fetch_assoc($result);
 $City_Name = $row['City_Name'];
-echo $City_Name;
+ $City_Name;
 
 
 //fetch row wise data

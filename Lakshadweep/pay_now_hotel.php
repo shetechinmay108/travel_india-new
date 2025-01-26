@@ -66,14 +66,17 @@ if (isset($_GET['id'])) {
 
 
 
-echo $user = $_SESSION["email"]; //user_Email_ID
+// echo $user = $_SESSION["email"]; //user_Email_ID
 
-echo $Hotel_Id = $_SESSION["Hotel_Id"]; //hotel_Id
+// echo $Hotel_Id = $_SESSION["Hotel_Id"]; //hotel_Id
 
+ $user = $_SESSION["email"]; //user_Email_ID
+
+ $Hotel_Id = $_SESSION["Hotel_Id"]; //hotel_Id
 
 $query = mysqli_query($conn, "select * from users where email ='$user'");
 $row = mysqli_fetch_array($query);
-echo $id = $row['user_Id'];  //user_Id
+ $id = $row['user_Id'];  //user_Id
 
 if (isset($_POST['submit'])) {
 

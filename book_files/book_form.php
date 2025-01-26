@@ -2,7 +2,7 @@
 include("../config/connection.php");
 error_reporting(0);
  
-echo $TourPackage = $_GET['Id'];
+ $TourPackage = $_GET['Id'];
 $_SESSION["TourPackage_Id"] = $TourPackage;
 
 if (isset($_GET['Id'])) {
@@ -31,6 +31,13 @@ $user = $_SESSION["email"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/admin/hotel.css">
+  <style>
+     .submitButton:hover{
+      background-color: black;
+      color: white;
+     }
+  </style>
+
 </head>
  
 <body>
