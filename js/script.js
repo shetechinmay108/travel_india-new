@@ -67,21 +67,23 @@ const animation = gsap.from(locationText.chars, {
     amount: 3,
     from: "start",
   },
-
+opacity:1,
   ease: "power2.out",
   paused: true,
 });
 ScrollTrigger.create({
   trigger: ".page3",
-  scroller: "body",
+  scroller: "body", 
   start: "top 0%",
-  end: "top -100%",
+  end: "top -100%", 
   onEnter: () => {
     animation.restart();
+    gsap.set(".location h1",{opacity:1})
     gsap.set(".pageImg", { display: "none" });
   },
   onLeaveBack: () => {
-    animation.restart(); // Restart the animation when scrolling back
+    gsap.set(".location h1",{opacity:0})
+    // animation.restart(); // Restart the animation when scrolling back
     gsap.set(".pageImg", { display: "none" }); // Show .pageImg again
   },
 });
@@ -386,4 +388,11 @@ tp.to(
     },
     "c"
   );
+
+  document.querySelector(".header button").addEventListener("mouseenter",()=>{
+    console.log("hiii")
+    gsap.to(".header a ",{
+      color:"white"
+    })
+  })
  
