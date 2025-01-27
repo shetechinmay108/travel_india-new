@@ -4,8 +4,8 @@
 
  
 // connect Mysql with object orianted approches
-  $servername = "localhost:3380";
-  $username = "root";
+  $servername = "localhost:3306";
+  $username = "root";                                       
   $password = "";
   $dbname = "mager_project";
 
