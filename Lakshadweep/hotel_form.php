@@ -48,7 +48,7 @@ error_reporting(0);
 
 
 
-echo $Hotel_Id = $_GET['id'];
+ $Hotel_Id = $_GET['id'];
  $_SESSION["Hotel_Id"] = $Hotel_Id;
 
 if (isset($_GET['id'])) {
@@ -84,7 +84,7 @@ if (isset($_GET['id'])) {
 //     echo "Invalid request..!";
 //     exit;
 // }
-echo $user = $_SESSION["email"];
+ $user = $_SESSION["email"];
 
 // $query = mysqli_query($conn, "select * from users where email ='$user'");
 // $row = mysqli_fetch_array($query);

@@ -58,7 +58,7 @@ include("../config/connection.php");
                     <div class="nav-part1">
                         <h5>Curated hotels from <br> The Real Housewives</h5>
                     </div>
-                    <h3 id="account" style="color:chartreuse;"><a href="profile/profile.php"><?php echo $_SESSION["email"]; ?></a> </h3>
+                    <h3 id="account" style="color:chartreuse;"><a href="profile/profile.php"><?php $_SESSION["email"]; ?></a> </h3>
                     <i class="ri-close-line close"></i>
                 </div>
                

@@ -66,14 +66,18 @@ if (isset($_GET['id'])) {
 
 
 
-echo $user = $_SESSION["email"];
+// echo $user = $_SESSION["email"];
 
-echo $Package_Id = $_SESSION["TourPackage_Id"];
+// echo $Package_Id = $_SESSION["TourPackage_Id"];
+
+ $user = $_SESSION["email"];
+
+ $Package_Id = $_SESSION["TourPackage_Id"];
 
 
 $query = mysqli_query($conn, "select * from users where email ='$user'");
 $row = mysqli_fetch_array($query);
-echo $id = $row['user_Id'];
+ $id = $row['user_Id'];
 
 if (isset($_POST['submit'])) {
 
@@ -142,6 +146,12 @@ $Total_Price = $person * $Package_Price;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/admin/hotel.css">
+    <style>
+     Button:hover{
+      background-color: green;
+      color: white;
+     }
+  </style>
   </head>
   
   <body>

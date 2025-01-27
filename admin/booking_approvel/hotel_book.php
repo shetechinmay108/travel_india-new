@@ -188,7 +188,7 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotel Record</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
-  <link rel="stylesheet" href="../../Authentication/pwd_update.css">
+  <link rel="stylesheet" href="../../css/pwd_update.css">
   <style>
     html,
     body {
