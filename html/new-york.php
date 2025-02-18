@@ -134,7 +134,7 @@ include("../config/connection.php");
 
 
             
-                <div class="booking">
+                <!-- <div class="booking">
                     <div class="booking1">
 
                         <div class="book-part1">
@@ -198,8 +198,8 @@ include("../config/connection.php");
                         <button><a href="#">Book now</a></button>
                         <button><a href="./new-york/RamonasHouse.php">read more</a></button> 
                     </div>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
         </div>
         <div class="page3"></div>
         <div class="lastPage1">

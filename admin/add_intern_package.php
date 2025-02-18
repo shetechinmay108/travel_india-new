@@ -2,129 +2,57 @@
 include("../config/connection.php");
 // error_reporting(0);
 
-// if (isset($_POST['submit'])) {
-//     // Sanitize and validate input data
-//     $Package_Name = htmlspecialchars(trim($_POST['package_name']));
-//     $Package_Type = htmlspecialchars(trim($_POST['package_type']));
-//     $Package_Location = htmlspecialchars(trim($_POST['Package_Location']));
-//     $Package_Price = filter_var($_POST['Package_price'], FILTER_VALIDATE_FLOAT);
-//     $Package_Features = ($_POST['package_features']);
-//     $Package_Details = htmlspecialchars(trim($_POST['package_details']));
-//     $phone = filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_INT);
-//     $city = htmlspecialchars(trim($_POST['city']));
-    
-//     // Handle file upload
-//     $file = $_FILES['package-img']['name'];
-//     $tempname = $_FILES['package-img']['tmp_name'];
-//     $uploadDir = '../International/intern_image/';
-//     $uploadPath = $uploadDir . basename($file);
-    
-//     // Validate file type and upload
-//     $allowedTypes = ['jpg', 'jpeg', 'png', 'gif'];
-//     $fileType = pathinfo($file, PATHINFO_EXTENSION);
-//     if (in_array(strtolower($fileType), $allowedTypes)) {
-//         if (move_uploaded_file($tempname, $uploadPath)) {
-//             // Prepare and execute SQL query
-//             $stmt = $conn->prepare("INSERT INTO create_intern_package (Package_Name, Package_Type, Package_Location, Price, Package_Feature, Package_Details, Phone, Package_Image, City, Package_Details) 
-//                                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-           
-           
-           
-//             $stmt->bind_param("sssdsisss", $Package_Name, $Package_Type, $Package_Location, $Package_Price, $Package_Features, $phone, $uploadPath, $city, $Package_Details);
 
-//             if ($stmt->execute()) {
-//                 echo "<script>alert('International Tour Package added successfully!')</script>";
-//                 header("Refresh:0.5; url=../adminhomepage.php");
-//             } else {
-//                 echo "<script>alert('Error: Could not insert data.')</script>";
-//             }
-//             $stmt->close();
-//         } else {
-//             echo "<script>alert('Error: Failed to upload image.')</script>";
-//         }
-//     } else {
-//         echo "<script>alert('Invalid file type. Only JPG, JPEG, PNG, and GIF are allowed.')</script>";
-//     }
-// }
-
-// $conn->close();
 ?>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <?php 
-//  include("../../config/connection.php");
-//  //include("../International/intern_image/");
-  
-
-//  error_reporting(0);
  
+ 
+ if (isset($_POST['submit'])) {
+     // Get form data
+     $Package_Name = $_POST['package_name'];
+     $Package_Type = $_POST['package_type'];
+     $Package_Location = $_POST['Package_Location'];
+     $Package_Price = $_POST['Package_price'];
+     $Package_Features = $_POST['package_features'];
+     $Package_Details = $_POST['package_details'];
+     $phone = $_POST['phone'];
+     $city = $_POST['city'];
+ 
+     // Handle file upload
+     $file = $_FILES['package-img']['name'];
+     $tempname = $_FILES['package-img']['tmp_name'];
+    // $folder = "uploads/" . basename($file); // Store images in 'uploads/' folder
+     $folder = '../image/'.$file;
 
-
-//  if(isset($_POST['submit'])){
-//      $Package_Name = $_POST['package_name'];
-//      $Package_Type = $_POST['package_type'];
-//      $Package_Location = $_POST['Package_Location'];
-//      $Package_Price = $_POST['Package_price'];
-//      $Package_Features = $_POST['package_features'];
-//      $Package_Details = $_POST['package_details'];
-//      $phone = $_POST['phone'];
-//      $city = $_POST['city'];
-    
-//     $file = $_FILES['package-img']['name'];
-//     $tempname = $_FILES['package-img']['tmp_name'];
-//     $folder = '../image/'.$file;
-//     //$folder = '../intern_image/' . $file;
-//     move_uploaded_file( $tempname,$folder);
-
-
-//     $sql = "INSERT INTO create_intern_package( Package_Name, Package_Type, Package_Location, Price, Package_Feature, Phone, Package_Image, City, Package_Details) VALUES 
-//     ('$Package_Name', '$Package_Type', '$Package_Location', '$Package_Price', '$Package_Features', '$phone', '$folder', '$city',' $Package_Details')";
-
-
-
-    
-// //      // $query = mysqli_query($conn, "select * from city where City_Name ='$city'");
-// // //     // $row = mysqli_fetch_array($query); 
-// //      // $City_Id = $row['City_Id'];
-
-// //      $sql = "INSERT INTO create_intern_package(Package_Name, Package_Type, Package_Location, Price, Package_Feature, Package_Details, Phone, Package_Image, City) VALUES 
-// //      ('$Package_Name', '$Package_Type', '$Package_Location', '$Package_Price', '$Package_Features', '$Package_Details', '$phone' , '$folder' , '$city')";
-
-//      $result = $conn->query($sql);
-
-//      if($result){
-//          echo "<script>alert('International Tour Package Add successfully..!')</script>";
-//          header("Refresh:0.5; url=../adminhomepage.php");
-//      } else {
-//          echo "Invalid Query..!";
-//      }
-//  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     if (move_uploaded_file($tempname, $folder)) {
+         // Insert data into the database using prepared statements
+         $sql = "INSERT INTO create_intern_package 
+                 (Package_Name, Package_Type, Package_Location, Price, Package_Feature, Phone, Package_Image, City, Package_Details) 
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+ 
+         $stmt = $conn->prepare($sql);
+         $stmt->bind_param("sssssssss", $Package_Name, $Package_Type, $Package_Location, $Package_Price, $Package_Features, $phone, $folder, $city, $Package_Details);
+ 
+         if ($stmt->execute()) {
+             echo "<script>alert('International Tour Package added successfully!');</script>";
+             header("Refresh: 0.5; url=adminhomepage.php");
+             exit;
+         } else {
+             echo "<script>alert('Database insertion failed.');</script>";
+         }
+ 
+         $stmt->close();
+     } else {
+         echo "<script>alert('Failed to upload image.');</script>";
+     }
+ }
+ 
+ $conn->close();
+ ?>
+ 
+<?php
 
 // Suppress error reporting (not recommended in production)
 error_reporting(0);
@@ -132,41 +60,41 @@ error_reporting(0);
 // Include database connection
 //include('db_connection.php'); // Make sure this file contains your database connection setup.
 
-if (isset($_POST['submit'])) {
-    // Retrieve form data
-    $Package_Name = $_POST['package_name'];
-    $Package_Type = $_POST['package_type'];
-    $Package_Location = $_POST['Package_Location'];
-    $Package_Price = $_POST['Package_price'];
-    $Package_Features = $_POST['package_features'];
-    $Package_Details = $_POST['package_details'];
-    $phone = $_POST['phone'];
-    $city = $_POST['city'];
+// if (isset($_POST['submit'])) {
+//     // Retrieve form data
+//     $Package_Name = $_POST['package_name'];
+//     $Package_Type = $_POST['package_type'];
+//     $Package_Location = $_POST['Package_Location'];
+//     $Package_Price = $_POST['Package_price'];
+//     $Package_Features = $_POST['package_features'];
+//     $Package_Details = $_POST['package_details'];
+//     $phone = $_POST['phone'];
+//     $city = $_POST['city'];
 
-    // Handle file upload
-    $file = $_FILES['package-img']['name'];
-    $tempname = $_FILES['package-img']['tmp_name'];
-    $folder = "../image/" . $file;
+//     // Handle file upload
+//     $file = $_FILES['package-img']['name'];
+//     $tempname = $_FILES['package-img']['tmp_name'];
+//     $folder = "../image/" . $file;
 
-    // Check if file upload is successful
-    if (move_uploaded_file($tempname, $folder)) {
-        // Insert data into the database
-        $sql = "INSERT INTO create_intern_package 
-                (Package_Name, Package_Type, Package_Location, Price, Package_Feature, Phone, Package_Image, City, Package_Details) 
-                VALUES 
-                ('$Package_Name', '$Package_Type', '$Package_Location', '$Package_Price', '$Package_Features', '$phone', '$folder', '$city', '$Package_Details')";
+//     // Check if file upload is successful
+//     if (move_uploaded_file($tempname, $folder)) {
+//         // Insert data into the database
+//         $sql = "INSERT INTO create_intern_package 
+//                 (Package_Name, Package_Type, Package_Location, Price, Package_Feature, Phone, Package_Image, City, Package_Details) 
+//                 VALUES 
+//                 ('$Package_Name', '$Package_Type', '$Package_Location', '$Package_Price', '$Package_Features', '$phone', '$folder', '$city', '$Package_Details')";
 
-        // Execute query
-        if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('International Tour Package added successfully!')</script>";
-            header("Refresh: 0.5; url=adminhomepage.php");
-        } else {
-            echo "<script>alert('Database insertion failed: " . $conn->error . "')</script>";
-        }
-    } else {
-        echo "<script>alert('Failed to upload image.')</script>";
-    }
-}
+//         // Execute query
+//         if ($conn->query($sql) === TRUE) {
+//             echo "<script>alert('International Tour Package added successfully!')</script>";
+//             header("Refresh: 0.5; url=adminhomepage.php");
+//         } else {
+//             echo "<script>alert('Database insertion failed: " . $conn->error . "')</script>";
+//         }
+//     } else {
+//         echo "<script>alert('Failed to upload image.')</script>";
+//     }
+// }
 ?>
 
 

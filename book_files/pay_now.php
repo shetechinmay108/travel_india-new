@@ -129,11 +129,13 @@ if (isset($_POST['submit'])) {
 
 //no of persons total no = 3 * package_Price;
 
-$person = $_POST['no_of_person'];
+$person = $_POST['no_of_person']; //3
 
-$Package_Price = $_POST['Price'];
+$Package_Price = $_POST['Price']; // 2000 * 3 = 6000 * 2
 
-$Total_Price = $person * $Package_Price;
+$duration = $_POST['destination'];
+
+$Total_Price = $person * $Package_Price * $duration;
 
 
 ?>
@@ -204,7 +206,7 @@ $Total_Price = $person * $Package_Price;
                <input type="text"  id="number" name="Price" value="<?php echo $Total_Price ?>" readonly>
                
                <label for="activity" class="required">destination</label>
-               <input   id="name" name="destination" placeholder="destination" value="<?php echo $_POST['destination'] ?>" readonly>
+               <input   id="name" name="destination" placeholder="destination" value="<?php echo $_POST['destination'] .' Days' ?>" readonly>
   
                 <label for="activity" class="required">Package Type</label>
                 <input   id="name" name="Package_Type" placeholder="Couple Package" value="<?php echo $data['Package_Type'] ?>" readonly>

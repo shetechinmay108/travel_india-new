@@ -74,7 +74,7 @@ $user = $_SESSION["email"];
               <input type="email" id="email" name="email" placeholder="Email" required>
     
               <label for="activity" class="required">no of Persons</label>
-              <input type="number" name="no_of_person" placeholder="Enter Number of Persons..!">
+              <input type="number" name="no_of_person" placeholder="Enter Number of Persons..!"> 
                
               <label for="activity" class="required">phone no</label>
               <input type="number" id="phone" name="Mobile_No" placeholder="phone-no" required>
@@ -86,15 +86,21 @@ $user = $_SESSION["email"];
               <input   id="name" name="package_name" placeholder="vaibhav tours" value="<?php echo $data['Package_Name'] ?>" readonly>
                   
               <label for="activity" class="required">Price</label>
-              <input   id="number" name="Price" value="<?php echo $data['Price'] ?>" readonly>
+              <input   id="number" name="Price" value="<?php echo $data['Price'] ?>" readonly> 
                  
               <label for="activity" class="required">destination</label>
               <select class="submitButton2" id="destination" name="destination" required>
                 <option value="">Select your Choise</option>
-                <option value="2 Days, 1 Night">2 Days, 1 Night</option>
+                <option value="2" >2 Days, 1 Night</option>
+                <option value="4">4 Days, 3 Night</option>
+                <option value="6">6 Days, 5 Night</option>
+            </select>
+              <!-- <select class="submitButton2" id="destination" name="destination" required>
+                <option value="">Select your Choise</option>
+                <option value="2 Days, 1 Night" >2 Days, 1 Night</option>
                 <option value="4 Days, 3 Night">4 Days, 3 Night</option>
                 <option value="6 Days, 5 Night">6 Days, 5 Night</option>
-            </select>
+            </select> -->
  
               <label for="activity" class="required">package type</label>
               <input   id="name" name="Package_Type" placeholder="Couple Package" value="<?php echo $data['Package_Type'] ?>" readonly>

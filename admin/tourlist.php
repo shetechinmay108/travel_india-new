@@ -57,7 +57,7 @@
                 </div>
                 <div class="book-part2">
                     <h2><?php echo $row['Package_Name']; ?></h2>
-                    <h4>Guerneville, California</h4>
+                    <h4><?php echo $row['Package_Location']; ?></h4>
                 </div>
             </div>
             <div class="booking2">
