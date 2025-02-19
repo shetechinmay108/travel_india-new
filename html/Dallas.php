@@ -123,7 +123,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                  }
 
             ?>
-            <div class="booking">
+            <!-- <div class="booking">
                 <div class="booking1">
 
                     <div class="book-part1">
@@ -188,7 +188,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                         <button><a href="./Dallas/Eduardo.php">read more</a></button> 
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div> 
         <div class="lastPage1">
             <h1>Stay in the know</h1>
@@ -202,7 +202,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                     <div class="last-part11">
                         <h3>map</h3>
                         <h3>Series </h3>
-                        <h3>About</h3>
+                        <h3>About</h3> 
                     </div>
                     <div class="last-part11">
                         <h3>submit</h3>

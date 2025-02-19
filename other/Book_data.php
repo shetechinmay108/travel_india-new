@@ -152,7 +152,7 @@ error_reporting(0);
                 <td>" . $row['Package_Duration'] . "</td>
                 <td>" . $row['Booking_Date'] . "</td>
                 <td>" . $row['Package_Price'] . " Rs</td>
-                <td style='color:green;'><b>". $row['Status'] . "</b></td>
+                <td class=status-cell>". $row['Status'] . "</td>
               </tr>";
                     }
                 }
@@ -203,11 +203,28 @@ error_reporting(0);
                 <td>" . $row['Duration'] . "</td>
                 <td>" . $row['created_booking'] . "</td>
                 <td>" . $row['Price'] . " Rs</td>
-                <td style=color:green; font-weight:bold;>" . $row['Status'] . "</td>
+                <td class=status-cell>" . $row['Status'] . "</td>
               </tr>";
+              //echo style=color:green; font-weight:bold
                     }
                 }
                 ?>
+                
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const statusCells = document.querySelectorAll(".status-cell");
+                        statusCells.forEach(function(cell) {
+                            if (cell.textContent === "Approved") {
+                                cell.style.color = "green";
+                                cell.style.fontWeight = "bold";
+                            } else if (cell.textContent === "Pending") {
+                                cell.style.color = "red";
+                                cell.style.fontWeight = "bold";
+                            }
+                        });
+                    });
+                </script>
+            
             </table>
         </div>
 

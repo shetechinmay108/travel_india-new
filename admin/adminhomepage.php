@@ -29,7 +29,7 @@
             </div>
             <div class="footer">
                 <h3><a href="user_data.php">user Record</a></h3>
-                <h3><a href="add_intern_package.php"> International Package</a></h3>
+                <h3><a href="add_intern_package.php">Add International Package</a></h3>
                 <h3><a href="add_packages.php">add new Tour</a></h3>
                 <h3><a href="add_hotels.php">add new hotel</a></h3>
                 <h3><a href="booking_approvel/book.php">tour Record</a></h3>

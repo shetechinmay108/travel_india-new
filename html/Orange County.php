@@ -131,7 +131,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
 
             ?>
 
-            <div class="booking">
+            <!-- <div class="booking">
                 <div class="booking1">
 
                     <div class="book-part1">
@@ -174,7 +174,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                         <button><a href="./orange county/Dawn-Ranch.php">read more</a></button> 
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <?php

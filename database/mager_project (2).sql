@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 17, 2025 at 01:04 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: 127.0.0.1:3380
+-- Generation Time: Feb 19, 2025 at 03:57 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,13 +49,10 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`id`, `user_Id`, `Package_Id`, `User_Name`, `Email_Id`, `Mobile_No`, `Tour_Date`, `Package_Name`, `Package_Price`, `Package_Duration`, `Package_Type`, `No_of_Person`, `Booking_Date`, `Status`) VALUES
-(137, 93, '15', 'Harshvardhan Vathare', 'akshayvathare42@gmail.com', '7972187168', '2025-01-09', 'Harshtour Packages', 10000, '4 Days, 3 Night', ' Couple & Famillty Packages are both', '4', '2025-01-06 15:38:22.547349', 'Approved'),
-(138, 93, '41', 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', '7972187168', '2025-01-16', 'Orange County 3', 24988, '2 Days, 1 Night', ' only friends', '4', '2025-01-06 15:44:47.094250', 'Approved'),
-(139, 93, '', 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', '7972187168', '2025-01-14', 'Narayan Hotels', 11994, '2', ' 3', '4', '2025-01-06 23:37:20.496201', 'Approved'),
-(143, 93, '15', 'Dhairyasheel patil', 'patilshiv481@gmail.com', '4334343434', '2025-02-20', 'Harshtour Packages', 22500, '3', ' Couple & Famillty Packages are both', '3', '2025-02-17 13:39:39.264925', 'Approved'),
-(144, 93, '15', 'Dhairyasheel patil', 'patilshiv481@gmail.com', '123432344', '2025-02-28', 'Harshtour Packages', 40000, '4 Days', ' Couple & Famillty Packages are both', '4', '2025-02-17 13:49:56.970090', 'Approved'),
-(145, 93, '15', 'Dhairyasheel patil', 'patilshiv481@gmail.com', '123432344', '2025-02-28', 'Harshtour Packages', 50000, '4 Days', ' Couple & Famillty Packages are both', '5', '2025-02-17 13:50:18.474552', 'Approved'),
-(146, 93, '37', 'Harsh vathere', 'harsh1234vathare@gmail.com', '7895757878', '2025-02-20', 'Mahabaleshwar Tour Package', 30000, '2 Days', ' Family / Friends', '2', '2025-02-17 15:52:50.409648', 'Approved');
+(148, 93, '57', 'Chinmay Shettey', 'harsh1234vathare@gmail.com', '7972187168', '2025-02-21', 'Ballinlough Castle', 34396, '4 Days, 3 Night', ' Family / Friends ', '4', '2025-02-19 17:15:26.314055', 'Approved'),
+(149, 93, '51', 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', '7972187168', '2025-02-20', 'The May Fair Hotel', 30396, '4 Days, 3 Night', ' Family / Friends ', '4', '2025-02-19 18:36:57.272037', 'Approved'),
+(151, 83, '61', 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', '7972187168', '2025-02-20', 'Banyan Tree Bangkok', 28707, '4 Days, 3 Night', ' Family / Friends ', '3', '2025-02-19 18:50:41.482880', 'Approved'),
+(152, 94, '65', 'Harshvardhan Vathare', 'vathare.harsh45@gmail.com', '7972187169', '2025-02-21', 'Salt Lake Temple', 21998, '4 Days, 3 Night', ' Family / Friends ', '2', '2025-02-19 19:11:03.414208', 'Approved');
 
 -- --------------------------------------------------------
 
@@ -133,30 +130,30 @@ CREATE TABLE `create_intern_package` (
 --
 
 INSERT INTO `create_intern_package` (`CIPackage_Id`, `Package_Name`, `Package_Type`, `Package_Location`, `Price`, `Package_Feature`, `Phone`, `Package_Image`, `City`, `Package_Details`) VALUES
-(22, 'W Algarve', 'Only friends', 'Algarve, Portugal', '6460', 'Shereé planned this trip because she needed awareness and healing, to which the other Peaches said, “Best of luck to you.” Drew gets very worked up at the first dinner about a home', '4565237688', '', 'Atlanta', 'Shereé planned this trip because she needed awareness and healing, to which the other Peaches said, “Best of luck to you.” Drew gets very worked up at the first dinner about a home'),
-(23, 'The Kelly Birmingham', 'only friends', 'Birmingham, Alabama', '7560', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'Atlanta', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(24, 'W Algarve', 'only friends', 'Birmingham, Alabama', '7560', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'Atlanta', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(25, 'Blue Ridge Chalet', 'only friends', 'Birmingham, Alabama', '7560', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'Atlanta', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(26, 'New Jersey 1', 'only friends', 'Birmingham, Alabama', '7560', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'New Jersey', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(27, 'New Jersey 2', 'only friends', 'Birmingham, Alabama', '7560', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'New Jersey', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(28, 'New Jersey 3', 'only friends', 'Birmingham, Alabama', '6500', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'New Jersey', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
 (29, 'New Jersey 1', 'only friends', 'Birmingham, Alabama', '5600', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'New Jersey', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(31, 'Dallas 2', 'only friends', 'Birmingham, Alabama', '4570', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'Dallas', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(32, 'Dallas 3', 'only friends', 'Birmingham, Alabama', '4570', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'Dallas', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(33, 'Dallas 1', 'only friends', 'Birmingham, Alabama', '5647', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'Dallas', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(34, 'Dallas 2', 'only friends', 'Birmingham, Alabama', '5647', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'Dallas', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(35, 'Salt Lake City1', 'only friends', 'Birmingham, Alabama', '5647', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'Salt Lake City', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(36, 'Salt Lake City 2', 'only friends', 'Birmingham, Alabama', '5647', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'Salt Lake City', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(37, 'Salt Lake City 3', 'only friends', 'Birmingham, Alabama', '5647', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'Salt Lake City', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
 (38, 'Salt Lake City 1', 'only friends', 'Birmingham, Alabama', '5647', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'Salt Lake City', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
 (39, 'Orange County 1', 'only friends', 'Birmingham, Alabama', '5647', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....', '4556677889', '', 'Orange County', ' Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the....'),
-(43, 'patil', 'Family / Friends', 'Ladakh Kashmir , India', '1200', 'Manali, India is a popular tourist destination with snow-capped mountains, adventure sports, and historic temples. ', '9975023083', '../image/coorg-wilderness-resort.jpg', 'Dallas', 'aaaaaaaaaaaaaaaaaa'),
 (44, 'california', 'Family / Friends', 'Mahabaleshwar , Maharashtra', '3333', 'Visit the best places in Leh & ladakh ...! ', '9975023083', '../image/swimming-pool_3.jpg', 'Dallas', 'sdsdsdsdsd'),
 (46, 'Harshtour Packages', 'Family / Friends', 'Mumbai , Maharashtra', '10', 'Visit the best places in Leh & ladakh ...! ', '9975023083', '../image/hotel1.jpeg', 'Atlanta', 'sdsdsdsdsd'),
 (47, 'Erin\'s\" House', 'Family / Friends', 'The Hamptons, New York', '12000', 'What constitutes a “remodel?” Who can say, really? Has Erin’s kitchen been remodeled, as she claims? Or is this a new island and fixtures? Or, perhaps, this is not a freshening up, but the final', '9975023075', '../image/1.avif', 'New York', 'What constitutes a “remodel?” Who can say, really? Has Erin’s kitchen been remodeled, as she claims? Or is this a new island and fixtures? Or, perhaps, this is not a freshening up, but the final'),
 (48, 'Long Bay Villas', 'Family / Friends', 'Long Bay Beach, Anguilla', '9600', 'One might think that Jenna Lyons’ choice to fly first while the rest of the apples suffer in coach would make her the villain of the trip. Nope! Not with Erin here. This meeting of the We Hate Erin club kicked off with a lovely boat trip....', '9975023056', '../image/2.avif', 'New York', 'One might think that Jenna Lyons’ choice to fly first while the rest of the apples suffer in coach would make her the villain of the trip. Nope! Not with Erin here. This meeting of the We Hate Erin club kicked off with a lovely boat trip....'),
 (49, 'Ramona\'s Vacation House', 'Family / Friends', 'The Hamptons, New York', '8500', 'This is one of the least aspirational trips a group of Housewives has ever taken. Not because Ramona’s mansion, decked out in an HGTV palette of white and light gray, is not comfortable....', '9975023045', '../image/3.avif', 'New York', 'This is one of the least aspirational trips a group of Housewives has ever taken. Not because Ramona’s mansion, decked out in an HGTV palette of white and light gray, is not comfortable....'),
-(50, 'Erin\'s\" House', 'Family / Friends', 'The Hamptons, New York', '12000', 'What constitutes a “remodel?” Who can say, really? Has Erin’s kitchen been remodeled, as she claims? Or is this a new island and fixtures? Or, perhaps, this is not a freshening up, but the final', '9975023083', '../image/1.avif', 'New York', 'What constitutes a “remodel?” Who can say, really? Has Erin’s kitchen been remodeled, as she claims? Or is this a new island and fixtures? Or, perhaps, this is not a freshening up, but the final');
+(50, 'Erin\'s House', 'Family / Friends', 'The Hamptons, New York', '12000', 'What constitutes a “remodel?” Who can say, really? Has Erin’s kitchen been remodeled, as she claims? Or is this a new island and fixtures? Or, perhaps, this is not a freshening up, but the final', '9975023083', '../image/1.avif', 'New York', 'What constitutes a “remodel?” Who can say, really? Has Erin’s kitchen been remodeled, as she claims? Or is this a new island and fixtures? Or, perhaps, this is not a freshening up, but the final'),
+(51, 'The May Fair Hotel', 'Family / Friends ', 'London, England', '7599', 'Some intrepid reporter needs to do an in-depth exposé on what exactly is wrong with Shannon Storms Beador’s digestive system. This woman has been trying to poop for years. ', '9595805740', '../image/orenge1.avif', 'Orange County', 'Some intrepid reporter needs to do an in-depth exposé on what exactly is wrong with Shannon Storms Beador’s digestive system. This woman has been trying to poop for years. '),
+(52, 'Elizabeth Vargas\'s Home', 'Family / Friends ', 'La Quinta, California', '6599', 'It’s a Tale of Two Girl’s Trips. Tamra brings her anti-Shannon weapon Alexis Bellino, along with Katie and Jenn, to her Big Bear cabin. Meanwhile, Gina, Heather, Shannon, and Emily head out to...', '7867875645', '../image/orenge2.avif', 'Orange County', 'It’s a Tale of Two Girl’s Trips. Tamra brings her anti-Shannon weapon Alexis Bellino, along with Katie and Jenn, to her Big Bear cabin. Meanwhile, Gina, Heather, Shannon, and Emily head out to...'),
+(53, 'Dawn Ranch', 'Family / Friends ', 'Guerneville, California', '7549', 'If only Heather could protect all of the ladies\' feelings as well as she protects her clothing packed in individual sheets of white tissue paper.', '3445466576', '../image/orenge3.avif', 'Orange County', 'If only Heather could protect all of the ladies\' feelings as well as she protects her clothing packed in individual sheets of white tissue paper.'),
+(54, 'W Algarve', 'Family / Friends ', 'Algarve, Portugal', '8599', 'Shereé planned this trip because she needed awareness and healing, to which the other Peaches said, “Best of luck to you.” Drew gets very worked up at the first dinner about a home chef who is suing her for one thousand dollars, to which Kenya asks if they can all just pool their money to settle..', '1231231234', '../image/atlanta1.avif', 'Atlanta', 'Shereé planned this trip because she needed awareness and healing, to which the other Peaches said, “Best of luck to you.” Drew gets very worked up at the first dinner about a home chef who is suing her for one thousand dollars, to which Kenya asks if they can all just pool their money to settle..'),
+(55, 'The Kelly Birmingham', 'Family / Friends ', 'Birmingham, Alabama', '8759', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the game, which leaves the Peaches confused as to just what they are doing there..', '6778675456', '../image/atlanta2.avif', 'Atlanta', 'Kenya, and Kenya Moore Hair Care, is performing the halftime show at the Magic City Classic, the country’s biggest HBCU football game. However, she is determined to keep it a secret until the game, which leaves the Peaches confused as to just what they are doing there..'),
+(56, ' Blue Ridge Chalet', 'Family / Friends ', 'Blue Ridge Mountains', '9670', 'Marlo and Kenya hate each other. They also love each other. They were both rejected by their mothers as little girls, and they can’t stop poking at each other\'s psychic pain, nor can they walk away from each other.', '9689917535', '../image/atlanta3.avif', 'Atlanta', 'Marlo and Kenya hate each other. They also love each other. They were both rejected by their mothers as little girls, and they can’t stop poking at each other\'s psychic pain, nor can they walk away from each other.'),
+(57, 'Ballinlough Castle', 'Family / Friends ', 'Algarve, Portugal', '8599', 'Season 13 brought audiences new cast members. Yes, yes, there is Rachel Fuda and Danielle Cabral and Jenn Fessler. More importantly, though, there is Claire, mother of', '5634647587', '../image/newjersy_1.avif', 'New Jersey', 'Season 13 brought audiences new cast members. Yes, yes, there is Rachel Fuda and Danielle Cabral and Jenn Fessler. More importantly, though, there is Claire, mother of'),
+(58, 'Nashville Pad', 'Family / Friends ', 'Birmingham, Alabama', '6499', 'When Teresa packs her bags for a couple\'s trip to Nashville, she brings along her season-long beef with Margaret. Marge asked a question about Teresa’s new man, Louie, and now no one..', '7586479367', '../image/newjersy_2.avif', 'New Jersey', 'When Teresa packs her bags for a couple\'s trip to Nashville, she brings along her season-long beef with Margaret. Marge asked a question about Teresa’s new man, Louie, and now no one..'),
+(59, 'Hamptons Estate', 'Family / Friends ', 'Blue Ridge Mountains', '7599', 'It’s driving distance from their homes, but somehow the Jersey Housewives just don’t look right in the Hamptons, like a Dunkin’ Donuts in a nature preserve. However, here they are,.', '9595805740', '../image/newjersy_3.avif', 'New Jersey', 'It’s driving distance from their homes, but somehow the Jersey Housewives just don’t look right in the Hamptons, like a Dunkin’ Donuts in a nature preserve. However, here they are,.'),
+(60, ' The Echelon Vacation', 'Family / Friends ', 'Algarve, Portugal', '8550', 'The lakeside setting was serene and peaceful, but the atmosphere was tense. Hostess Kary Brittingham tries to set the tone by apologizing to newcomer, and first Asian American Housewife', '7867785687', '../image/dalas_1.avif', 'Dallas', 'The lakeside setting was serene and peaceful, but the atmosphere was tense. Hostess Kary Brittingham tries to set the tone by apologizing to newcomer, and first Asian American Housewife'),
+(61, 'Banyan Tree Bangkok', 'Family / Friends ', 'London, England', '9569', 'It is too hot in Bangkok. These women have lost their minds. First, D’Andra brings one of her frenemy LeeAnne’s L’Infinity dresses with her and films a scene making fun of her and Kary’s', '7856816745', '../image/dalas_2.avif', 'Dallas', 'It is too hot in Bangkok. These women have lost their minds. First, D’Andra brings one of her frenemy LeeAnne’s L’Infinity dresses with her and films a scene making fun of her and Kary’s'),
+(62, ' Eduardo\'s Family Home', 'Family / Friends ', 'Guerneville, California', '9599', 'Eduardo’s house is stunning, if two hours from the airport by bus. As per usual, there are room shenanigans. Kary, the hostess, thinks it will be fun to share beds. LeeAnne thinks that having a.', '8787675898', '../image/dalas_3.avif', 'Dallas', 'Eduardo’s house is stunning, if two hours from the airport by bus. As per usual, there are room shenanigans. Kary, the hostess, thinks it will be fun to share beds. LeeAnne thinks that having a.'),
+(63, 'Downtown Salt Lake City', 'Family / Friends ', 'North-central Uteh', '9599', 'Downtown Salt Lake City is the best spot for first-time visitors who want to explore the city. The Grand America Hotel is a European-style hotel that makes a wonderful splurge. If you’re traveling with family, the Hyatt House Salt Lake City Downtown has an outdoor pool and free breakfast. ', '8978674567', '../image/saltlake_1.jpg', 'Salt Lake City', 'Downtown Salt Lake City is the best spot for first-time visitors who want to explore the city. The Grand America Hotel is a European-style hotel that makes a wonderful splurge. If you’re traveling with family, the Hyatt House Salt Lake City Downtown has an outdoor pool and free breakfast. '),
+(64, 'Southwest Valley', 'Family / Friends ', 'Springhill Suites Salt Lake City-South Jordan', '8999', 'The Southwest Valley is near the Oquirrh Mountains and you’ll find lots of outdoor activities here. Yellow Fork Canyon County Park and the Rad Canyon BMX Park are both known for their biking. There are also lots of trails in the canyons and mountains nearby.   The Embassy Suites by Hilton, South Jor', '9854367634', '../image/saltlake_2.jpg', 'Salt Lake City', 'The Southwest Valley is near the Oquirrh Mountains and you’ll find lots of outdoor activities here. Yellow Fork Canyon County Park and the Rad Canyon BMX Park are both known for their biking. There are also lots of trails in the canyons and mountains nearby.   The Embassy Suites by Hilton, South Jor'),
+(65, 'Salt Lake Temple', 'Family / Friends ', 'North Temple, Salt Lake City, Uteh ', '10999', 'Salt Lake Temple is the important one for the ‘The Church of Jesus Christ of Latter-day Saints’ followers. They are called the LDS church followers. Yet, Utah is the only place with this church recognition with most of the communities living in Salt Lake City. This is a 126-year old church, which is', '9878685838', '../image/Salt-Lake-Temple3.webp', 'Salt Lake City', 'Salt Lake Temple is the important one for the ‘The Church of Jesus Christ of Latter-day Saints’ followers. They are called the LDS church followers. Yet, Utah is the only place with this church recognition with most of the communities living in Salt Lake City. This is a 126-year old church, which is');
 
 -- --------------------------------------------------------
 
@@ -180,7 +177,8 @@ INSERT INTO `feedback` (`msg_Id`, `name`, `email`, `massage`) VALUES
 (9, 'Chinmay Shetty', 'chinmayshetty@gmail.com', 'He is the Frontend Devlopers in this website..!'),
 (34, 'Harsh Vathare', 'rama@gmail.com', 'Tour tourism website is very attractive and very smoothfoll to others websites, So i like it..!'),
 (37, 'Vaibhav Neje', 'neje@gmail.com', 'This website is also add to tour packages in all in all freidsa so ..! '),
-(43, 'Nandkumar Vathare', 'vatharenandkumar@gmail.com', 'this website is so fast other than other websites..!');
+(43, 'Nandkumar Vathare', 'vatharenandkumar@gmail.com', 'this website is so fast other than other websites..!'),
+(48, 'Harshvardhan Vathare', 'vathare.harsh45@gmail.com', 'This website is so atractive to other persons and very interactive them..!');
 
 -- --------------------------------------------------------
 
@@ -295,7 +293,11 @@ INSERT INTO `payment` (`user_Id`, `TourPackage_Id`, `razorpay_payment_Id`, `tota
 (83, '40', 'pay_PwhNIOKlJ9Dwli', 19941, 'Dhairyasheel patil', 'patilshiv481@gmail.com', 'Success'),
 (83, '30', 'pay_PwhV4gVddNt0bC', 10500, 'Dhairyasheel patil', 'patilshiv481@gmail.com', 'Success'),
 (93, '15', 'pay_Pwi3erNV3Y5tdq', 50000, 'Dhairyasheel patil', 'patilshiv481@gmail.com', 'Success'),
-(93, '37', 'pay_Pwk8h48yc98PJj', 30000, 'Harsh vathere', 'harsh1234vathare@gmail.com', 'Success');
+(93, '37', 'pay_Pwk8h48yc98PJj', 30000, 'Harsh vathere', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '51', 'pay_Pxa0HPQmyuCm3E', 30396, 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', 'Success'),
+(94, '65', 'pay_PxaaPjhEAguiXH', 21998, 'Harshvardhan Vathare', 'vathare.harsh45@gmail.com', 'Success'),
+(83, '61', 'pay_PxaElAUoIfGK4s', 28707, 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '57', 'pay_PxYcWFZOHVDeRH', 34396, 'Chinmay Shettey', 'harsh1234vathare@gmail.com', 'Success');
 
 -- --------------------------------------------------------
 
@@ -357,7 +359,8 @@ INSERT INTO `users` (`user_Id`, `fname`, `lname`, `email`, `password`, `otp`, `a
 (50, 'Harshvardhan', 'Vathare', 'harsh1234vathare@gmail.com', '3434', '787867', '6db84b9f166fe0562595843af597a171', 'active', '2024-08-09 11:49:07', 'user', '2003-02-10', '7972187168', '         Ramnager Rendal  Near the Ambai Bazar    '),
 (68, 'Chinmay', 'Shetty', 'shetechinmay0260@gmail.com', '1234', '', '7e3bab4c74b6f414f4247918a60dbfc1', 'active', '2024-08-13 14:16:02', 'user', '2020-02-10', ' 9595805740', '    Ramnager Korochi  in Kolhapur'),
 (83, 'swapnil', 'Shedsale', 'swapnil.shedsale@gmail.com', '3030', '', 'm1d54bconjef9klha64gi', 'active', '2024-09-12 11:40:49', 'user', '', '', ''),
-(93, 'Akshay', 'Vathare', 'akshayvathare42@gmail.com', '5619', '', 'ek1amfig89h3jldnb3co0', 'active', '2024-12-31 14:15:42', 'user', '2025-02-26', '123123123', '   Ramnager Rendal');
+(93, 'Akshay', 'Vathare', 'akshayvathare42@gmail.com', '5619', '', 'ek1amfig89h3jldnb3co0', 'active', '2024-12-31 14:15:42', 'user', '2025-02-26', '123123123', '   Ramnager Rendal'),
+(94, 'Ramesh', 'Patil', 'vathare.harsh45@gmail.com', '7576', '', 'olmgckf4d73ia37hje8nb', 'active', '2025-02-19 13:31:49', 'user', '2003-02-10', '7972187168', '   Ramnager rendal');
 
 --
 -- Indexes for dumped tables
@@ -425,7 +428,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
 
 --
 -- AUTO_INCREMENT for table `create_hotel`
@@ -437,13 +440,13 @@ ALTER TABLE `create_hotel`
 -- AUTO_INCREMENT for table `create_intern_package`
 --
 ALTER TABLE `create_intern_package`
-  MODIFY `CIPackage_Id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `CIPackage_Id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `msg_Id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `msg_Id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `hotel_booking`
@@ -461,7 +464,7 @@ ALTER TABLE `tour_package`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_Id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `user_Id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
