@@ -45,7 +45,7 @@
                              <p><b>Payment Id : </b>". $Payment_Id . " </p>
                              <p><b>Total Price : </b>". $total_rate . "Rs </p>
                              <p><b>Payment Status : </b> <b style=color:green;> Success </b> </p><br><br>
-                             <button> <a href='http://localhost/clone/The-Real-Travel-website/travel_india-new-main/admin/adminhomepage.php'>Approval </a></button>
+                             <button> <a href='http://localhost/main/travel_india-new/admin/adminhomepage.php'>Approval </a></button>
                         ";
          $res = $mail->send();
          if ($res) {

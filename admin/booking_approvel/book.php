@@ -157,7 +157,7 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 
 		$res = $mail->send();
 		if ($res) {
-			echo  "<script>alert('Your Messages succesfully Send..!')</script>";
+			// echo  "<script>alert('Your Messages succesfully Send..!')</script>";
 		} else {
 			echo  "<script>alert('Your Messages not Send..!')</script>";
 		}
