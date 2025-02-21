@@ -11,7 +11,9 @@
     <div class="main">
         <div class="page1">
             <div class="video">
-                <video muted loop autoplay src="https://www.fourseasons.com/content/dam/fourseasons/video/FSH/FSH_festive_ambient_shorter.mp4"></video>
+            <video muted loop autoplay src="https://videos.pexels.com/video-files/3015510/3015510-sd_640_360_24fps.mp4"></video>
+            <!-- https://videos.pexels.com/video-files/3015510/3015510-sd_640_360_24fps.mp4 -->
+                <!-- <video muted loop autoplay src="https://www.fourseasons.com/content/dam/fourseasons/video/FSH/FSH_festive_ambient_shorter.mp4"></video> -->
             </div>
             <div class="nav">
                 <div class="nav-part1">
