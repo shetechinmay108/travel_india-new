@@ -68,10 +68,12 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
                 text-align: left;
                 padding: 10px;
                 border: 1px solid #ddd;
+                color: white;
             }
             .payment-slip table th {
                 background-color: #f4f4f4;
                 font-weight: bold;
+                color: white;
             }
             .payment-slip table tr:nth-child(even) {
                 background-color: #f9f9f9;
@@ -212,7 +214,7 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
       justify-content: center;
       display: flex;
 
-      border: .2vw solid black;
+      border: .2vw solid white;
     }
 
     table {
@@ -220,12 +222,14 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
       width: 100%;
       border-collapse: collapse;
       padding: 2vw;
+      color: white;
     }
 
     th,
     td {
       padding: 1vw;
       text-align: center;
+      color: white;
     }
 
 
@@ -234,12 +238,14 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
       font-weight: 400;
       text-transform: capitalize;
       font-family: regular;
-      border-bottom: .2vw solid black;
+      border-bottom: .2vw solid white;
+      color: white;
     }
 
     td {
       font-size: 1.2vw;
-      border-bottom: 0.2vw solid black;
+      border-bottom: 0.2vw solid white;
+      color: white;
     }
 
     button {

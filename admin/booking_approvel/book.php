@@ -38,7 +38,7 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
                 font-family: Arial, sans-serif;
                 margin: 0;
                 padding: 0;
-                background-color: #f9f9f9;
+                
             }
             .payment-slip {
                 width: 60%;
@@ -62,19 +62,22 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
             .payment-slip table th, .payment-slip table td {
                 text-align: left;
                 padding: 10px;
-                border: 1px solid #ddd;
+                border: 1px solid #fff;
             }
             .payment-slip table th {
                 background-color: #f4f4f4;
                 font-weight: bold;
+                border: 1px solid #fff;
             }
             .payment-slip table tr:nth-child(even) {
                 background-color: #f9f9f9;
+                border: 1px solid #fff;
             }
             .payment-slip p {
                 text-align: center;
                 color: #555;
                 margin-top: 10px;
+                border: 1px solid #fff;
             }
 
             @media only screen and (max-width:500px){
@@ -229,6 +232,7 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 		td {
 			padding: 1vw;
 			text-align: center;
+			border: 1px solid #fff;
 			/* background-color: black; */
 		}
 
@@ -238,13 +242,13 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 			font-weight: 400;
 			text-transform: capitalize;
 			font-family: regular;
-			border-bottom: .2vw solid black;
+			border-bottom: .2vw solid #fff;
 			/* background-color: blue; */
 		}
 
 		td {
 			font-size: 1.2vw;
-			border-bottom: 0.2vw solid black;
+			border-bottom: 0.2vw solid #fff;
 		}
 
 		button {

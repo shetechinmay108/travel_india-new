@@ -48,7 +48,7 @@ if (isset($_GET['ID'])) {
             justify-content: center;
             display: flex;
 
-            border: .2vw solid black;
+            border: .2vw solid white;
         }
 
         table {
@@ -70,12 +70,12 @@ if (isset($_GET['ID'])) {
             font-weight: 400;
             font-family: regular;
             text-transform: capitalize;
-            border-bottom: .2vw solid black;
+            border-bottom: .2vw solid white;
         }
 
         td {
             font-size: 1.3vw;
-            border-bottom: 0.2vw solid black;
+            border-bottom: 0.2vw solid white;
         }
 
         button {

@@ -77,6 +77,7 @@
   .nav h3 {
     font-family: regular;
     font-size: 1.5vw;
+    color: white;
     font-weight: 400;
   }
   .nav-part1 {
@@ -115,6 +116,7 @@
     font-family: twl;
     font-size: 1.5vw;
     font-weight: 400;
+    color: white;
   }
   .nav-part2 a {
     text-decoration: none;
@@ -131,8 +133,8 @@
   .booking{
     width: 100%;
     height: 35vh;
-      color: #0b0a0e;
-      border-top: 1px solid rgb(155, 151, 151);
+    color: #0b0a0e;
+    border-top: 1px solid rgb(155, 151, 151);
     align-items: center;
     justify-content: space-around;
     display: flex;
@@ -143,7 +145,7 @@
     display: flex;
     align-items: center;
     gap: 1.5vw;
-     height: 100%;
+    height: 100%;
     justify-content: center; 
   }
   .booking2{
@@ -222,50 +224,35 @@
     width: 80%;
     letter-spacing: 1px;
     height: 5vh;
-    background-color: transparent;
+    background-color: black;
     text-align: center;
     text-transform: uppercase;
     padding: 0.5vw;
     cursor: pointer;
-    border: 1px solid #0000003c;
+    border: 1px solid silver;
     font-weight: 500;
     font-family: twl;
-    color: #000000bb;
+    color: white;
     transition: all ease 0.4s;
     position: relative;
     border-radius: 1.5vw;
     overflow: hidden;
-    /* margin-bottom: 2vh; */
-    /* border-radius: 2vw; */
-    /* font-size: 18px; */
   }
   
-  .book-part4 button::after {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    left: 0;
-    bottom: -100%;
-    border-radius: 50%;
-    transition: all ease 0.4s;
-  }
-  
-  .book-part4 button:hover::after {
-    bottom: 0;
-    border-radius: 0;
+  .book-part4 button:hover {
+    background-color: white;
+    color: black;
   }
   
   .book-part4 button a {
-    color: #000000bb;
+    color: white;
     text-decoration: none;
     position: relative;
     z-index: 9;
   }
   
   .book-part4 button:hover a {
-    color: #fff;
+    color: black;
   }
        @media (max-width: 600px){
           .page1{
@@ -381,9 +368,9 @@
         </div>
         <h1>the real travel</h1>
         <div class="nav-part2">
-            <h3><a href="adminhomepage.php">Home</a></h3>
-            <h3><a href="#">Hotels</a></h3>
-            <h3><a href="tourlist.php">package</a></h3>
+            <h3><a href="adminhomepage.php" style="color: white">Home</a></h3>
+            <h3><a href="#" style="color: white">Hotels</a></h3>
+            <h3><a href="tourlist.php" style="color: white">package</a></h3>
         </div>
     </div>
 
