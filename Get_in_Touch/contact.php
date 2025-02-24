@@ -102,7 +102,7 @@ catch (Exception $e) {
         </svg>
         <a href="../other/homepage.php" style="color: white;">Home</a></h3>
           <div class="nav-part1">
-             <h3>EST-2024</h3>
+              <h3>EST-2024</h3>
           </div>
         </div>
         <hr class="animated-hr" />

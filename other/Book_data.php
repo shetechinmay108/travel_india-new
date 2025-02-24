@@ -22,19 +22,14 @@ error_reporting(0);
             width: 100%;
             min-height: 100vh;
             padding: 0 2vw;
- 
             overflow-x: hidden;
-
-
         }
 
         .part1 {
             width: 100%;
             min-height: 10vh;
-            /* align-items: center; */
             justify-content: center;
             display: flex;
-
             border: .2vw solid white;
         }
 
@@ -43,17 +38,13 @@ error_reporting(0);
             width: 100%;
             border-collapse: collapse;
             padding: 2vw;
-            /* background-color: aqua; */
-            /* text-transform: capitalize; */
         }
 
         th,
         td {
             padding: 1vw;
             text-align: center;
-            /* background-color: black; */
         }
-
 
         th {
             font-size: 1.2vw;
@@ -61,7 +52,6 @@ error_reporting(0);
             text-transform: capitalize;
             font-family: regular;
             border-bottom: .2vw solid white;
-            /* background-color: blue; */
         }
 
         td {
@@ -97,6 +87,35 @@ error_reporting(0);
             color: white;
             border: 1px solid white;
             border-radius: 0.8vw;
+        }
+
+        @media (max-width: 600px) {
+            .page1 {
+                padding: 0 4vw;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            th, td {
+                font-size: 3vw;
+                padding: 2vw;
+            }
+
+            .nav h1 {
+                font-size: 5vw;
+            }
+
+            .nav-part1 h2, .nav-part2 h3 {
+                font-size: 3.5vw;
+            }
+
+            .submitButton {
+                font-size: 3vw;
+                padding: 2vw;
+            }
         }
 
     </style>

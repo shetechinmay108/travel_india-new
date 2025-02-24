@@ -344,12 +344,12 @@
              
           }
           .book-part4>button:first-child{
-            background-color: black;
-            color: white;
+            background-color: white;
+            color: black;
           }
           .book-part4>button:first-child a{
              
-            color: white;
+            color: black;
           }
            
 

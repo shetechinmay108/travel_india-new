@@ -81,7 +81,7 @@ if (isset($_GET['get_Id'])) {
                Home</a></h3>
             </div>
               <div class="nav-part1">
-             <h3>est-2024</h3>
+             <h3>EST-2024</h3>
           </div>
         </div>
         <hr class="animated-hr" />
