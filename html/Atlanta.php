@@ -69,7 +69,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                             <h1 class="animate-text" data-index="2">sign in</h1>
                             <h1 class="animate-text" data-index="3">sign up</h1>
                             <h1 class="animate-text" data-index="4">about us</h1>
-                            <h1 class="animate-text" data-index="5">get in touch</h1>
+                            <h1 class="animate-text" data-index="5"><a href="../Get_in_Touch/contact.php" style="color: black;">get in touch</a></h1>
                         </div>
                         
                         <div class="about">

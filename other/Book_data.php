@@ -35,7 +35,7 @@ error_reporting(0);
             justify-content: center;
             display: flex;
 
-            border: .2vw solid black;
+            border: .2vw solid white;
         }
 
         table {
@@ -60,13 +60,13 @@ error_reporting(0);
             font-weight: 400;
             text-transform: capitalize;
             font-family: regular;
-            border-bottom: .2vw solid black;
+            border-bottom: .2vw solid white;
             /* background-color: blue; */
         }
 
         td {
             font-size: 1.2vw;
-            border-bottom: 0.2vw solid black;
+            border-bottom: 0.2vw solid white;
         }
 
         button {
