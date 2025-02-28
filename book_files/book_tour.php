@@ -90,19 +90,19 @@ if (isset($_GET['Id'])) {
         </div>
         <div class="page2">
            <div class="text">
-            <h1>Some intrepid reporter needs to do an in-depth
-                exposé on what exactly is wrong with Shannon
-                Storms Beador’s digestive system. This woman has
-                been trying to poop for years. We have been through
-                so many trips to Dr. Moon with her, and so many
-                enemas.</h1>
+            <h1>Experience the ultimate luxury at The May Fair Hotel, 
+                where elegance meets modern sophistication in the heart 
+                of London. This iconic hotel has hosted countless celebrities 
+                and notable guests, offering world-class amenities including 
+                a renowned spa, exquisite dining options, and impeccably 
+                designed rooms with stunning city views.</h1>
            </div>
            <div class="middle2">
             <div class="middle2-part1">
                 <img src="<?php echo $data['Package_Image']; ?>" alt="">
             </div>
             <div class="middle2-part2">
-                <h3><?php echo $data['Package_Features']; ?></h3>
+                <h3><?php echo $data['Package_Features']; ?> </h3>
             </div>
            </div>
            <div class="middle3">
@@ -120,6 +120,7 @@ if (isset($_GET['Id'])) {
            </div>
            <div class="middle4">
             <div class="booking">
+                <div class="booking1">
                 <div class="book-part1">
                     <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/672d0043e9147b9cab9aadaf_RHOC_S18E14-16_The%20May%20Fair%20Hotel_1-topaz-upscale-2000w.avif" alt="">
                 </div>
@@ -127,15 +128,19 @@ if (isset($_GET['Id'])) {
                     <h2>The May Fair Hotel</h2>
                     <h4>London, England</h4>
                 </div>
+                </div>
+                <div class="booking2">
                 <div class="book-part3"> 
                     <h5>Some intrepid reporter needs to do an in-depth exposé on what exactly is wrong with Shannon Storms Beador’s digestive system. This woman has been trying to poop for years. We have been</h5>
                 </div>
                 <div class="book-part4"> 
-                    <button>Book now</button>
-                    <button>read more</button>
+                    <button><a href="#">Book now</a></button>
+                    <button><a href="#">read more</a></button>
+                    </div>
                 </div>
             </div>
             <div class="booking">
+                <div class="booking1">
                 <div class="book-part1">
                     <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66e194f2e375a6029db9ceb1_RHOBH_S11E10-12_La%20Quinta-3-topaz.avif" alt="">
                 </div>
@@ -143,15 +148,19 @@ if (isset($_GET['Id'])) {
                     <h2>"Elizabeth Vargas's" Home</h2>
                     <h4>La Quinta, California</h4>
                 </div>
+                </div>
+                <div class="booking2">  
                 <div class="book-part3"> 
                     <h5>It’s a Tale of Two Girl’s Trips. Tamra brings her anti-Shannon weapon Alexis Bellino, along with Katie and Jenn, to her Big Bear cabin. Meanwhile, Gina, Heather, Shannon, and Emily head out to...</h5>
                 </div>
                 <div class="book-part4"> 
-                    <button>Book now</button>
-                    <button>read more</button>
+                    <button><a href="#">Book now</a></button>
+                    <button><a href="#">read more</a></button>
+                </div>
                 </div>
             </div>
             <div class="booking">
+                <div class="booking1">
                 <div class="book-part1">
                     <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66f44adc4ee8a07e24c81f1f_RHOC_S18E9-10_Dawn%20Ranch_1-topaz-upscale-2000w.avif" alt="">
                 </div>
@@ -159,12 +168,15 @@ if (isset($_GET['Id'])) {
                     <h2>Dawn Ranch</h2>
                     <h4>Guerneville, California</h4>
                 </div>
+                </div>
+                <div class="booking2">
                 <div class="book-part3"> 
                     <h5>If only Heather could protect all of the ladies' feelings as well as she protects her clothing packed in individual sheets of white tissue paper....</h5>
                 </div>
                 <div class="book-part4"> 
-                    <button>Book now</button>
-                    <button>read more</button>
+                    <button><a href="#">Book now</a></button>
+                    <button><a href="#">read more</a></button>
+                </div>
                 </div>
             </div>
            </div>

@@ -10,7 +10,7 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hotels</title>
+    <title>Tour List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
     <link rel="stylesheet" href="../css/pwd_update.css">
 </head>
@@ -19,12 +19,12 @@ $result = $conn->query($sql);
     <div class="page1">
         <div class="nav">
             <div class="nav-part1">
-                <h2>packages</h2>
+                <h2>Tour List</h2>
             </div>
             <h1>the real travel</h1>
             <div class="nav-part2">
                 <h3><a href="../other/homepage.php">Home</a></h3>
-                <h3><a href="tourlist.php">Packages</a></h3>
+                <h3><a href="tourlist.php">Package</a></h3>
                 <h3><a href="hotellist.php">Hotels</a></h3>
                 <!-- <h3><a href="#contact">Contact</a></h3> -->
             </div>
@@ -53,8 +53,8 @@ $result = $conn->query($sql);
                                 <h5><?php echo $row['Package_Features']; ?>....</h5>
                             </div> 
                             <div class="book-part4"  >
-                                <button><a href="../book_files/book_form.php?Id=<?php echo $row['TourPackage_Id']; ?>">Book now</a></button>
-                                <button><a href="../book_files/book_tour.php?Id=<?php echo $row['TourPackage_Id']; ?>">read more</a></button> 
+                                <button><a href="../book_files/book_form.php?Id=<?php echo $row['TourPackage_Id']; ?>">Book Now</a></button>
+                                <button><a href="../book_files/book_tour.php?Id=<?php echo $row['TourPackage_Id']; ?>">Read More</a></button> 
                             </div>
                         </div>
                     </div>

@@ -10,7 +10,7 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hotels</title>
+    <title>Hotel List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
     <link rel="stylesheet" href="../css/pwd_update.css">
 </head>
@@ -19,7 +19,7 @@ $result = $conn->query($sql);
     <div class="page1">
         <div class="nav">
             <div class="nav-part1">
-                <h2>hotels</h2>
+                <h2>Hotel List</h2>
             </div>
             <h1>the real travel</h1>
             <div class="nav-part2">
