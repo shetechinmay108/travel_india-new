@@ -1,0 +1,74 @@
+Complete List of Admin Folder PHP Files and Their CSS Connections (13 Files):
+
+1. add_hotels.php
+- Connected CSS: ../css/admin/hotel.css
+
+2. booking_approvel/hotel_book.php
+- Connected CSS: ../../css/pwd_update.css
+
+3. booking_approvel/book.php
+- Connected CSS: ../../css/pwd_update.css
+
+4. other/Book_data.php
+- Connected CSS: ../css/pwd_update.css
+
+5. adminhomepage.php
+- Connected CSS: ../css/admin/admin.css
+
+6. hotellist.php
+- Connected CSS: ../css/admin/hotellist.css
+
+7. packagelist.php
+- Connected CSS: ../css/admin/packagelist.css
+
+8. add_package.php
+- Connected CSS: ../css/admin/package.css
+
+9. user_data.php
+- Connected CSS: ../css/pwd_update.css
+
+10. booking_approvel/package_book.php
+- Connected CSS: ../../css/pwd_update.css
+
+11. admin_login.php
+- Connected CSS: ../css/admin/admin_login.css
+
+12. admin_profile.php
+- Connected CSS: ../css/admin/profile.css
+
+13. admin_pwd_update.php
+- Connected CSS: ../css/pwd_update.css
+
+CSS Files Summary:
+1. pwd_update.css - Common styling for multiple pages
+2. hotel.css - Hotel management specific styling  
+3. admin.css - Admin homepage styling
+4. hotellist.css - Hotel listing page styling
+5. packagelist.css - Package listing page styling
+6. package.css - Package management styling
+7. admin_login.css - Admin login page styling
+8. profile.css - Admin profile page styling
+9. locomotive-scroll.css (CDN) - Scrolling functionality
+
+
+
+
+
+Based on the file connections shown, there are no CSS files that need to be removed since each CSS file has a corresponding PHP page using it:
+
+1. pwd_update.css - Used extensively across multiple pages for common styling
+2. hotel.css - Used by add_hotels.php
+3. admin.css - Used by adminhomepage.php
+4. hotellist.css - Used by hotellist.php 
+5. packagelist.css - Used by packagelist.php
+6. package.css - Used by add_package.php
+7. admin_login.css - Used by admin_login.php
+8. profile.css - Used by admin_profile.php
+
+Recommendation:
+- Keep all current CSS files as they are actively being used
+- No files need to be removed from the css folder
+- Consider combining some of the specialized CSS files in the future if they share common styles (e.g. hotellist.css and packagelist.css) to reduce duplication
+
+
+
