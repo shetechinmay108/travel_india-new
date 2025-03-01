@@ -136,7 +136,7 @@ $conn->close();
               <label for="activity" class="required">package details</label>
               <textarea name="package_details" placeholder="Package Details" rows="4" required></textarea> 
                       
-              <input class="button-part1" type="submit" name="submit" value="Create">
+              <input style="color: black;" class="button-part1" type="submit" name="submit" value="Create">
       
             </form>
  

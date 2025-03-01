@@ -168,7 +168,7 @@ error_reporting(0);
               <label for="password" class="required">package details</label>
               <input type="text" name="package_details" placeholder="Package Details" required>     
 
-              <input class="button-part1" type="submit" name="submit" value="Create">
+              <input style="color: black;" class="button-part1" type="submit" name="submit" value="Create">
       
             </form>
 

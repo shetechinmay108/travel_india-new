@@ -140,60 +140,141 @@ if (isset($_POST['submit'])) {
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-    <style>
-      body {
-        text-align: center;
-        padding: 40px 0;
-        background: #EBF0F5;
-      }
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: clamp(20px, 5vw, 50px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            width: min(90%, 500px);
+            margin: auto;
+        }
+
+        .icon-wrapper {
+            width: min(150px, 30vw);
+            height: min(150px, 30vw);
+            background: #f8f9fa;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fa-hourglass-half {
+            font-size: clamp(30px, 8vw, 60px);
+            color: #fd7e14;
+        }
+
         h1 {
-          color: rgb(177, 59, 30);
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-          font-weight: 900;
-          font-size: 40px;
-          margin-bottom: 10px;
+            color: #343a40;
+            font-size: clamp(24px, 5vw, 36px);
+            margin-bottom: 20px;
         }
+
         p {
-          color:black;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-          font-size:20px;
-          margin: 0;
+            color: #6c757d;
+            font-size: clamp(14px, 3vw, 18px);
+            line-height: 1.6;
+            margin-bottom: 25px;
         }
-      i {
-         
-        color:rgb(243, 106, 52);;
-        font-size: 100px;
-        line-height: 350px;
-        margin-left:-15px;
-        padding: 50px;
-      }
-      .card {
-        background: white;
-        padding: 60px;
-        border-radius: 4px;
-        box-shadow: 0 2px 3px #C8D0D8;
-        display: inline-block;
-        margin: 0 auto;
-      }
+
+        button {
+            background: #fd7e14;
+            color: white;
+            border: none;
+            padding: clamp(8px, 2vw, 10px) clamp(15px, 4vw, 25px);
+            border-radius: 25px;
+            font-size: clamp(14px, 3vw, 16px);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        button:hover {
+            background: #f76707;
+            transform: translateY(-2px);
+        }
+
+        form {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 30px 20px;
+            }
+            
+            .icon-wrapper {
+                margin-bottom: 20px;
+            }
+            
+            h1 {
+                margin-bottom: 15px;
+            }
+            
+            p {
+                margin-bottom: 20px;
+            }
+        }
     </style>
-    <body>
+    <!-- <body>
       <div class="card">
-      <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+      style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;"
+      <div >
         <i class="fa-regular fa-hourglass-half"></i>
         
       </div>
         <h1> Pending </h1> 
         <p>Your booking request is under review !<br/> we'll be in touch shortly! <br>
         <form action="" method="post">
-          <input type="hidden" name="Payment_Id" value="<?php echo $order_Id ?>">
-          <input type="hidden" name="name" value="<?php echo $name; ?>">
-          <input type="hidden" name="rate" value="<?php echo $rate; ?>">
-          <input type="hidden" name="emailforpayment" value="<?php echo $email; ?>">
-          <input type="hidden" name="phone" value="<?php echo $phone; ?>">
+          <input type="hidden" name="Payment_Id" value="<?php //echo $order_Id ?>">
+          <input type="hidden" name="name" value="<?php //echo $name; ?>">
+          <input type="hidden" name="rate" value="<?php //echo $rate; ?>">
+          <input type="hidden" name="emailforpayment" value="<?php //echo $email; ?>">
+          <input type="hidden" name="phone" value="<?php //echo $phone; ?>">
         Please click <button type="submit" name="submit" style="cursor: pointer;">here</button></p>
         </form>
       </div>
-    </body>
+    </body> -->
+
+    <body>
+    <div class="card">
+        <div class="icon-wrapper">
+            <i class="fa-regular fa-hourglass-half"></i>
+        </div>
+        <h1>Request Pending</h1>
+        <p>Your booking request is currently under review.<br>We'll get back to you shortly!</p>
+        <form action="" method="post">
+            <input type="hidden" name="Payment_Id" value="<?php echo $order_Id ?>">
+            <input type="hidden" name="name" value="<?php echo $name; ?>">
+            <input type="hidden" name="rate" value="<?php echo $rate; ?>">
+            <input type="hidden" name="emailforpayment" value="<?php echo $email; ?>">
+            <input type="hidden" name="phone" value="<?php echo $phone; ?>">
+            <button type="submit" name="submit">Continue</button>
+        </form>
+    </div>
+</body>
 </html>
 
 

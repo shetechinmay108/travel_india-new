@@ -120,12 +120,13 @@ textarea {
   outline: none;
   font-size: 16px;
   background-color: black;
+  color: white;
   transition: border-color 0.3s ease;
   opacity: 1;
 }
 .signUpPage .container input:last-child {
   background-color: white;
-  color: black;
+   color: yellow; 
   height: 5vh;
   text-transform: uppercase;
 }

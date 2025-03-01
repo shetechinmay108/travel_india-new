@@ -262,7 +262,7 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 		}
 
 		.submitButton {
-			padding: 0.5vw;
+			/* padding: 0.5vw;
 			background-color: transparent;
 			color: black;
 			border: none;
@@ -270,15 +270,35 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 			cursor: pointer;
 			margin-bottom: 1vw;
 			font-size: 1.2vw;
-			border: 1px solid black;
+			border: 1px solid black; */
+			padding: 0.5vw;
+			background-color: black;
+			color: #08fa08;
+			border: none;
+			/* border-radius: 0.5vw; */
+			cursor: pointer;
+			margin-bottom: 1vw;
+			font-size: 1.2vw;
+			/* border: 1px solid white; */
 		}
 
-		.submitButton:hover {
+		/* .submitButton:hover {
 			background-color: black;
 			transition: 0.7s;
 			color: white;
 			border: 1px solid white;
 			border-radius: 0.8vw;
+		} */
+
+		.deleteButton{
+			padding: 0.5vw;
+			background-color: black;
+			color: red;
+			border: none;
+			/* border-radius: 0.5vw; */
+			cursor: pointer;
+			margin-bottom: 1vw;
+			font-size: 1.2vw;
 		}
 	</style>
 </head>
@@ -301,6 +321,7 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 			<table>
 				<tr>
 					<th scope="col">Id</th>
+					<th scope="col">User_Id</th>
 					<th scope="col">Package Name</th>
 					<th scope="col">User Name</th>
 					<th scope="col">Email_Id</th>
@@ -313,11 +334,12 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 					<th scope="col">Status</th>
 				</tr>
 				<?php
-				$query = "SELECT * FROM  booking WHERE status = 'pending' ORDER BY user_Id";
+				$query = "SELECT * FROM  booking WHERE status = 'pending' ORDER BY user_Id , id";
 				$result = mysqli_query($conn, $query);
 				while ($row = mysqli_fetch_array($result)) { ?>
 					<tr>
-						<td scope="row"><?php echo $row['user_Id']; ?></td>
+						<td scope="row"><?php echo $row['id']; ?></td>
+						<td><?php echo $row['user_Id']; ?></td>
 						<td><?php echo $row['Package_Name']; ?></td>
 						<td><?php echo $row['User_Name']; ?></td>
 						<td><?php echo $row['Email_Id']; ?></td>
@@ -329,11 +351,11 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 						<td><?php echo $row['Package_Price']; ?> Rs</td>
 						<td>
 							<form action="" method="POST">
-								<input type="hidden" name="id" value="<?php echo $row['user_Id']; ?>" />
+								<input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
 								<input type="hidden" name="fname" value="<?php echo $row['User_Name']; ?>">
 								<input type="hidden" name="email" value="<?php echo $row['Email_Id']; ?>">
-								<input class="submitButton" type="submit" name="approve" value="approve">
-								<input class="submitButton" type="submit" name="delete" value="delete">
+								<input class="submitButton" type="submit" name="approve" value="Approvel">
+								<input class="deleteButton" type="submit" name="delete" value="Delete">
 							</form>
 						</td>
 					</tr>
@@ -357,7 +379,7 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 			$id = $_POST['id'];
 			$fname = $_POST['fname'];
 			$email = $_POST['email'];
-			$select = "UPDATE booking SET status = 'Approved' WHERE user_Id = '$id' ";
+			$select = "UPDATE booking SET status = 'Approved' WHERE id = '$id' ";
 			$result = mysqli_query($conn, $select);
 
 
@@ -373,7 +395,7 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 
 		if (isset($_POST['delete'])) {
 			$id = $_POST['id'];
-			$select = "DELETE FROM booking WHERE user_Id = '$id' ";
+			$select = "DELETE FROM booking WHERE id = '$id' ";
 			$result = mysqli_query($conn, $select);
 
 			if ($result) {
@@ -427,8 +449,26 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 						<td><?php echo $row['Package_Duration']; ?></td>
 						<td><?php echo $row['Booking_Date']; ?></td>
 						<td><?php echo $row['Package_Price']; ?> Rs</td>
-						<td style="color:green; font-weight:bold;"><?php echo $row['Status']; ?></td>
+						<td  class=status-cell style="color:green; font-weight:bold;"><?php echo $row['Status']; ?></td>
 					</tr>
+
+					<script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const statusCells = document.querySelectorAll(".status-cell");
+                        statusCells.forEach(function(cell) {
+                            if (cell.textContent === "Approved") {
+                                // cell.style.color = "green";
+                                cell.style.color = "#08fa08";
+                                cell.style.fontWeight = "bold";
+                            } else if (cell.textContent === "Pending") {
+                                cell.style.color = "red";
+                                cell.style.fontWeight = "bold";
+                            }
+                        });
+                    });
+                </script>
+
+
 				<?php } ?>
 			</table>
 		</div>

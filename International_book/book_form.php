@@ -70,7 +70,7 @@ $user = $_SESSION["email"];
               <input type="number" id="phone" name="Mobile_No" placeholder="phone-no" required>
 
               <label for="activity" class="required">date</label>
-              <input type="date" id="date" name="date" required>
+              <input  type="date" id="date" name="date" required>
                  
               <label for="activity" class="required">package name</label>
               <input id="name" name="package_name" value="<?php echo $data['Package_Name'] ?>" readonly>

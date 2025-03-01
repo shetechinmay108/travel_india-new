@@ -116,7 +116,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                     </div>
                     <div class="book-part4"  >
                    <button> <a href="../International_book/book_form.php ?Id=<?php echo $rowdata['CIPackage_Id'] ?>">Book now</a></button>
-                   <button> <a href="./new-york/Erin's-House.php">read more</a></button> 
+                   <button> <a href="./read_more.php ?Intern_Id=<?php echo $rowdata['CIPackage_Id'] ?>">read more</a></button> 
                     </div>
                 </div>
             </div>

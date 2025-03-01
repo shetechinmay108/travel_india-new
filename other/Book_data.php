@@ -234,7 +234,8 @@ error_reporting(0);
                         const statusCells = document.querySelectorAll(".status-cell");
                         statusCells.forEach(function(cell) {
                             if (cell.textContent === "Approved") {
-                                cell.style.color = "green";
+                                // cell.style.color = "green";
+                                cell.style.color = "#08fa08";
                                 cell.style.fontWeight = "bold";
                             } else if (cell.textContent === "Pending") {
                                 cell.style.color = "red";
