@@ -25,7 +25,7 @@ $result = $conn->query($sql);
             <div class="nav-part2">
                 <h3><a href="../other/homepage.php">Home</a></h3>
                 <h3><a href="tourlist.php">Package</a></h3>
-                <h3><a href="hotellist.php">Hotels</a></h3>
+                <h3><a href="hotellist.php">Hotel</a></h3>
                 <!-- <h3><a href="#contact">Contact</a></h3> -->
             </div>
         </div>
