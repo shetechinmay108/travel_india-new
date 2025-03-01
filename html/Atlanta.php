@@ -69,7 +69,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                             <h1 class="animate-text" data-index="2">sign in</h1>
                             <h1 class="animate-text" data-index="3">sign up</h1>
                             <h1 class="animate-text" data-index="4">about us</h1>
-                            <h1 class="animate-text" data-index="5">get in touch</h1>
+                            <h1 class="animate-text" data-index="5"><a href="../Get_in_Touch/contact.php" style="color: black;">get in touch</a></h1>
                         </div>
                         
                         <div class="about">
@@ -115,8 +115,8 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                         <h5><?php echo $rowdata['Package_Feature'] ?></h5>
                     </div>
                     <div class="book-part4"  >
-                        <h4><a href="../International_book/book_form.php ?Id=<?php echo $rowdata['CIPackage_Id'] ?>">Book now</a></h4>
-                        <h4><a href="./new-york/Erin's-House.php">read more</a></h4> 
+                   <button> <a href="../International_book/book_form.php ?Id=<?php echo $rowdata['CIPackage_Id'] ?>">Book now</a></button>
+                   <button> <a href="./read_more.php ?Intern_Id=<?php echo $rowdata['CIPackage_Id'] ?>">read more</a></button> 
                     </div>
                 </div>
             </div>
@@ -126,7 +126,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                  }
 
             ?>
-            <div class="booking">
+            <!-- <div class="booking">
                 <div class="booking1">
 
                     <div class="book-part1">
@@ -191,7 +191,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                         <button><a href="./Atlanta/Blue-Ridge-Chalet.php">read more</a></button> 
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="page3"></div>
         <div class="lastPage1">

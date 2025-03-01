@@ -48,7 +48,7 @@ if (isset($_GET['ID'])) {
             justify-content: center;
             display: flex;
 
-            border: .2vw solid black;
+            border: .2vw solid white;
         }
 
         table {
@@ -70,12 +70,12 @@ if (isset($_GET['ID'])) {
             font-weight: 400;
             font-family: regular;
             text-transform: capitalize;
-            border-bottom: .2vw solid black;
+            border-bottom: .2vw solid white;
         }
 
         td {
             font-size: 1.3vw;
-            border-bottom: 0.2vw solid black;
+            border-bottom: 0.2vw solid white;
         }
 
         button {
@@ -126,7 +126,7 @@ if (isset($_GET['ID'])) {
                                 <td><?php echo $row['lname']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
                                 <td><?php echo $row['user_type']; ?></td>
-                                <td class="action-btn"><button><a href="edit_user.php?id=<?php echo $row['user_Id'] ?>" style="text-decoration: none; color:green;">Update</a></button></td>
+                                <td class="action-btn"><button><a href="edit_user.php?id=<?php echo $row['user_Id'] ?>" style="text-decoration: none; color:#08fa08;">Update</a></button></td>
                                 <td class="action-btn"><button><a href="user_data.php?ID=<?php echo $row['user_Id'] ?>" style="text-decoration: none; color:red;">Delete</a></button></td>
                             </tr>
                     <?php

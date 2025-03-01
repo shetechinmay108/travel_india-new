@@ -91,7 +91,7 @@ catch (Exception $e) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" href="../css/otpNew.css">
 </head> 
 <body>
@@ -106,7 +106,7 @@ catch (Exception $e) {
               <a href="../index.php">Home</a></h3>
             </div>
               <div class="nav-part1">
-             <h3>est-2024</h3>
+             <h3>EST-2024</h3>
           </div>
         </div>
         <hr class="animated-hr" />

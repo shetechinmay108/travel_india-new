@@ -363,7 +363,10 @@ if (isset($_POST['submit'])) {
   </div>
         <div class="page2">
             <div class="video">
+            <!-- <video autoplay muted loop src="https://videos.pexels.com/video-files/4133023/4133023-sd_640_360_30fps.mp4"></video> -->
+            <!-- https://videos.pexels.com/video-files/4133023/4133023-sd_640_360_30fps.mp4 -->
                 <video autoplay muted loop src=" https://www.fourseasons.com/content/dam/fourseasons/video/FSH/FSH_festive_ambient_shorter.mp4"></video>
+                <!-- https://videos.pexels.com/video-files/4133023/4133023-sd_640_360_30fps.mp4 -->
             </div>
             <div class="text">
                 <h6>Our collections span the globe, offering you <br>

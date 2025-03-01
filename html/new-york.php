@@ -121,7 +121,7 @@ include("../config/connection.php");
                     </div>
                     <div class="book-part4"  >
                         <button><a href="../International_book/book_form.php ?Id=<?php echo $rowdata['CIPackage_Id'] ?>">Book now</a></button>
-                        <button><a href="./new-york/Erin's-House.php">read more</a></button> 
+                        <button><a href="./read_more.php ?Intern_Id=<?php echo $rowdata['CIPackage_Id'] ?>">read more</a></button> 
                     </div>
                 </div>
             </div>
@@ -134,7 +134,7 @@ include("../config/connection.php");
 
 
             
-                <div class="booking">
+                <!-- <div class="booking">
                     <div class="booking1">
 
                         <div class="book-part1">
@@ -198,8 +198,8 @@ include("../config/connection.php");
                         <button><a href="#">Book now</a></button>
                         <button><a href="./new-york/RamonasHouse.php">read more</a></button> 
                     </div>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
         </div>
         <div class="page3"></div>
         <div class="lastPage1">

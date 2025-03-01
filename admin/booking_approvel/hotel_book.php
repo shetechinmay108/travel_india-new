@@ -68,10 +68,12 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
                 text-align: left;
                 padding: 10px;
                 border: 1px solid #ddd;
+                color: white;
             }
             .payment-slip table th {
                 background-color: #f4f4f4;
                 font-weight: bold;
+                color: white;
             }
             .payment-slip table tr:nth-child(even) {
                 background-color: #f9f9f9;
@@ -212,7 +214,7 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
       justify-content: center;
       display: flex;
 
-      border: .2vw solid black;
+      border: .2vw solid white;
     }
 
     table {
@@ -220,12 +222,14 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
       width: 100%;
       border-collapse: collapse;
       padding: 2vw;
+      color: white;
     }
 
     th,
     td {
       padding: 1vw;
       text-align: center;
+      color: white;
     }
 
 
@@ -234,12 +238,14 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
       font-weight: 400;
       text-transform: capitalize;
       font-family: regular;
-      border-bottom: .2vw solid black;
+      border-bottom: .2vw solid white;
+      color: white;
     }
 
     td {
       font-size: 1.2vw;
-      border-bottom: 0.2vw solid black;
+      border-bottom: 0.2vw solid white;
+      color: white;
     }
 
     button {
@@ -251,26 +257,45 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
     #msg {
       text-align: left;
     }
-
     .submitButton {
-      padding: 0.5vw;
-      background-color: transparent;
-      color: black;
-      border: none;
-      border-radius: 0.5vw;
-      cursor: pointer;
-      margin-bottom: 1vw;
-      font-size: 1.2vw;
-      border: 1px solid black;
-    }
+			/* padding: 0.5vw;
+			background-color: transparent;
+			color: black;
+			border: none;
+			border-radius: 0.5vw;
+			cursor: pointer;
+			margin-bottom: 1vw;
+			font-size: 1.2vw;
+			border: 1px solid black; */
+			padding: 0.5vw;
+			background-color: black;
+			color: #08fa08;
+			border: none;
+			/* border-radius: 0.5vw; */
+			cursor: pointer;
+			margin-bottom: 1vw;
+			font-size: 1.2vw;
+			/* border: 1px solid white; */
+		}
 
-    .submitButton:hover {
-      background-color: black;
-      transition: 0.7s;
-      color: white;
-      border: 1px solid white;
-      border-radius: 0.8vw;
-    }
+		/* .submitButton:hover {
+			background-color: black;
+			transition: 0.7s;
+			color: white;
+			border: 1px solid white;
+			border-radius: 0.8vw;
+		} */
+
+		.deleteButton{
+			padding: 0.5vw;
+			background-color: black;
+			color: red;
+			border: none;
+			/* border-radius: 0.5vw; */
+			cursor: pointer;
+			margin-bottom: 1vw;
+			font-size: 1.2vw;
+		}
   </style>
 </head>
 
@@ -292,6 +317,7 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
       <table>
         <tr>
           <th scope="col">id</th>
+          <th scope="col">user_id</th>
           <th scope="col">Hotel Name</th>
           <th scope="col">User Name</th>
           <th scope="col">Email_Id</th>
@@ -305,11 +331,12 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
         </tr>
         <?php
 
-        $query = "SELECT * FROM  hotel_booking WHERE status = 'pending' ORDER BY user_Id";
+        $query = "SELECT * FROM  hotel_booking WHERE status = 'pending' ORDER BY user_Id , id";
         $result = mysqli_query($conn, $query);
         while ($row = mysqli_fetch_array($result)) { ?>
 
           <tr>
+          <td><?php echo $row['id']; ?></td>
             <th scope="row"><?php echo $row['user_Id']; ?></th>
             <td><?php echo $row['Hotel_Name']; ?></td>
             <td><?php echo $row['User_Name']; ?></td>
@@ -323,11 +350,11 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
 
             <td>
               <form action="" method="POST">
-                <input type="hidden" name="id" value="<?php echo $row['user_Id']; ?>" />
+                <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
                 <input type="hidden" name="fname" value="<?php echo $row['User_Name']; ?>" placeholder="fname">
                 <input type="hidden" name="email" placeholder="email" value="<?php echo $row['Email_Id']; ?>">
-                <input type="submit" name="approve" value="approve"> &nbsp &nbsp <br>
-                <input type="submit" name="delete" value="delete">
+                <input class="submitButton" type="submit" name="approve" value="Approvel"> &nbsp &nbsp <br>
+                <input class="deleteButton" type="submit" name="delete" value="Delete">
               </form>
             </td>
           </tr>
@@ -351,7 +378,7 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
       $id = $_POST['id'];
       $fname = $_POST['fname'];
       $email = $_POST['email'];
-      $select = "UPDATE hotel_booking SET status = 'Approved' WHERE user_Id = '$id' ";
+      $select = "UPDATE hotel_booking SET status = 'Approved' WHERE id = '$id' ";
       $result = mysqli_query($conn, $select);
       Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hotel_Name, $Total_room, $Payment_Id, $Total_Price);
       if ($result) {
@@ -365,7 +392,7 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
 
     if (isset($_POST['delete'])) {
       $id = $_POST['id'];
-      $select = "DELETE FROM hotel_booking WHERE user_Id = '$id' ";
+      $select = "DELETE FROM hotel_booking WHERE id = '$id' ";
       $resut = mysqli_query($conn, $select);
       if ($result) {
         echo "<script>alert('Your Package Deleted Succesfully..!')</script>";
@@ -419,8 +446,27 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
             <td><?php echo $row['Duration']; ?></td>
             <td><?php echo $row['created_booking']; ?></td>
             <td><?php echo $row['Price']; ?> Rs</td>
-            <td style=color:green; font-weight:bold;><?php echo $row['Status']; ?></td>
+            <td class=status-cell style=color:green; font-weight:bold;><?php echo $row['Status']; ?></td>
           </tr>
+
+          <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const statusCells = document.querySelectorAll(".status-cell");
+                        statusCells.forEach(function(cell) {
+                            if (cell.textContent === "Approved") {
+                                // cell.style.color = "green";
+                                cell.style.color = "#08fa08";
+                                cell.style.fontWeight = "bold";
+                            } else if (cell.textContent === "Pending") {
+                                cell.style.color = "red";
+                                cell.style.fontWeight = "bold";
+                            }
+                        });
+                    });
+                </script>         
+
+
+
         <?php } ?>
       </table>
     </div>

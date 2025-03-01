@@ -22,20 +22,15 @@ error_reporting(0);
             width: 100%;
             min-height: 100vh;
             padding: 0 2vw;
- 
             overflow-x: hidden;
-
-
         }
 
         .part1 {
             width: 100%;
             min-height: 10vh;
-            /* align-items: center; */
             justify-content: center;
             display: flex;
-
-            border: .2vw solid black;
+            border: .2vw solid white;
         }
 
         table {
@@ -43,30 +38,25 @@ error_reporting(0);
             width: 100%;
             border-collapse: collapse;
             padding: 2vw;
-            /* background-color: aqua; */
-            /* text-transform: capitalize; */
         }
 
         th,
         td {
             padding: 1vw;
             text-align: center;
-            /* background-color: black; */
         }
-
 
         th {
             font-size: 1.2vw;
             font-weight: 400;
             text-transform: capitalize;
             font-family: regular;
-            border-bottom: .2vw solid black;
-            /* background-color: blue; */
+            border-bottom: .2vw solid white;
         }
 
         td {
             font-size: 1.2vw;
-            border-bottom: 0.2vw solid black;
+            border-bottom: 0.2vw solid white;
         }
 
         button {
@@ -97,6 +87,35 @@ error_reporting(0);
             color: white;
             border: 1px solid white;
             border-radius: 0.8vw;
+        }
+
+        @media (max-width: 600px) {
+            .page1 {
+                padding: 0 4vw;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            th, td {
+                font-size: 3vw;
+                padding: 2vw;
+            }
+
+            .nav h1 {
+                font-size: 5vw;
+            }
+
+            .nav-part1 h2, .nav-part2 h3 {
+                font-size: 3.5vw;
+            }
+
+            .submitButton {
+                font-size: 3vw;
+                padding: 2vw;
+            }
         }
 
     </style>
@@ -152,7 +171,7 @@ error_reporting(0);
                 <td>" . $row['Package_Duration'] . "</td>
                 <td>" . $row['Booking_Date'] . "</td>
                 <td>" . $row['Package_Price'] . " Rs</td>
-                <td style='color:green;'><b>". $row['Status'] . "</b></td>
+                <td class=status-cell>". $row['Status'] . "</td>
               </tr>";
                     }
                 }
@@ -203,11 +222,29 @@ error_reporting(0);
                 <td>" . $row['Duration'] . "</td>
                 <td>" . $row['created_booking'] . "</td>
                 <td>" . $row['Price'] . " Rs</td>
-                <td style=color:green; font-weight:bold;>" . $row['Status'] . "</td>
+                <td class=status-cell>" . $row['Status'] . "</td>
               </tr>";
+              //echo style=color:green; font-weight:bold
                     }
                 }
                 ?>
+                
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const statusCells = document.querySelectorAll(".status-cell");
+                        statusCells.forEach(function(cell) {
+                            if (cell.textContent === "Approved") {
+                                // cell.style.color = "green";
+                                cell.style.color = "#08fa08";
+                                cell.style.fontWeight = "bold";
+                            } else if (cell.textContent === "Pending") {
+                                cell.style.color = "red";
+                                cell.style.fontWeight = "bold";
+                            }
+                        });
+                    });
+                </script>
+            
             </table>
         </div>
 

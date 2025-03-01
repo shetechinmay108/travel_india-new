@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>admin</title>
+    <title>admin</title>    
     <link rel="stylesheet" href="../css/admin/admin.css">
 </head>
 <body>
     <div class="main">
         <div class="page1">
             <div class="video">
-                <video muted loop autoplay src="https://www.fourseasons.com/content/dam/fourseasons/video/FSH/FSH_festive_ambient_shorter.mp4"></video>
+            <video muted loop autoplay src="https://adamsandbutler.b-cdn.net/app/uploads/2020/08/Web-Hero-Vid-V2-No-Sound-copy.mp4"></video>
+            <!-- https://videos.pexels.com/video-files/3015510/3015510-sd_640_360_24fps.mp4 -->
+                <!-- <video muted loop autoplay src="https://www.fourseasons.com/content/dam/fourseasons/video/FSH/FSH_festive_ambient_shorter.mp4"></video> -->
             </div>
             <div class="nav">
                 <div class="nav-part1">
@@ -29,7 +31,7 @@
             </div>
             <div class="footer">
                 <h3><a href="user_data.php">user Record</a></h3>
-                <h3><a href="add_intern_package.php"> International Package</a></h3>
+                <h3><a href="add_intern_package.php">Add International Package</a></h3>
                 <h3><a href="add_packages.php">add new Tour</a></h3>
                 <h3><a href="add_hotels.php">add new hotel</a></h3>
                 <h3><a href="booking_approvel/book.php">tour Record</a></h3>

@@ -43,7 +43,7 @@ $result = $conn->query($sql);
                             </div>
                             <div class="book-part2">
                                 <h2><?php echo $row['Hotel_Name']; ?></h2>
-                                <h4>Guerneville, California</h4>
+                                <h4><?php echo $row['Hotel_Address']; ?></h4>
                             </div>
                         </div>
                         <div class="booking2">

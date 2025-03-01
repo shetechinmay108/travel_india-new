@@ -62,7 +62,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                 </div>
                 <div class="menu-section">
                     <div class="menu">
-                        <h1 class="animate-text" data-index="1">the real hotels</h1>
+                        <h1 class="animate-text" data-index="1">ho</h1>
                         <h1 class="animate-text" data-index="2">sign in</h1>
                         <h1 class="animate-text" data-index="3">sign up</h1>
                         <h1 class="animate-text" data-index="4">about us</h1>
@@ -113,7 +113,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                     </div>
                     <div class="book-part4"  >
                         <button><a href="../International_book/book_form.php ?Id=<?php echo $rowdata['CIPackage_Id'] ?>">Book now</a></button>
-                        <button><a href="./new-york/Erin's-House.php">read more</a></button> 
+                        <button><a href="./read_more.php ?Intern_Id=<?php echo $rowdata['CIPackage_Id'] ?>">read more</a></button> 
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                  }
 
             ?>
-            <div class="booking">
+            <!-- <div class="booking">
                 <div class="booking1">
 
                     <div class="book-part1">
@@ -188,7 +188,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                         <button><a href="./Dallas/Eduardo.php">read more</a></button> 
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div> 
         <div class="lastPage1">
             <h1>Stay in the know</h1>
@@ -202,7 +202,7 @@ $queryfordata = mysqli_query($conn, "select * from create_intern_package where C
                     <div class="last-part11">
                         <h3>map</h3>
                         <h3>Series </h3>
-                        <h3>About</h3>
+                        <h3>About</h3> 
                     </div>
                     <div class="last-part11">
                         <h3>submit</h3>

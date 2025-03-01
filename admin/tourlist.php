@@ -24,7 +24,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>packages</title>
+    <title>Package List</title>
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
     <link rel="stylesheet" href="../css/pwd_update.css">
 </head>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="book-part2">
                     <h2><?php echo $row['Package_Name']; ?></h2>
-                    <h4>Guerneville, California</h4>
+                    <h4><?php echo $row['Package_Location']; ?></h4>
                 </div>
             </div>
             <div class="booking2">
