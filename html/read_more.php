@@ -177,17 +177,17 @@
                     </div> -->
                     
                     <div class="detail1">
-                        <div class="detail2"><h3>bathroom</h3></div>
+                        <div class="detail2"><h3>guide</h3></div>
                         <div class="detail3"><h3>available</h3></div> 
                     </div>
                     <div class="detail1">
-                        <div class="detail2"><h3>bathroom</h3></div>
+                        <div class="detail2"><h3>car</h3></div>
                         <div class="detail3"><h3>available</h3></div> 
                     </div>
-                    <div class="detail1">
+                    <!-- <div class="detail1">
                         <div class="detail2"><h3>bathroom</h3></div>
                         <div class="detail3"><h3>available</h3></div> 
-                    </div>
+                    </div> -->
                 </div>
             </div>
            </div>
