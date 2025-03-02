@@ -49,6 +49,12 @@
     display: flex;
     align-items: center; 
     gap: 10px;
+    
+  }
+  .signUpPage .nav-part1 h3{
+    text-transform: uppercase;
+    font-family: Aeonik;
+    cursor: pointer;
   }
   .nav-part2 h3 a{
     color: white;

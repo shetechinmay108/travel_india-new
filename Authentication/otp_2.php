@@ -75,7 +75,7 @@
               <a href="../index.php"> Back</a></h3> 
           </div>
           <div class="nav-part1">
-             <h3>est-2024</h3>
+             <h3>EST-2024</h3>
           </div>
         </div>
         <hr class="animated-hr" />
@@ -83,7 +83,7 @@
           <div class="signUpPage-part11">
             <h3>otp verification</h3>
             <div class="signUpPage-bottom">
-              <h1>OTP <br> Verification</h1>
+              <h1>otp <br> verification</h1>
             </div>
     
           </div>

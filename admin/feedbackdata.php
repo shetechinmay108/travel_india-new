@@ -26,13 +26,10 @@ if (isset($_GET['IDe'])) {
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
     <link rel="stylesheet" href="../css/pwd_update.css">
     <style>
-        @font-face {
-            font-family: 'Aeonik';
-            src: url(../font/66de30cc396af3b5cc39c4b6_Aeonik-Medium.woff2);
-        }
+       
 
         * {
-            font-family: 'Aeonik';
+            font-family: aeonik;
         }
 
         html,
@@ -52,7 +49,7 @@ if (isset($_GET['IDe'])) {
             align-items: center;
             justify-content: center;
             display: flex;
-            border: .2vw solid white;
+            border: .05vw solid white;
         }
         table {
             width: 100%;
@@ -64,13 +61,13 @@ if (isset($_GET['IDe'])) {
         td {
             padding: 1vw;
             text-align: center;
-            border: 1px solid white;
+            border: .05vw solid white;
         }
 
         th {
             font-size: 2vw;
             font-weight: 500;
-            text-transform: capitalize;
+            text-transform: uppercase;
             background-color: black;
         }
 

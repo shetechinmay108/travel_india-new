@@ -30,33 +30,35 @@ error_reporting(0);
             min-height: 10vh;
             justify-content: center;
             display: flex;
-            border: .2vw solid white;
+            border: .05vw solid white;
         }
 
         table {
-            font-family: twl;
+            font-family: aeonik;
             width: 100%;
             border-collapse: collapse;
             padding: 2vw;
+            
         }
 
         th,
         td {
             padding: 1vw;
             text-align: center;
+            border: .05vw solid white;
         }
 
         th {
             font-size: 1.2vw;
             font-weight: 400;
-            text-transform: capitalize;
-            font-family: regular;
-            border-bottom: .2vw solid white;
+            text-transform: uppercase;
+            font-family: aeonik;
+            border-bottom: .05vw solid white;
         }
 
         td {
             font-size: 1.2vw;
-            border-bottom: 0.2vw solid white;
+            border-bottom: 0.05vw solid white;
         }
 
         button {

@@ -149,7 +149,7 @@ error_reporting(0);
               <input type="text" name="package_features" placeholder="Package Features" required>
 
               <label for="activity" class="required">Phone No</label>
-              <input type="number" placeholder="phone" name="phone" required>
+              <input type="number" placeholder="Phone Number" name="phone" required>
                   
               <label for="activity" class="required">Package Image</label>
               <input type="file" name="package-img" required>

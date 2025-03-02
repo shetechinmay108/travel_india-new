@@ -24,6 +24,11 @@
     <title>International Tour List</title>
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
     <link rel="stylesheet" href="../css/pwd_update.css">
+    <style>
+        .middle4 {
+            padding-inline: 2vw;
+    }
+    </style>
 </head>
 <body>
    <div class="page1">

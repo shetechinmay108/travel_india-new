@@ -53,7 +53,7 @@
   .page1 {
     width: 100%;
     min-height: 100vh;
-    background-color: #f3f1f1;
+    background-color: black; 
   }
   .nav {
     width: 100%;
@@ -80,12 +80,7 @@
     color: white;
     font-weight: 400;
   }
-  .nav-part1 {
-    padding: 1vh;
-    /* font-family: twl; */
   
-    border-left: 0.2vw solid #f3f1f1;
-  }
   .nav-part1 h2 {
     font-weight: 400;
     font-size: 2.5vw;
@@ -128,7 +123,7 @@
     width: 100%;
     /* border-bottom: 1px solid rgb(155, 151, 151); */
     /* padding: 4vw; */
-    padding: 1vw 1vw;
+    padding: 1vw 2vw;
   }
   .booking{
     width: 100%;

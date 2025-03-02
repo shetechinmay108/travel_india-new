@@ -157,19 +157,19 @@
                     </div>
                     <div class="detail1">
                         <div class="detail2"><h3>price</h3></div>
-                        <div class="detail3"><h3>kami aahe</h3></div> 
+                        <div class="detail3"><h3>10000</h3></div> 
                     </div>
                     <div class="detail1">
                         <div class="detail2"><h3>bathroom</h3></div>
                         <div class="detail3"><h3>aahe</h3></div> 
                     </div>
                     <div class="detail1">
-                        <div class="detail2"><h3>bathroom</h3></div>
-                        <div class="detail3"><h3>aahe</h3></div> 
+                        <div class="detail2"><h3>guide</h3></div>
+                        <div class="detail3"><h3>available</h3></div> 
                     </div>
                     <div class="detail1">
-                        <div class="detail2"><h3>bathroom</h3></div>
-                        <div class="detail3"><h3>aahe</h3></div> 
+                        <div class="detail2"><h3>car</h3></div>
+                        <div class="detail3"><h3>available</h3></div> 
                     </div>
                 </div>
             </div>

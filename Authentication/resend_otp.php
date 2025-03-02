@@ -111,7 +111,7 @@ if (isset($_POST['submit'])) {
         <hr class="animated-hr" />
         <div class="signUpPage-part1"> 
           <div class="signUpPage-part11">
-            <h3>re-set otp</h3>
+            <h3>resend otp</h3>
             <div class="signUpPage-bottom">
               <h1>Resend <br> OTP</h1>
             </div>

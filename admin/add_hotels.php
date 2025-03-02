@@ -69,27 +69,27 @@ if (isset($_POST['submit'])) {
           <div class="container"> 
             <form action="" method="POST" enctype="multipart/form-data">
               <label for="activity" class="required">Hotel Name</label>
-              <input type="text" id="hotelName" name="Hotel_Name" placeholder="hotel name" required>
+              <input type="text" id="hotelName" name="Hotel_Name" placeholder="Hotel Name" required>
               <label for="activity" class="required">Hotel Address</label>
-              <input type="text" id="address" name="Hotel_Address" placeholder="hotel address" required>
+              <input type="text" id="address" name="Hotel_Address" placeholder="Hotel Address" required>
     
               <label for="activity" class="required">Amenities</label>
-              <textarea id="amenities" name="amenities" placeholder="amenities" required></textarea>
+              <textarea id="amenities" name="amenities" placeholder="Amenities" required></textarea>
                
               <label for="activity" class="required">Phone No</label>
-              <input type="tel" id="phoneNumber" name="phoneno" placeholder="phone number" required>
+              <input type="tel" id="phoneNumber" name="phoneno" placeholder="Phone Number" required>
 
               <label for="activity" class="required">Email</label>
-              <input type="email" id="email" name="email" placeholder="enter email" required>
+              <input type="email" id="email" name="email" placeholder="Enter Email" required>
 
               <label for="activity" class="required">Number of Rooms</label>
-              <input type="number" id="numberOfRooms" name="NumberOfRooms" placeholder="number of rooms" required>
+              <input type="number" id="numberOfRooms" name="NumberOfRooms" placeholder="Number of Rooms" required>
                   
               <label for="activity" class="required">Price</label>
-              <input type="number" id="PriceOfRoom" name="PriceOfRoom" placeholder="price" required>
+              <input type="number" id="PriceOfRoom" name="PriceOfRoom" placeholder="Price" required>
                  
               <label for="activity" class="required">Hotel Image</label>
-              <input type="file" id="hotelImage" name="Hotel_Image" accept="image/*" placeholder="hotel image" required>
+              <input type="file" id="hotelImage" name="Hotel_Image" accept="image/*" placeholder="Hotel Image" required>
                   
               <button class="submitButton" type="submit" name="submit">Create Hotel</button>
       

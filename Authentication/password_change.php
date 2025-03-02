@@ -52,7 +52,7 @@ if(isset($_POST['update_password'])){
             
           </div>
           <div class="nav-part1">
-             <h3>est-2024</h3>
+             <h3>EST-2024</h3>
           </div>
         </div>
         <hr class="animated-hr" />

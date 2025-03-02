@@ -101,7 +101,7 @@ catch (Exception $e) {
 
             <h3 class="closeSignUp" style="align-items: center; justify-content: center; display: flex;">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="1.2vw" viewBox="0 0 24 24">
-                <path fill-rule="evenodd" d="M11.708 19.273a.686.686 0 0 0-.05-.966l-6.121-5.55h14.71c.416 0 .753-.338.753-.756a.755.755 0 0 0-.752-.758H5.53l6.129-5.548a.69.69 0 0 0 .05-.969.676.676 0 0 0-.961-.05l-7.522 6.812a.69.69 0 0 0 0 1.017l7.52 6.82c.28.252.71.23.962-.052Z"></path>
+                <path fill="white" fill-rule="evenodd" d="M11.708 19.273a.686.686 0 0 0-.05-.966l-6.121-5.55h14.71c.416 0 .753-.338.753-.756a.755.755 0 0 0-.752-.758H5.53l6.129-5.548a.69.69 0 0 0 .05-.969.676.676 0 0 0-.961-.05l-7.522 6.812a.69.69 0 0 0 0 1.017l7.52 6.82c.28.252.71.23.962-.052Z"></path>
               </svg>
               <a href="../index.php">Home</a></h3>
             </div>
@@ -114,7 +114,7 @@ catch (Exception $e) {
           <div class="signUpPage-part11">
             <h3>Connect with us</h3>
             <div class="signUpPage-bottom">
-              <h1>Start <br> Your <br> Journey</h1>
+              <h1>Connect <br> With Us</h1>
             </div>
     
           </div>
