@@ -139,37 +139,54 @@
                     while offering stunning views of
                     the coastal landscape.</h3>
                 <div class="middle5-part3">
-                    <img src="https://cdn.prod.website-files.com/66de71cc2bd368e4376f06b0/66debb8c35f90cddbe22f3b8_hikari_img_03.webp" alt="">
+                    <img src="<?php echo $data['Package_Image'] ?>" alt="">
                 </div>
                 <h3>details</h3>
                 <div class="details">
                     <div class="detail1">
+                        <div class="detail2"><h3>Package Name</h3></div>
+                        <div class="detail3"><h3><?php echo $data['Package_Name'] ?></h3></div> 
+                    </div>
+                    <div class="detail1">
                         <div class="detail2"><h3>location</h3></div>
-                        <div class="detail3"><h3>satara</h3></div> 
+                        <div class="detail3"><h3><?php echo $data['Package_Location'] ?></h3></div> 
+                    </div>
+                    <div class="detail1">
+                        <div class="detail2"><h3>Package Type</h3></div>
+                        <div class="detail3"><h3><?php echo $data['Package_Type'] ?></h3></div> 
+                    </div>
+                    <div class="detail1">
+                        <div class="detail2"><h3>price</h3></div>
+                        <div class="detail3"><h3><?php echo $data['Price'] ?> Rs</h3></div> 
+                    </div>
+                    <div class="detail1">
+                        <div class="detail2"><h3>Contact No </h3></div>
+                        <div class="detail3"><h3><?php echo $data['Phone'] ?> </h3></div> 
+                    </div>
+                    <div class="detail1">
+                        <div class="detail2"><h3>city</h3></div>
+                        <div class="detail3"><h3><?php echo $data['City'] ?> </h3></div> 
                     </div>
                     <div class="detail1">
                         <div class="detail2"><h3>year</h3></div>
                         <div class="detail3"><h3> 2024</h3></div> 
                     </div>
-                    <div class="detail1">
+                    <!-- <div class="detail1">
                         <div class="detail2"><h3>location</h3></div>
                         <div class="detail3"><h3>pune</h3></div> 
-                    </div>
+                    </div> -->
+                    
                     <div class="detail1">
-                        <div class="detail2"><h3>price</h3></div>
-                        <div class="detail3"><h3>kami aahe</h3></div> 
+                        <div class="detail2"><h3>bathroom</h3></div>
+                        <div class="detail3"><h3>available</h3></div> 
                     </div>
                     <div class="detail1">
                         <div class="detail2"><h3>bathroom</h3></div>
-                        <div class="detail3"><h3>aahe</h3></div> 
+                        <div class="detail3"><h3>available</h3></div> 
                     </div>
                     <div class="detail1">
                         <div class="detail2"><h3>bathroom</h3></div>
-                        <div class="detail3"><h3>aahe</h3></div> 
-                    </div>
-                    <div class="detail1">
-                        <div class="detail2"><h3>bathroom</h3></div>
-                        <div class="detail3"><h3>aahe</h3></div> 
+                        <div class="detail3"><h3>available</h3></div> 
                     </div>
                 </div>
             </div>
