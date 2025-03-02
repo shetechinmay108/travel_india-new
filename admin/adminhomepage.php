@@ -17,26 +17,26 @@
             </div>
             <div class="nav">
                 <div class="nav-part1">
-                    <h5>Curated hotels from <br> The Real Housewives</h5>
+                    <h5>Curated Hotels from <br> The Real Housewives</h5>
                 </div>
-                <h1>the real travel</h1>
+                <h1>The Real Travel</h1>
                 <div class="nav-part2">
                
                     <h3><a href="../index.php">Logout</a></h3>
                 </div>
             </div>
             <div class="middle">
-                <h1>hello admin</h1>
+                <h1>Hello Admin</h1>
                 <h5>Welcome to the Admin Dashboard: Empowering you with advanced tools  <br>to efficiently manage and curate exceptional travel experiences.</h5>   
             </div>
             <div class="footer">
-                <h3><a href="user_data.php">user Record</a></h3>
+                <h3><a href="user_data.php">User Record</a></h3>
                 <h3><a href="add_intern_package.php">Add International Package</a></h3>
-                <h3><a href="add_packages.php">add new Tour</a></h3>
-                <h3><a href="add_hotels.php">add new hotel</a></h3>
-                <h3><a href="booking_approvel/book.php">tour Record</a></h3>
-                <h3><a href="booking_approvel/hotel_book.php">hotel Record</a></h3>
-                <h3><a href="feedbackdata.php">Feedback data</a></h3>
+                <h3><a href="add_packages.php">Add New Tour</a></h3>
+                <h3><a href="add_hotels.php">Add New Hotel</a></h3>
+                <h3><a href="booking_approvel/book.php">Tour Record</a></h3>
+                <h3><a href="booking_approvel/hotel_book.php">Hotel Record</a></h3>
+                <h3><a href="feedbackdata.php">Feedback Data</a></h3>
                 
             </div>
         </div>

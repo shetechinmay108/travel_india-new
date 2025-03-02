@@ -115,8 +115,8 @@ error_reporting(0);
               <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="1.2vw" viewBox="0 0 24 24">
                   <path fill="white" fill-rule="evenodd" d="M11.708 19.273a.686.686 0 0 0-.05-.966l-6.121-5.55h14.71c.416 0 .753-.338.753-.756a.755.755 0 0 0-.752-.758H5.53l6.129-5.548a.69.69 0 0 0 .05-.969.676.676 0 0 0-.961-.05l-7.522 6.812a.69.69 0 0 0 0 1.017l7.52 6.82c.28.252.71.23.962-.052Z"></path>
               </svg>
-              <a href="adminhomepage.php">to go Back</a></h3>
-              <h3 id="none" ><a href="International_tourlist.php">international tour list</a></h3>
+              <a href="adminhomepage.php">To go Back</a></h3>
+              <h3 id="none" ><a href="International_tourlist.php">International Tour List</a></h3>
           </div>
           <div class="nav-part1">
              <h3>est-2024</h3>
@@ -133,28 +133,28 @@ error_reporting(0);
           </div>
           <div class="container"> 
             <form action="" method="POST" enctype="multipart/form-data">
-              <label for="activity" class="required">package Name</label>
+              <label for="activity" class="required">Package Name</label>
               <input type="text" name="package_name" placeholder="Package Name" required>
     
-              <label for="activity" class="required">package type</label>
+              <label for="activity" class="required">Package Type</label>
               <input type="text" name="package_type" placeholder="Package Type (Family/Couple)" required>
     
-              <label for="activity" class="required">package Location</label>
+              <label for="activity" class="required">Package Location</label>
               <input type="text" name="Package_Location" placeholder="Package Location" required>
                
-              <label for="activity" class="required">package Price</label>
+              <label for="activity" class="required">Package Price</label>
               <input type="number" name="Package_price" placeholder="Package Price" required>
 
-              <label for="activity" class="required">package Features</label>
+              <label for="activity" class="required">Package Features</label>
               <input type="text" name="package_features" placeholder="Package Features" required>
 
-              <label for="activity" class="required">phone no</label>
+              <label for="activity" class="required">Phone No</label>
               <input type="number" placeholder="phone" name="phone" required>
                   
-              <label for="activity" class="required">package Image</label>
+              <label for="activity" class="required">Package Image</label>
               <input type="file" name="package-img" required>
                  
-              <label for="activity" class="required">select</label>
+              <label for="activity" class="required">Select City</label>
               <select name="city" id="city" required>
                 <option value="" disabled selected>Select a City</option>
                 <option value="Orange County">Orange County</option>
@@ -165,7 +165,7 @@ error_reporting(0);
                 <option value="Salt Lake City">Salt Lake City</option>
             </select> 
                 
-              <label for="password" class="required">package details</label>
+              <label for="password" class="required">Package Details</label>
               <input type="text" name="package_details" placeholder="Package Details" required>     
 
               <input style="color: black;" class="button-part1" type="submit" name="submit" value="Create">

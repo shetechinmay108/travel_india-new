@@ -364,13 +364,13 @@
    <div class="page1">
     <div class="nav">
         <div class="nav-part1">
-            <h2>hotels</h2>
+            <h2>Hotels</h2>
         </div>
-        <h1>the real travel</h1>
+        <h1>The Real Travel</h1>
         <div class="nav-part2">
             <h3><a href="adminhomepage.php" style="color: white">Home</a></h3>
-            <h3><a href="#" style="color: white">Hotels</a></h3>
-            <h3><a href="tourlist.php" style="color: white">package</a></h3>
+            <h3><a href="#" style="color: white">Hotel</a></h3>
+            <h3><a href="tourlist.php" style="color: white">Package</a></h3>
         </div>
     </div>
 

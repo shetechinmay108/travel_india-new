@@ -59,7 +59,7 @@
  <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>otp verification</title> 
+     <title>OTP Verification</title> 
      <link rel="stylesheet" href="../css/otpNew.css">
      
  </head>
@@ -81,13 +81,13 @@
           <div class="signUpPage-part11">
             <h3>otp verification</h3>
             <div class="signUpPage-bottom">
-              <h1>Start <br> Your <br> Journey</h1>
+              <h1>OTP <br> Verification</h1>
             </div>
     
           </div>
           <div class="container"> 
             <form action="" method="POST">  
-              <label for="activity" class="required">enter otp</label>
+              <label for="activity" class="required">Enter OTP</label>
               <input type="number" name="otp" placeholder="Enter OTP" required> 
      
       
