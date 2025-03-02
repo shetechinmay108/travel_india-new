@@ -34,7 +34,7 @@ error_reporting(0);
         }
 
         table {
-            font-family: aeonik;
+            font-family: twl;
             width: 100%;
             border-collapse: collapse;
             padding: 2vw;
@@ -50,7 +50,7 @@ error_reporting(0);
             font-size: 1.2vw;
             font-weight: 400;
             text-transform: capitalize;
-            font-family: aeonik;
+            font-family: regular;
             border-bottom: .2vw solid white;
         }
 

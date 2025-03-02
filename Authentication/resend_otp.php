@@ -105,13 +105,13 @@ if (isset($_POST['submit'])) {
             
           </div>
           <div class="nav-part1">
-             <h3>EST-2024</h3>
+             <h3>est-2024</h3>
           </div>
         </div>
         <hr class="animated-hr" />
         <div class="signUpPage-part1"> 
           <div class="signUpPage-part11">
-            <h3>Re-set OTP</h3>
+            <h3>re-set otp</h3>
             <div class="signUpPage-bottom">
               <h1>Start <br> Your <br> Journey</h1>
             </div>

@@ -10,10 +10,6 @@
   font-family: regular2;
   src: url(/font/66bdbfce81e82ca87a30c297_Tartuffo-Light.ttf);
 }
-@font-face {
-  font-family: aeonik;
-  src: url(/font/66de30cc396af3b5cc39c4b6_Aeonik-Medium.woff2);
-}
 * {
   padding: 0%;
   margin: 0%;

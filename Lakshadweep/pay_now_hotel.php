@@ -149,7 +149,7 @@ $_SESSION['hotel_price'] = $Total_Price;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Page</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../css/admin/hotel.css">
 </head>
  
@@ -165,7 +165,7 @@ $_SESSION['hotel_price'] = $Total_Price;
                     <a href="../Lakshadweep/tourlist.php">to go Back</a></h3> 
                 </div>
           <div class="nav-part1">
-             <h3>EST-2024</h3>
+             <h3>est-2024</h3>
           </div>
         </div>
         <hr class="animated-hr" />

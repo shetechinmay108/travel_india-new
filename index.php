@@ -398,7 +398,7 @@ if (isset($_POST['submit'])) {
                 </div>
             <div class="location">
                 <h1><a href="before_Login/Orange County.php">Orange County</a></h1>
-                <h1><a href="before_Login/new-york.php">New York</a></h1>
+                <h1><a href="before_Login/new-york.php">new york</a></h1>
                 <h1><a href="before_Login/Atlanta.php">Atlanta</a></h1>
                 <h1><a href="before_Login/New Jersey.php">New Jersey</a></h1>
                 <h1><a href="before_Login/Dallas.php">Dallas</a></h1>
@@ -466,26 +466,26 @@ if (isset($_POST['submit'])) {
             <div class="lastPage2">
                 <div class="last-part1">
                     <div class="last-part11">
-                        <h3>Map</h3>
+                        <h3>map</h3>
                         <h3>Series </h3>
                         <h3>About</h3>
                     </div>
                     <div class="last-part11">
-                        <h3>Submit</h3>
-                        <h3>Press</h3>
-                        <h3>Contact</h3>
+                        <h3>submit</h3>
+                        <h3>press</h3>
+                        <h3>contact</h3>
                     </div>
                 </div>
                 <div class="last-part2">
                     <div class="last-part11">
-                        <h3>Credits</h3>
-                        <h3>Accessibility </h3>
-                        <h3>Privacy</h3>
+                        <h3>credits</h3>
+                        <h3>accessibility </h3>
+                        <h3>privacy</h3>
                     </div>
                     <div class="last-part11">
-                        <h3>Facebook</h3>
-                        <h3>Instagram</h3>
-                        <h3>1ax Consulting</h3>
+                        <h3>facebook</h3>
+                        <h3>instagram</h3>
+                        <h3>1ax consulting</h3>
                     </div>
                 </div>
 
