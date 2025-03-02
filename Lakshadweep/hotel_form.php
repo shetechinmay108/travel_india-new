@@ -130,7 +130,7 @@ $_SESSION['hotel_price'] = $Total_Price;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Booking Form</title>
     <link rel="stylesheet" href="../css/admin/hotel.css">
 </head>
  
@@ -153,7 +153,7 @@ $_SESSION['hotel_price'] = $Total_Price;
         <hr class="animated-hr" />
         <div class="signUpPage-part1"> 
           <div class="signUpPage-part11">
-            <h3>Build Hotel</h3>
+            <h3>Booking Form</h3> 
             <div class="signUpPage-bottom">
               <h1>Start <br> Your <br> Journey</h1>
             </div>

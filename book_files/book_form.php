@@ -59,7 +59,7 @@ $user = $_SESSION["email"];
         <hr class="animated-hr" />
         <div class="signUpPage-part1"> 
           <div class="signUpPage-part11">
-            <h3>confirm details</h3>
+            <h3>fill details</h3>
             <div class="signUpPage-bottom">
               <h1>Start <br> Your <br> Journey</h1>
             </div>
@@ -74,7 +74,7 @@ $user = $_SESSION["email"];
               <input type="email" id="email" name="email" placeholder="Email" required>
     
               <label for="activity" class="required">no of Persons</label>
-              <input type="number" name="no_of_person" placeholder="Enter Number of Persons..!"> 
+              <input type="number" name="no_of_person" placeholder="Number of persons">
                
               <label for="activity" class="required">phone no</label>
               <input type="number" id="phone" name="Mobile_No" placeholder="phone-no" required>
