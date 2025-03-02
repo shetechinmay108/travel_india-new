@@ -55,7 +55,7 @@ if(isset($_POST['submit'])){
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="1.2vw" viewBox="0 0 24 24">
                         <path fill-rule="evenodd" d="M11.708 19.273a.686.686 0 0 0-.05-.966l-6.121-5.55h14.71c.416 0 .753-.338.753-.756a.755.755 0 0 0-.752-.758H5.53l6.129-5.548a.69.69 0 0 0 .05-.969.676.676 0 0 0-.961-.05l-7.522 6.812a.69.69 0 0 0 0 1.017l7.52 6.82c.28.252.71.23.962-.052Z"></path>
                     </svg>
-                    <a href="adminhomepage.php">to go Back</a></h3>
+                    <a href="adminhomepage.php">Back</a></h3>
                     <h3><a href="tourlist.php">Tour List</a></h3>
                 </div>
           <div class="nav-part1">
@@ -67,34 +67,34 @@ if(isset($_POST['submit'])){
           <div class="signUpPage-part11">
             <h3>update tour</h3>
             <div class="signUpPage-bottom">
-              <h1>Start <br> Your <br> Journey</h1>
+              <h1>Update <br> Your <br> Tour</h1>
             </div>
     
           </div>
           <div class="container"> 
             <form action="" method="POST" enctype="multipart/form-data">
-              <label for="activity" class="required">pacakge name</label>
+              <label for="activity" class="required">Package Name</label>
               <input value="<?php echo $data['Package_Name'] ?>" type="text" name="package_name" placeholder="Create Package" autocomplete="off" required>
             
-              <label for="activity" class="required">package type </label>
+              <label for="activity" class="required">Package Type</label>
               <input value="<?php echo $data['Package_Type'] ?>" type="text" name="package_type" placeholder="Package Type (Family/Couple)" required />
             
               <label for="activity" class="required">Location</label>
               <input value="<?php echo $data['Package_Location'] ?>" type="text" name="Package_Location" placeholder="Package Location" required />
             
-              <label for="activity" class="required">price</label>
+              <label for="activity" class="required">Price</label>
               <input value="<?php echo $data['Price'] ?>" type="number" name="Package_price" placeholder="Package price" required />
             
-              <label for="activity" class="required">features</label>
+              <label for="activity" class="required">Features</label>
               <input value="<?php echo $data['Package_Features'] ?>" type="text" name="package_features" placeholder="Package features..!" autocomplete="off" required>
             
-              <label for="activity" class="required">phone no</label>
+              <label for="activity" class="required">Phone No</label>
               <input type="number" placeholder="Phone" name="phone" value="<?php echo $data['Phone'] ?>" required>
             
-              <label for="activity" class="required">package img</label>
+              <label for="activity" class="required">Package Image</label>
               <input  name="package-img" type="file"  required> 
             
-              <label for="activity" class="required">details</label>
+              <label for="activity" class="required">Details</label>
               <textarea rows='4' cols='1'  name="package_details" placeholder="Package Details" required><?php echo $data['Package_Details'] ?></textarea>  
             
               <input class="button-part1" type="submit" name="submit" value="Update" required />

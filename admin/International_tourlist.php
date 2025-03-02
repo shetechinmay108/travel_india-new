@@ -29,13 +29,13 @@
    <div class="page1">
     <div class="nav">
         <div class="nav-part1">
-            <h2>hotels</h2>
+            <h2>Hotels</h2>
         </div>
-        <h1>the real travel</h1>
+        <h1>The Real Travel</h1>
         <div class="nav-part2">
             <h3><a href="adminhomepage.php">Home</a></h3>
-            <h3><a href="#">Hotels</a></h3>
-            <h3><a href="tourlist.php">package</a></h3>
+            <h3><a href="#">Hotel</a></h3>
+            <h3><a href="tourlist.php">Package</a></h3>
         </div>
     </div>
 
