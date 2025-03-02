@@ -26,11 +26,7 @@
                 echo "<script>alert('Please provide correct OTP..!')</script>";
             }
             else{
-                // if(date('d-m-Y h:i:s') >= $timeup){
-                //     echo "<script>alert('Your time is up.. try again..!')</script>";
-                //     header("Refresh:1; url=../index.php");
-                // }
-                // else{
+                
                     $sqlupdate = "UPDATE users SET otp = '', status = 'active' WHERE otp = '".$otp."' AND activation_code = '".$activation_code."'";
                     $result_update = mysqli_query($conn, $sqlupdate);
 

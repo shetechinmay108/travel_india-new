@@ -119,10 +119,9 @@
     color: black;
   }
   .middle4 {
-    /* min-height: 100vh; */
+     
     width: 100%;
-    /* border-bottom: 1px solid rgb(155, 151, 151); */
-    /* padding: 4vw; */
+    
     padding: 1vw 2vw;
   }
   .booking{

@@ -3,50 +3,7 @@
 include("../config/connection.php");
 error_reporting(0);
 
-
-//email send///////////
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\Exception;
-
-// require '../PHPMailer/src/Exception.php';
-// require '../PHPMailer/src/PHPMailer.php';
-// require '../PHPMailer/src/SMTP.php';
-
-// function Sendemail_approvel($User_Name, $email)
-// {
-
-
-//     //Create an instance; passing `true` enables exceptions
-//     $mail = new PHPMailer(true);
-
-//     try {
-//         //Server settings
-//         $mail->SMTPDebug = 0;                      //Enable verbose debug output  //SMTP::DEBUG_SERVER
-//         $mail->isSMTP();                                            //Send using SMTP
-//         $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-//         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-//         $mail->Username   = 'harsh1234vathare@gmail.com';                     //SMTP username
-//         $mail->Password   = 'olfq duvu rucq tvsv';                               //SMTP password
-//         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-//         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-//         $mail->setFrom('travelindia9500@gmail.com', 'Travel_India.com');
-//         $mail->addAddress('travelindia9500@gmail.com'); //$email      
-//         $mail->addReplyTo('travelindia9500@gmail.com', 'Information');
-//         $mail->isHTML(true);                                  //Set email format to HTML
-//         $mail->Subject = ' Approvel Request From ' . $_POST['name'] . '..!';
-//         $mail->Body    = "<h3>hello Travel_India Team !
-//                        <p><h4>My name is " . $_POST['name'] . " . </h4></p></h3><br>
-//                        <h4> I exited to book your Tour-Packages , So i hope You can approved my package in Your Accounts..!</h4>";
-//         $res = $mail->send();
-//         if ($res) {
-//         } else
-//             echo  "<script>alert('Your Messages not Send..!')</script>"; ///'Message has been not sent';
-
-//     } catch (Exception $e) {
-//         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-//     }
-// }
-
+ 
 
 
 
@@ -65,10 +22,7 @@ if (isset($_GET['id'])) {
 
 
 
-
-// echo $user = $_SESSION["email"];
-
-// echo $Package_Id = $_SESSION["TourPackage_Id"];
+ 
 
  $user = $_SESSION["email"];
 
@@ -115,8 +69,7 @@ if (isset($_POST['submit'])) {
     $result = $conn->query($sql);
 
     if ($result) {
-       // Sendemail_approvel("$User_Name", "$email");
-       // echo "<script>alert('Thank you for booking with us! You will get Approvel to you within 24-hours...!')</script>";
+ 
 
         header("Refresh:0.2; url=./payment/razorpay.php?price=$Package_Price");
     } else {

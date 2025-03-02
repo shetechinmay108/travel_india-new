@@ -6,11 +6,7 @@ include('connection.php');
   require '../PHPMailer/src/Exception.php';
   require '../PHPMailer/src/PHPMailer.php';
   require '../PHPMailer/src/SMTP.php';
-
-//   require 'PHPMailer/src/Exception.php';
-//   require 'PHPMailer/src/PHPMailer.php';
-//   require 'PHPMailer/src/SMTP.php';
-
+ 
 
    if(isset($_POST['send'])){
     $name = $_POST['name'];                
@@ -26,19 +22,18 @@ include('connection.php');
        
 
     
-
-//Create an instance; passing `true` enables exceptions
+ 
 $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = 0;                      //Enable verbose debug output  //SMTP::DEBUG_SERVER
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'harsh1234vathare@gmail.com';                     //SMTP username
-    $mail->Password   = 'olfq duvu rucq tvsv';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->SMTPDebug = 0;                      
+    $mail->isSMTP();                                           
+    $mail->Host       = 'smtp.gmail.com';                    
+    $mail->SMTPAuth   = true;                                    
+    $mail->Username   = 'harsh1234vathare@gmail.com';                     
+    $mail->Password   = 'olfq duvu rucq tvsv';                               
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
@@ -46,18 +41,7 @@ try {
     $mail->addAddress('tourism@mailinator.com');     //Add a recipient
     $mail->addAddress('travelindia9500@gmail.com');               //Name is optional
     $mail->addReplyTo('harsh1234vathare@gmail.com', 'Information');
-    // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
-
-    //Attachments
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
-
-
-   //  $sql_query = "select * from feedback ";
-   //  $feedback_data = $conn->query($sql_query);
-    //Content
+    
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Feedback From '. $_POST['name'] .'..!';
     $mail->Body    = '<h3>Hello Travel_India Team ,</h3> <p><b> You got a new message from '. $_POST['name'] .' ,</b></p>-
@@ -71,7 +55,7 @@ try {
   
        ';
              
-    //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+ 
 
     $res = $mail->send();
     if($res)
@@ -85,20 +69,7 @@ catch (Exception $e) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-      // echo "<script>alert('Your Messages succesfully Send..!')</script>";
+ 
     }
     else{
        echo "Invalid Query..!";

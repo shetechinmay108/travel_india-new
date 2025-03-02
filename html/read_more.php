@@ -6,7 +6,6 @@
     $result = $conn->query($sql);
     $data = mysqli_fetch_assoc($result);
     if ($data) {
-       // echo "data fetch succes";
     }
 } else {
     echo "Invalid request..!";
@@ -30,7 +29,6 @@
         <div class="page1">
             <div class="backimg">
             <img src="<?php echo $data['Package_Image'] ?>"> 
-            <!-- <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/672d05fb3d29a2341a311c13_RHONY_S15E3-5__Erin%27s_%20House_1-topaz-upscale-2000w.avif" alt=""> -->
             </div>
             <div class="nav">
                 <div class="nav-part1">
@@ -171,27 +169,12 @@
                         <div class="detail2"><h3>year</h3></div>
                         <div class="detail3"><h3> 2024</h3></div> 
                     </div>
-                    <!-- <div class="detail1">
-                        <div class="detail2"><h3>location</h3></div>
-                        <div class="detail3"><h3>pune</h3></div> 
-                    </div> -->
                     
                     <div class="detail1">
-                        <div class="detail2"><h3>price</h3></div>
-                        <div class="detail3"><h3>kami aahe</h3></div> 
-                    </div>
-                    <div class="detail1">
-                        <div class="detail2"><h3>car</h3></div>
+                        <div class="detail2"><h3>guide</h3></div>
                         <div class="detail3"><h3>available</h3></div> 
                     </div>
-                    <div class="detail1">
-                        <div class="detail2"><h3>bathroom</h3></div>
-                        <div class="detail3"><h3>aahe</h3></div> 
-                    </div>
-                    <div class="detail1">
-                        <div class="detail2"><h3>bathroom</h3></div>
-                        <div class="detail3"><h3>aahe</h3></div> 
-                    </div>
+                   
                 </div>
             </div>
            </div>
@@ -214,7 +197,7 @@
                     </div>
                     <div class="book-part4"  >
                         <h4><a href="#">Book now</a></h4>
-                        <h4><a href="Erin's-House.php">read more</a></h4>
+                        <h4><a href="#">read more</a></h4>
                         
                     </div>
                 </div>
@@ -237,7 +220,7 @@
                     </div>
                     <div class="book-part4"  >
                         <h4><a href="#">Book now</a></h4>
-                        <h4><a href="long-bay-villas.php">read more</a></h4>
+                        <h4><a href="#">read more</a></h4>
                         
                     </div>
                 </div>
@@ -260,7 +243,7 @@
                     </div>
                     <div class="book-part4"  >
                         <h4><a href="#">Book now</a></h4>
-                        <h4><a href="RamonasHouse.php">read more</a></h4>
+                        <h4><a href="#">read more</a></h4>
                         
                     </div>
                 </div>

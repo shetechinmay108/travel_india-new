@@ -16,11 +16,7 @@ if(isset($_POST['submit'])) {
     $file = $_FILES['package-img']['name'];
         $tempname = $_FILES['package-img']['tmp_name'];
        // $folder = '../image/'.$file;
-        $folder = '../image/'.$file;
-        // move_uploaded_file( $tempname,$folder);
-    // $file = $_FILES['package-img']['name'];
-    // $tempname = $_FILES['package-img']['tmp_name'];
-    // $folder = "uploads/" . basename($file); // Store files in 'uploads/' folder
+        $folder = '../image/'.$file; 
 
     if(move_uploaded_file($tempname, $folder)) {
         // Prepare SQL query
@@ -49,32 +45,7 @@ $conn->close();
 
 <?php
 
-// if(isset($_POST['submit'])){
-//     $Package_Name = $_POST['package_name'];
-//     $Package_Type = $_POST['package_type'];
-//     $Package_Location = $_POST['Package_Location'];
-//     $Package_Price = $_POST['Package_price'];
-//     $Package_Features = $_POST['package_features'];
-//     $Package_Details = $_POST['package_details'];
-//     $phone = $_POST['phone'];
-
-//     $file = $_FILES['package-img']['name'];
-//     $tempname = $_FILES['package-img']['tmp_name'];
-//    // $folder = '../image/'.$file;
-//     $folder = '../image/'.$file;
-//     move_uploaded_file( $tempname,$folder);
-
-//     $sql = "insert into tour_package(Package_Name, Package_Type, Package_Location, Price, Package_Features, Package_Details, Phone ,Package_Image) values 
-//     ('$Package_Name', '$Package_Type', '$Package_Location', '$Package_Price', '$Package_Features', '$Package_Details', '$phone' , '$folder')";
-//     $result = $conn->query($sql);
-
-//     if($result){
-//         echo "<script>alert('New Tour Package Add successfully..!')</script>";
-//         header("Refresh:0.5; url=tourlist.php");
-//     } else {
-//         echo "Invalid Query..!";
-//     }
-// }
+  
 ?>
 
 <!DOCTYPE html>

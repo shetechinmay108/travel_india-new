@@ -56,7 +56,7 @@ if (isset($_GET['ID'])) {
             width: 100%;
             border-collapse: collapse;
             padding: 2vw;
-            /* text-transform: capitalize; */
+            
         }
 
         th,

@@ -92,7 +92,7 @@
      
       
               <button class="submitButton" id="verify" type="submit" name="verify">Verify</button>
-              <!-- <button><a href="../index.php">back</a></button>  -->
+              
       
             </form>  
           </div> 

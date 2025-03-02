@@ -160,7 +160,7 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 
 		$res = $mail->send();
 		if ($res) {
-			// echo  "<script>alert('Your Messages succesfully Send..!')</script>";
+ 
 		} else {
 			echo  "<script>alert('Your Messages not Send..!')</script>";
 		}
@@ -212,7 +212,6 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 		.part1 {
 			width: 100%;
 			min-height: 10vh;
-			/* align-items: center; */
 			justify-content: center;
 			display: flex;
 
@@ -224,8 +223,6 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 			width: 100%;
 			border-collapse: collapse;
 			padding: 2vw;
-			/* background-color: aqua; */
-			/* text-transform: capitalize; */
 		}
 
 		th,
@@ -233,7 +230,6 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 			padding: 1vw;
 			text-align: center;
 			border: 1px solid #fff;
-			/* background-color: black; */
 		}
 
 
@@ -243,7 +239,6 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 			text-transform: capitalize;
 			font-family: regular;
 			border-bottom: .2vw solid #fff;
-			/* background-color: blue; */
 		}
 
 		td {
@@ -262,40 +257,20 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 		}
 
 		.submitButton {
-			/* padding: 0.5vw;
-			background-color: transparent;
-			color: black;
-			border: none;
-			border-radius: 0.5vw;
-			cursor: pointer;
-			margin-bottom: 1vw;
-			font-size: 1.2vw;
-			border: 1px solid black; */
 			padding: 0.5vw;
 			background-color: black;
 			color: #08fa08;
 			border: none;
-			/* border-radius: 0.5vw; */
 			cursor: pointer;
 			margin-bottom: 1vw;
 			font-size: 1.2vw;
-			/* border: 1px solid white; */
 		}
-
-		/* .submitButton:hover {
-			background-color: black;
-			transition: 0.7s;
-			color: white;
-			border: 1px solid white;
-			border-radius: 0.8vw;
-		} */
 
 		.deleteButton{
 			padding: 0.5vw;
 			background-color: black;
 			color: red;
 			border: none;
-			/* border-radius: 0.5vw; */
 			cursor: pointer;
 			margin-bottom: 1vw;
 			font-size: 1.2vw;
@@ -365,7 +340,6 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
 
 		<?php
 
-		//access the data by using session
 		$Mobile_No = $_SESSION["phone"];
 		$Package_Date = $_SESSION["Package_Date"];
 		$Package_Name = $_SESSION["Package_Name"];
@@ -457,7 +431,6 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
                         const statusCells = document.querySelectorAll(".status-cell");
                         statusCells.forEach(function(cell) {
                             if (cell.textContent === "Approved") {
-                                // cell.style.color = "green";
                                 cell.style.color = "#08fa08";
                                 cell.style.fontWeight = "bold";
                             } else if (cell.textContent === "Pending") {

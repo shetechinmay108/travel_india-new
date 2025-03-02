@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
                         <path fill="white" fill-rule="evenodd" d="M11.708 19.273a.686.686 0 0 0-.05-.966l-6.121-5.55h14.71c.416 0 .753-.338.753-.756a.755.755 0 0 0-.752-.758H5.53l6.129-5.548a.69.69 0 0 0 .05-.969.676.676 0 0 0-.961-.05l-7.522 6.812a.69.69 0 0 0 0 1.017l7.52 6.82c.28.252.71.23.962-.052Z"></path>
                     </svg>
                     <a href="user_data.php">To go Back</a></h3>
-                    <!-- <h3><a href="./hotellist.php">hotel list</a></h3> -->
+                    
                 </div>
           <div class="nav-part1">
              <h3>est-2024</h3>

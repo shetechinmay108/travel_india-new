@@ -16,9 +16,7 @@ include("../config/connection.php");
     <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
-    <!-- https://www.fourseasons.com/content/dam/fourseasons/video/FSH/FSH_festive_ambient_shorter.mp4 -->
-     <!-- https://www.fourseasons.com/
-       -->
+     
     <div class="main">
         <div class="page1">
             
@@ -154,54 +152,7 @@ include("../config/connection.php");
             </div> 
 
         </div> 
-        <!-- <div id="page6">
-                <div class="page-text"> 
-                    <h1>the real travel </h1>
-                    <h4>These curated collections of popular and highly-rated travel <br> experiences offer well-organized itineraries, premium accommodations, <br> guided tours, exclusive deals, memorable moments, exceptional services, <br> personalized options, and unique destinations for all travelers</h4>
-                    </div>
-            <div class="cards" id="card-one">
-                <div class="nav">
-                    
-                    <h2 style="text-transform: capitalize;">The Real travel</h2> 
-                </div>
-                <div class="middle">
-                    <h1>"Elizabeth Vargas's" Home</h1>
-                    <br><h4>La Quinta, California</h4>
-                 </div>
-                 <div class="header">
-                    <h4> Real Housewives of Orange County <br> season 18  | episode(s) 14-16</h4> 
-                        <button> <a href="../html/orange county/Elizabeth-Home.php">explore</a></button> 
-                 </div>
-            </div>
-            <div class="cards" id="card-two">
-                <div class="nav">
-                    
-                    <h2 style="text-transform: capitalize;">The Real travel</h2> 
-                </div>
-                <div class="middle">
-                    <h1>"Elizabeth Vargas's" Home</h1>
-                    <br><h4>La Quinta, California</h4>
-                 </div>
-                 <div class="header">
-                    <h4> Real Housewives of Orange County <br> season 18  | episode(s) 14-16</h4> 
-                        <button> <a href="../html/orange county/Dawn-Ranch.php">explore</a></button> 
-                 </div>
-            </div>
-            <div class="cards" id="card-three">
-                <div class="nav">
-                    
-                    <h2 style="text-transform: capitalize;">The Real travel</h2> 
-                </div>
-                <div class="middle">
-                    <h1>The May Fair Hotel</h1>
-                    <br><h4>London, England</h4>
-                 </div>
-                 <div class="header">
-                    <h4> Real Housewives of Orange County <br> season 18  | episode(s) 14-16</h4> 
-                        <button> <a href="../html/orange county/The-May-Fair-Hotel.php">explore</a></button> 
-                 </div>
-            </div>
-        </div> -->
+         
         <div class="lastPage1">
             <h1>Stay in the know</h1>
             <h3>Be the first to know about new hotels we’ve uncovered</h3>
@@ -241,12 +192,12 @@ include("../config/connection.php");
         
     </div>
     <script src="https://unpkg.com/split-type"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script> -->
+    
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <!-- <script src="../js/script.js"></script> -->
+   
      <script src="../js/script.js"></script>
 </body>
 </html>

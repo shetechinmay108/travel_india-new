@@ -253,67 +253,7 @@ if (isset($_POST['submit'])) {
   </form>
 </div>
 
-
-
-
-
-
-          <!-- <div class="container"> 
-          <?php
-    //   if(isset($_POST['Login'])) {
-    //     $email = $_POST['email'];
-    //     $password = $_POST['password'];
-
-    //     $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-    //     $result = $conn->query($sql);
-    //     $result = mysqli_query($conn, $sql);
-    //     $row = mysqli_fetch_array($result);
-
-    //     if ($row["user_type"] == "user") {
-    //       if ($row['status'] == 'active') {
-    //        echo $_SESSION["email"] = $email;
-    //       // header("Refresh:0.3; url=other/homepage.php");
-    //         echo "<script >alert('Welcome users, Explore this Real_Travel-website..!')</script>";
-    //         header("Refresh:0.3; url=other/homepage.php");
-    //       } else {
-    //         echo "<script>alert('Your account is not verified, Please click Verify Email_ID..!')</script>";
-    //       }
-    //     } else if ($row["user_type"] == "admin") {
-    //       if ($row['status'] == 'active') {
-    //         header('location:admin/adminhomepage.php');
-    //       } else {
-    //         echo "<script>alert('Your account is not verified, Please click Verify Email_Id..!')</script>";
-    //       }
-    //     } else {
-    //       echo "<script>alert('Invalid Login info..!')</script>";
-    //     }
-    //   }
-      ?>
-             <form action="" method="POST">
-                <?php // include("config/alert.php"); ?> 
-              <label for="bravolebrity" class="required">email</label>
-              <input type="email"  name="email"  placeholder="email " required /> 
-              <label for="activity" class="required">password</label>
-              <input  type="password" name="password"  placeholder="password  " required />
-
-              <button class="button-part1" type="submit" name="Login">login</button> 
-      
-              <button class="button-part1"  id="xyz"><a href="Authentication/password_reset.php">forget password</a></button>
-              <button class="button-part1"  id="xyz"><a href="Authentication/resend_otp.php">Verify Email</a></button>
-     
-            </form>
-          </div>  -->
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-
+ 
       <!-- Sign up page -->
         <div class="signUpPage">
     <div class="nav">
@@ -363,10 +303,9 @@ if (isset($_POST['submit'])) {
   </div>
         <div class="page2">
             <div class="video">
-            <!-- <video autoplay muted loop src="https://videos.pexels.com/video-files/4133023/4133023-sd_640_360_30fps.mp4"></video> -->
-            <!-- https://videos.pexels.com/video-files/4133023/4133023-sd_640_360_30fps.mp4 -->
+             
                 <video autoplay muted loop src=" https://www.fourseasons.com/content/dam/fourseasons/video/FSH/FSH_festive_ambient_shorter.mp4"></video>
-                <!-- https://videos.pexels.com/video-files/4133023/4133023-sd_640_360_30fps.mp4 -->
+               
             </div>
             <div class="text">
                 <h6>Our collections span the globe, offering you <br>
