@@ -23,6 +23,8 @@
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
     <link rel="stylesheet" href="../css/the-may-fair.css" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
     <div class="main">   
@@ -178,78 +180,122 @@
                 </div>
             </div>
            </div>
-           <div class="middle4">
-            <div class="booking">
-                <div class="booking1">
-
-                    <div class="book-part1">
-                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/672d05fb3d29a2341a311c13_RHONY_S15E3-5__Erin%27s_%20House_1-topaz-upscale-2000w.avif" alt="">
-                    </div>
-                    <div class="book-part2">
-                        <h2>"Erin's" House</h2>
-                        <h4>The Hamptons, New York</h4>
-                    </div>
-                </div>
-                <div class="booking2">
-
-                    <div class="book-part3"> 
-                        <h5>What constitutes a “remodel?” Who can say, really? Has Erin’s kitchen been remodeled, as she claims? Or is this a new island and fixtures? Or, perhaps, this is not a freshening up, but the final</h5>
-                    </div>
-                    <div class="book-part4"  >
-                        <h4><a href="#">Book now</a></h4>
-                        <h4><a href="#">read more</a></h4>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="booking">
-                <div class="booking1">
-
-                    <div class="book-part1">
-                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66db195f408ef2ce2af4ad34_RHONY_S14E9-11_Long%20Bay%20Villas_1.avif" alt="">
-                    </div>
-                    <div class="book-part2">
-                        <h2>Long Bay Villas </h2>
-                        <h4>Long Bay Beach, Anguilla</h4>
-                    </div>
-                </div>
-                <div class="booking2">
-
-                    <div class="book-part3"> 
-                        <h5>One might think that Jenna Lyons’ choice to fly first while the rest of the apples suffer in coach would make her the villain of the trip. Nope! Not with Erin here. This meeting of the We Hate Erin club kicked off with a lovely boat trip....</h5>
-                    </div>
-                    <div class="book-part4"  >
-                        <h4><a href="#">Book now</a></h4>
-                        <h4><a href="#">read more</a></h4>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="booking">
-                <div class="booking1">
-
-                    <div class="book-part1">
-                        <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/66db17d423125d804532d619_RHONY_S13E3-4_Hamptons-1.avif" alt="">
-                    </div>
-                    <div class="book-part2">
-                        <h2>"Ramona's" Vacation House</h2>
-                        <h4>The Hamptons, New York</h4>
-                    </div>
-                </div>
-                <div class="booking2">
-
-                    <div class="book-part3"> 
-                        <h5>This is one of the least aspirational trips a group of Housewives has ever taken. Not because Ramona’s mansion, decked out in an HGTV palette of white and light gray, is not comfortable....</h5>
-                    </div>
-                    <div class="book-part4"  >
-                        <h4><a href="#">Book now</a></h4>
-                        <h4><a href="#">read more</a></h4>
-                        
-                    </div>
-                </div>
-            </div>
-           </div>
+            
         </div>
+        <div class="container1">
+
+    <div class="container">
+        <div class="overlay"></div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-text">
+                        <div class="slide-part1">
+                            <img src="https://adamsandbutler.b-cdn.net/app/uploads/2020/08/icon_extra-mile.svg" alt="">
+                        </div>
+                        <h3 >Only Irish Virtuoso Agency</h3>
+                        <p> Virtuoso, the world’s leading travel consortia, connects travelers to the world’s best travel advisors – and we’re proud to say we’re the only Virtuoso member here in Ireland. We’re local experts, operating at the highest global standards, and the winner of the best travel professional 2020 at the Irish Industry Travel Awards. And our accolades don’t stop there – we’re a Travel and Leisure A-list agency, accredited and bonded by the Irish Travel Agents Association, and frequently profiled by the New York Times, Washington Post, Forbes and Conde Nast, amongst others. </p>
+                         
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-text">
+                        <div class="slide-part1">
+                            <img src="https://adamsandbutler.b-cdn.net/app/uploads/2020/06/why_promise.svg" alt="">
+                        </div>
+                        <h3>our promise</h3>
+                        <p> Real Travel is dedicated to putting your needs first. With our expertise and strong connections, we provide exclusive benefits, competitive rates, and unforgettable experiences. We collaborate with you to create itineraries that exceed your expectations.</p>
+                        <p>
+                            With years of experience in travel solutions, Real Travel prioritizes your health and happiness. We provide flexible credit and cancellation policies for your peace of mind.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-text">
+                        <div class="slide-part1">
+                            <img src="https://adamsandbutler.b-cdn.net/app/uploads/2020/08/icon_accommodation-amenities.svg" alt="">
+                        </div>
+                        <h3 class="why-title">Accommodation Amenities</h3>
+                        <p >Adams &amp; Butler offers clients access to exclusive amenities and benefits at over 500 hotels and lodges worldwide. These amenities include, but are not limited to:<br>
+                            • Room upgrade on arrival<br>
+                            •&nbsp;Daily breakfast for two<br>
+                            •&nbsp;Food &amp; beverage credit<br>
+                            •&nbsp;Early check-in/late checkout<br>
+                            •&nbsp;Spa treatment credits</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-text">
+                        <div class="slide-part1">
+                            <img src="https://adamsandbutler.b-cdn.net/app/uploads/2020/08/icon_cruise-benefits.svg" alt="">
+                        </div>
+                        <h3 class="why-title">Exclusive Cruise Benefits</h3>
+                        <p >When voyaging with Adams &amp; Butler on a cruise, clients reap exclusive on-board amenities, which may include:<br>
+                            • Dedicated Onboard Hosts<br>
+                            • Welcome Aboard Cocktail Reception<br>
+                            • Camaraderie of Fellow Travelers<br>
+                            • Exclusive Shore Excursion<br>
+                            • Up to EUR 400 On Board Credit</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-text">
+                        <div class="slide-part1">
+                            <img src="https://adamsandbutler.b-cdn.net/app/uploads/2020/08/icon_extra-mile.svg" alt="">
+                        </div>
+                        <h3 class="why-title">Extra Mile</h3>
+                        <p class="text-style">Our highly personal level of service begins the moment you enquire through to your return home. We are on hand 24/7 at all stages to make sure your trip is seamless, memorable and extraordinary. Enjoy travelling with the peace of mind that we are always on hand to assist.<br>
+                            <br>
+                            Our handpicked guides and travel designers will provide a genuine experience, bringing the destination you are dreaming of to life with care and passion.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-text">
+                        <div class="slide-part1">
+                            <img src="https://adamsandbutler.b-cdn.net/app/uploads/2020/08/icon_uncover-your-options.svg" alt="">
+                        </div>
+                        <h3 class="why-title">Uncover Your Options </h3>
+                        <p class="text-style">We are flexible and know how to take away the stress of planning a trip. Whether it’s a weekend break, an around-the-world adventure or multi-city itinerary, we’re here to help. Not only will we book your flights and hotels, but also, we will curate a complete itinerary with bespoke experiences and activities tailored to your individual interests and requirements. </p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>  -->
+        </div>
+    </div>
+</div>
+<div class="container2">
+    <div class="main-news">
+
+        
+            <div class="news-part1">
+                <h1>Featured Press</h1>
+            </div>
+            <div class="news-part2">
+                <div class="news-box" onclick="window.location.href='https://www.travelandleisure.com/hotels-resorts/vacation-rentals/best-villa-rental-agencies'">
+                    <div class="box1">
+                        <img src="https://www.travelandleisure.com/thmb/fZ74dlPPlrNCgDdVwCg6Y8tMzGc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/parisperfect-villarentals0716-2000-a4d859f3b63b405d858f0f5d6eca289e.jpg" alt="">
+                    </div>
+                    <h4>trt news</h4>
+                    <p>best villa rental agencies</p>
+                </div>
+                <div class="news-box" onclick="window.location.href='https://www.travelandleisure.com/a-list/best-europe-travel-agents'">
+                    <div class="box1">
+                        <img src="/hotel_image/01 tur.avif" alt="">
+                    </div>
+                    <h4>trt news</h4>
+                    <p>the best travel agents for europe</p>
+                </div>
+                <div class="news-box" onclick="window.location.href='https://www.independent.ie/life/travel/world/forget-kenya-and-south-africa-heres-the-rising-star-of-african-safari/31514072.html'">
+                    <div class="box1">
+                        <img src="https://focus.independent.ie/thumbor/P877ppPA5uzW2bINF3ihT6_1Ns4=/0x83:1500x910/1280x853/prod-mh-ireland/65297194-be4f-11ed-b158-0210609a3fe2.JPG" alt="">
+                    </div>
+                    <h4>trt news</h4>
+                    <p>forget kenya and south africa, these are the best places to visit in africa</p>
+                </div>
+            </div>
+        
+    </div>
+</div>
         <div class="lastPage1">
             <h1>Stay in the know</h1>
             <h3>Be the first to know about new hotels we’ve uncovered</h3>
@@ -292,5 +338,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="/js/the-may-fair.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3, // Show three slides
+      spaceBetween: 50,
+      loop: true,
+      centeredSlides: true, // Center the active slide
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    // Add active class to the current slide
+    swiper.on('slideChange', function () {
+      var slides = document.querySelectorAll('.swiper-slide');
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[swiper.activeIndex].classList.add('active');
+    });
+  </script>
 </body>
 </html>
