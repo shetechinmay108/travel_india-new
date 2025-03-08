@@ -118,6 +118,83 @@ if (isset($_GET['Id'])) {
                 <img src="https://cdn.prod.website-files.com/66be216df5f5c498bc873efb/672d004a81c785b1a6d9cf4e_RHOC_S18E14-16_The%20May%20Fair%20Hotel_3-topaz-upscale-2000w.avif" alt="">
             </div>
            </div>
+
+
+           <div class="middle5">
+            <div class="middle5-part1">
+                <img src="https://cdn.prod.website-files.com/66de71cc2bd368e4376f06b0/66debb8811be47c3a6471803_hikari_img_02.webp" alt="">
+            </div>
+            <div class="middle5-part2">
+                <h3>info</h3>
+
+                <h3>Hikari Villa is a luxury retreat in
+                    Okinawa designed by Saisei.
+                    Completed in 2021, it seamlessly
+                    integrates modern amenities with
+                    traditional Japanese design
+                    elements, creating a serene and
+                    light-filled environment. The villa’s
+                    design prioritizes sustainability
+                    while offering stunning views of
+                    the coastal landscape.</h3>
+
+
+           <div class="middle5-part3">
+                    <img src="<?php echo $data['Package_Image'] ?>" alt="">
+                </div>
+                <h3>details</h3>
+                <div class="details">
+                    <div class="detail1">
+                        <div class="detail2"><h3>Package Name</h3></div>
+                        <div class="detail3"><h3><?php echo $data['Package_Name'] ?></h3></div> 
+                    </div>
+                    <div class="detail1">
+                        <div class="detail2"><h3>location</h3></div>
+                        <div class="detail3"><h3><?php echo $data['Package_Location'] ?></h3></div> 
+                    </div>
+                    <div class="detail1">
+                        <div class="detail2"><h3>Package Type</h3></div>
+                        <div class="detail3"><h3><?php echo $data['Package_Type'] ?></h3></div> 
+                    </div>
+                    <div class="detail1">
+                        <div class="detail2"><h3>price</h3></div>
+                        <div class="detail3"><h3><?php echo $data['Price'] ?> Rs</h3></div> 
+                    </div>
+                    <div class="detail1">
+                        <div class="detail2"><h3>Contact No </h3></div>
+                        <div class="detail3"><h3><?php echo $data['Phone'] ?> </h3></div> 
+                    </div>
+                    <!-- <div class="detail1">
+                        <div class="detail2"><h3>city</h3></div>
+                        <div class="detail3"><h3><?php //echo $data['City'] ?> </h3></div> 
+                    </div> -->
+                    <div class="detail1">
+                        <div class="detail2"><h3>year</h3></div>
+                        <div class="detail3"><h3> 2024</h3></div> 
+                    </div>
+                    <!-- <div class="detail1">
+                        <div class="detail2"><h3>location</h3></div>
+                        <div class="detail3"><h3>pune</h3></div> 
+                    </div> -->
+                    
+                    <div class="detail1">
+                        <div class="detail2"><h3>guide</h3></div>
+                        <div class="detail3"><h3>available</h3></div> 
+                    </div>
+                    <div class="detail1">
+                        <div class="detail2"><h3>car</h3></div>
+                        <div class="detail3"><h3>available</h3></div> 
+                    </div>
+                    <!-- <div class="detail1">
+                        <div class="detail2"><h3>bathroom</h3></div>
+                        <div class="detail3"><h3>available</h3></div> 
+                    </div> -->
+                </div>
+            </div>
+           </div>
+
+
+
            <div class="middle4">
             <div class="booking">
                 <div class="book-part1">

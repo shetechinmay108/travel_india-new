@@ -460,6 +460,9 @@ function Sendemail_hotel_approvel($email, $fname ,$Mobile_No, $Hotel_Date, $Hote
                             } else if (cell.textContent === "Pending") {
                                 cell.style.color = "red";
                                 cell.style.fontWeight = "bold";
+                              } else if (cell.textContent === "Cancelled") {
+                                cell.style.color = "darkorange"
+                                cell.style.fontWeight = "bold";
                             }
                         });
                     });

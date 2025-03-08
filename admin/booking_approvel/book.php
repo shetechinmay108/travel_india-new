@@ -463,6 +463,9 @@ function Sendemail_approvel($email, $fname, $Mobile_No, $Package_Date, $Package_
                             } else if (cell.textContent === "Pending") {
                                 cell.style.color = "red";
                                 cell.style.fontWeight = "bold";
+                            } else if (cell.textContent === "Cancelled") {
+                                cell.style.color = "darkorange"
+                                cell.style.fontWeight = "bold";
                             }
                         });
                     });
