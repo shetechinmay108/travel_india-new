@@ -23,6 +23,7 @@ error_reporting(0);
             min-height: 100vh;
             padding: 0 2vw;
             overflow-x: hidden;
+             
         }
 
         .part1 {
@@ -91,6 +92,14 @@ error_reporting(0);
             border-radius: 0.8vw;
         }
 
+        .cancel-btn{
+            font-family:twl ;
+            font-size: 1.2vw;
+            color:darkorange;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
         @media (max-width: 600px) {
             .page1 {
                 padding: 0 4vw;
@@ -138,6 +147,7 @@ error_reporting(0);
 
             <table>
                 <tr>
+                    <th>Id</th>
                     <th>Package Name</th>
                     <th>User Name</th>
                     <th>Email_Id</th>
@@ -148,6 +158,7 @@ error_reporting(0);
                     <th>Booking-Date</th>
                     <th>Package-Price</th>
                     <th>Status</th>
+                    <th>Action</th>
                 </tr>
                 <?php
            
@@ -163,7 +174,9 @@ error_reporting(0);
 
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
+                        
                         echo "<tr>
+                <td>" . $row['id'] . "</td>
                 <td>" . $row['Package_Name'] . "</td>
                 <td>" . $row['User_Name'] . "</td>
                 <td>" . $row['Email_Id'] . "</td>
@@ -173,11 +186,87 @@ error_reporting(0);
                 <td>" . $row['Package_Duration'] . "</td>
                 <td>" . $row['Booking_Date'] . "</td>
                 <td>" . $row['Package_Price'] . " Rs</td>
-                <td class=status-cell>". $row['Status'] . "</td>
-              </tr>";
+                <td class=status-cell>". $row['Status'] . "</td>";
+
+                // Add a cancel button for "Pending" status
+                if ($row['Status'] === "Pending") {
+                    // echo "<td><button class='cancel-btn' type='submit' name='Cancel'  > Cancel </button></td>'";
+
+                    echo "<td>
+                    <form method='POST' action='cancel_booking.php'>
+                        <input type='hidden' name='booking_id' value='". $row['id']. "'>
+                        <button class='cancel-btn' type='submit' name='Cancel'>Cancel</button>
+                    </form>
+                </td>";
+                } else {
+                    echo "<td></td>"; // Empty cell for other statuses
+                }
+
+                echo "</tr>";
+              
                     }
                 }
                 ?>
+                
+                
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const statusCells = document.querySelectorAll(".status-cell");
+                        statusCells.forEach(function(cell) {
+                            if (cell.textContent === "Approved") {
+                                // cell.style.color = "green";
+                                cell.style.color = "#08fa08";
+                                cell.style.fontWeight = "bold";
+                            } else if (cell.textContent === "Pending") {
+                                cell.style.color = "red";
+                                cell.style.fontWeight = "bold";
+                                
+                            } else if (cell.textContent === "Cancelled") {
+                                cell.style.color = "darkorange"
+                                cell.style.fontWeight = "bold";
+                            }
+                        });
+
+
+                        // Cancel button functionality
+                        document.querySelectorAll(".cancel-btn").forEach(function(button) {
+                            button.addEventListener("click", function() {
+                                const bookingId = this.getAttribute("data-id");
+
+                                // confirm("Are you sure you want to cancel this booking?");
+
+                            });
+                        });
+                    });
+                </script>
+
+                <?php
+                   //update pending to cancelled
+
+
+
+
+                    if (isset($_POST['Cancel'])) {
+                //     $fname = $_POST['fname'];
+                //     $lname = $_POST['lname'];
+                //     $email = $_POST['email'];
+                  
+                   $sqlup = "UPDATE booking SET Status='Cancelled' where id = " . $row['id'];
+                    $cancel = $conn->query($sqlup);
+                  
+                    if ($cancel) {
+                      echo "<script>alert('Data Cancel Successfully..!')</script>";
+                      //header("Refresh:0.5; url=user_data.php");
+                    } else {
+                      echo "Not Cancelled..!";
+                    }
+                   }
+                  
+                ?>
+                
+                    <!-- }
+                }
+                ?> -->
             </table>
         </div>
         <div class="nav1">
@@ -193,6 +282,7 @@ error_reporting(0);
 
             <table>
                 <tr>
+                    <th>Id</th>
                     <th>Hotel Name</th>
                     <th>User Name</th>
                     <th>Email_Id</th>
@@ -203,6 +293,7 @@ error_reporting(0);
                     <th>Booking-Date</th>
                     <th>Hotel-Price</th>
                     <th>Status</th>
+                    <th>Action</th>
                 </tr>
                 <?php
                 $user = $_SESSION["email"];
@@ -215,6 +306,7 @@ error_reporting(0);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>
+                        <td>" . $row['id'] . "</td> 
                 <td>" . $row['Hotel_Name'] . "</td>
                 <td>" . $row['User_Name'] . "</td>
                 <td>" . $row['Email_Id'] . "</td>
@@ -224,9 +316,24 @@ error_reporting(0);
                 <td>" . $row['Duration'] . "</td>
                 <td>" . $row['created_booking'] . "</td>
                 <td>" . $row['Price'] . " Rs</td>
-                <td class=status-cell>" . $row['Status'] . "</td>
-              </tr>";
-              //echo style=color:green; font-weight:bold
+                <td class=status-cell>" . $row['Status'] . "</td>";
+
+                // Add a cancel button for "Pending" status
+                if ($row['Status'] === "Pending") {
+                    // echo "<td><button class='cancel-btn' data-id='" . $row['booking_id'] . "'>Cancel</button></td>";
+
+                    echo "<td>
+                    <form method='POST' action='cancel_hotel.php'>
+                        <input type='hidden' name='booking_id' value='". $row['id']. "'>
+                        <button class='cancel-btn' type='submit' name='Cancel'>Cancel</button>
+                    </form>
+                </td>";
+                } else {
+                    echo "<td></td>"; // Empty cell for other statuses
+                }
+
+                echo "</tr>";
+              
                     }
                 }
                 ?>
@@ -242,7 +349,18 @@ error_reporting(0);
                             } else if (cell.textContent === "Pending") {
                                 cell.style.color = "red";
                                 cell.style.fontWeight = "bold";
+                                
                             }
+                        });
+
+
+                        // Cancel button functionality
+                        document.querySelectorAll(".cancel-btn").forEach(function(button) {
+                            button.addEventListener("click", function() {
+                                const bookingId = this.getAttribute("data-id");
+
+                                // confirm("Are you sure you want to cancel this booking?");
+                            });
                         });
                     });
                 </script>
