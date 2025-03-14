@@ -12,6 +12,22 @@ error_reporting(0);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
     <link rel="stylesheet" href="../css/pwd_update.css">
     <style>
+        @font-face {
+  font-family: twl;
+  src: url(../font/66bdbff11e188b5245c6ce47_TWKLausanne-400.ttf);
+}
+@font-face {
+  font-family: regular;
+  src: url(../font/66bdbfd4186d4f1e46bc84ab_Tartuffo-Regular.ttf);
+}
+@font-face {
+  font-family: regular2;
+  src: url(../font/66bdbfce81e82ca87a30c297_Tartuffo-Light.ttf);
+}
+@font-face {
+  font-family: aeonik;
+  src: url(../font/66de30cc396af3b5cc39c4b6_Aeonik-Medium.woff2);
+}
         html,
         body {
             width: 100%;
@@ -31,7 +47,7 @@ error_reporting(0);
             min-height: 10vh;
             justify-content: center;
             display: flex;
-            border: .05vw solid white;
+            /* border: .05vw solid white; */
         }
 
         table {
