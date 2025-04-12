@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3380
--- Generation Time: Feb 19, 2025 at 03:57 PM
+-- Generation Time: Apr 12, 2025 at 07:42 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mager_project`
+-- Database: `major_project`
 --
 
 -- --------------------------------------------------------
@@ -50,9 +50,13 @@ CREATE TABLE `booking` (
 
 INSERT INTO `booking` (`id`, `user_Id`, `Package_Id`, `User_Name`, `Email_Id`, `Mobile_No`, `Tour_Date`, `Package_Name`, `Package_Price`, `Package_Duration`, `Package_Type`, `No_of_Person`, `Booking_Date`, `Status`) VALUES
 (148, 93, '57', 'Chinmay Shettey', 'harsh1234vathare@gmail.com', '7972187168', '2025-02-21', 'Ballinlough Castle', 34396, '4 Days, 3 Night', ' Family / Friends ', '4', '2025-02-19 17:15:26.314055', 'Approved'),
-(149, 93, '51', 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', '7972187168', '2025-02-20', 'The May Fair Hotel', 30396, '4 Days, 3 Night', ' Family / Friends ', '4', '2025-02-19 18:36:57.272037', 'Approved'),
-(151, 83, '61', 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', '7972187168', '2025-02-20', 'Banyan Tree Bangkok', 28707, '4 Days, 3 Night', ' Family / Friends ', '3', '2025-02-19 18:50:41.482880', 'Approved'),
-(152, 94, '65', 'Harshvardhan Vathare', 'vathare.harsh45@gmail.com', '7972187169', '2025-02-21', 'Salt Lake Temple', 21998, '4 Days, 3 Night', ' Family / Friends ', '2', '2025-02-19 19:11:03.414208', 'Approved');
+(153, 93, '48', 'Chinmay Shettey', 'akshayvathare42@gmail.com', '7972187168', '2025-02-24', 'Long Bay Villas', 19200, '2 Days, 1 Night', ' Family / Friends', '2', '2025-02-20 23:43:22.167857', 'Approved'),
+(156, 93, '55', 'Vaibhav Neje', 'akshayvathare42@gmail.com', '7972187168', '2025-02-28', 'The Kelly Birmingham', 26277, '2 Days, 1 Night', ' Family / Friends ', '3', '2025-02-27 16:02:00.048334', 'Approved'),
+(157, 93, '51', 'Vaibhav Neje', 'harsh1234vathare@gmail.com', '7972187168', '2025-02-12', 'The May Fair Hotel', 15198, '2 Days, 1 Night', ' Family / Friends ', '2', '2025-03-01 22:42:49.441886', 'Cancelled'),
+(171, 93, '58', 'Vaibhav Neje', 'akshayvathare42@gmail.com', '7972187168', '2025-03-14', 'Nashville Pad', 19497, '2 Days, 1 Night', ' Family / Friends ', '3', '2025-03-04 18:39:31.697208', 'Approved'),
+(172, 93, '61', 'Soham Mohite', 'harsh1234vathare@gmail.com', '7972187168', '2025-03-14', 'Banyan Tree Bangkok', 19138, '6 Days, 5 Night', ' Family / Friends ', '2', '2025-03-08 12:00:11.435593', 'Cancelled'),
+(173, 93, '64', 'ankita patil', 'vatharenandkumar@gmail.com', '1234554321', '2025-03-19', 'Southwest Valley', 26997, '2 Days, 1 Night', ' Family / Friends ', '3', '2025-03-15 00:46:11.473676', 'Cancelled'),
+(174, 50, '55', 'Ramesh Gupta', 'harsh1234vathare@gmail.com', '9595805740', '2025-04-19', 'The Kelly Birmingham', 35036, '4 Days, 3 Night', ' Family / Friends ', '4', '2025-04-12 22:40:52.756175', 'Approved');
 
 -- --------------------------------------------------------
 
@@ -175,7 +179,6 @@ CREATE TABLE `feedback` (
 INSERT INTO `feedback` (`msg_Id`, `name`, `email`, `massage`) VALUES
 (3, 'Ramsager Pujari', 'pujari@gmail.com', 'This website is very strong to others websites'),
 (9, 'Chinmay Shetty', 'chinmayshetty@gmail.com', 'He is the Frontend Devlopers in this website..!'),
-(34, 'Harsh Vathare', 'rama@gmail.com', 'Tour tourism website is very attractive and very smoothfoll to others websites, So i like it..!'),
 (37, 'Vaibhav Neje', 'neje@gmail.com', 'This website is also add to tour packages in all in all freidsa so ..! '),
 (43, 'Nandkumar Vathare', 'vatharenandkumar@gmail.com', 'this website is so fast other than other websites..!'),
 (48, 'Harshvardhan Vathare', 'vathare.harsh45@gmail.com', 'This website is so atractive to other persons and very interactive them..!');
@@ -211,8 +214,8 @@ INSERT INTO `hotel_booking` (`id`, `user_Id`, `Hotel_Id`, `User_Name`, `Email_Id
 (13, 50, '4', 'Vaibhav Neje', 'harsh1234vathare@gmail.com', '7849243567', '2025-01-14', 'Narayan Hotels', '5', '23988', '4', '2025-01-07 00:46:02', 'Approved'),
 (18, 83, '1', 'Dhairyasheel patil', 'patilshiv481@gmail.com', '1234123454', '2025-02-20', 'Sadhana Hoteles', '3', '4900', '2', '2025-02-17 12:58:08', 'Approved'),
 (19, 93, '1', 'Dhairyasheel patil', 'patilshiv481@gmail.com', '5675656565', '2025-02-21', 'Sadhana Hoteles', '3', '29400', '4', '2025-02-17 13:55:58', 'Approved'),
-(20, 93, '17', 'harsh vathare', 'harsh1234vathare@gmail.com', '1234512345', '2025-02-20', 'The Leela Palace Bengaluru', '5', '26120', '2', '2025-02-17 16:38:17', 'Approved'),
-(21, 93, '17', 'harsh vathare', 'harsh1234vathare@gmail.com', '1234512345', '2025-02-20', 'The Leela Palace Bengaluru', '5', '26120', '2', '2025-02-17 16:38:44', 'Approved');
+(24, 93, '15', 'Chinmay Shettey', 'akshayvathare42@gmail.com', '7972187168', '2025-03-05', 'Woodstock Resorts', '2', '25800', '2', '2025-03-01 22:38:24', 'Cancelled'),
+(25, 93, '13', 'Chinmay Shettey', 'harsh1234vathare@gmail.com', '7972187168', '2025-03-25', 'Silver Sand Beach Resort', '2', '26396', '2', '2025-03-02 00:13:24', 'Cancelled');
 
 -- --------------------------------------------------------
 
@@ -242,7 +245,12 @@ INSERT INTO `hotel_payment` (`User_Id`, `Hotel_Id`, `Razorpay_Payment_Id`, `Tota
 ('93', '2', 'pay_PgQ2JcdVqViLcN', '17994', 'Vaibhav Neje', 'harsh1234vathare@gmail.com', 'Success'),
 ('93', '4', 'pay_PgQ8JFf2cusRyP', '15992', 'Chinmay Shettey', 'harsh1234vathare@gmail.com', 'Success'),
 ('83', '1', 'pay_PwhAbno05I8REI', '4900', 'Dhairyasheel patil', 'patilshiv481@gmail.com', 'Success'),
-('93', '17', 'pay_PwkvDjQClPO4pC', '26120', 'harsh vathare', 'harsh1234vathare@gmail.com', 'Success');
+('93', '17', 'pay_PwkvDjQClPO4pC', '26120', 'harsh vathare', 'harsh1234vathare@gmail.com', 'Success'),
+('93', '13', 'pay_PzXehclDSQqVFc', '26396', 'Chinmay Shettey', 'harsh1234vathare@gmail.com', 'Success'),
+('93', '14', 'pay_Q1bR8sMhsN8PsV', '22400', 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', 'Success'),
+('93', '15', 'pay_Q1bTUq6MfhFGj8', '25800', 'Chinmay Shettey', 'akshayvathare42@gmail.com', 'Success'),
+('93', '13', 'pay_Q1d4smcSx4SlsT', '26396', 'Chinmay Shettey', 'harsh1234vathare@gmail.com', 'Success'),
+('93', '13', 'pay_Q4E9ZslWzvwEeK', '39594', 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', 'Success');
 
 -- --------------------------------------------------------
 
@@ -297,7 +305,29 @@ INSERT INTO `payment` (`user_Id`, `TourPackage_Id`, `razorpay_payment_Id`, `tota
 (93, '51', 'pay_Pxa0HPQmyuCm3E', 30396, 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', 'Success'),
 (94, '65', 'pay_PxaaPjhEAguiXH', 21998, 'Harshvardhan Vathare', 'vathare.harsh45@gmail.com', 'Success'),
 (83, '61', 'pay_PxaElAUoIfGK4s', 28707, 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', 'Success'),
-(93, '57', 'pay_PxYcWFZOHVDeRH', 34396, 'Chinmay Shettey', 'harsh1234vathare@gmail.com', 'Success');
+(93, '57', 'pay_PxYcWFZOHVDeRH', 34396, 'Chinmay Shettey', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '48', 'pay_Py3lijwCpvxygs', 19200, 'Chinmay Shettey', 'akshayvathare42@gmail.com', 'Success'),
+(93, '33', 'pay_PzXDJAu8QnJjPo', 19996, 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '51', 'pay_PzY7mwvyzUPVHb', 15198, 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '55', 'pay_Q0hdeY2z7eTQmr', 26277, 'Vaibhav Neje', 'akshayvathare42@gmail.com', 'Success'),
+(93, '66', 'pay_Q1bbiwit6LVxr7', 16200, 'Soham Mohite', 'akshayvathare42@gmail.com', 'Success'),
+(93, '51', 'pay_Q1bXCiApepVx8L', 15198, 'Vaibhav Neje', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '55', 'pay_Q1cmsNl3eT22b5', 17518, 'Vaibhav Neje', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '55', 'pay_Q1coU1ygZsBFQA', 26277, 'Chinmay Shettey', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '58', 'pay_Q1csItF2tzkmcW', 12998, 'Chinmay Shettey', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '65', 'pay_Q1ctkaVdZxOxIC', 32997, 'Chinmay Shettey', 'akshayvathare42@gmail.com', 'Success'),
+(93, '33', 'pay_Q1cxgWclUeERyj', 19996, 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '65', 'pay_Q1cYiBin16Qzae', 32997, 'Nandkumar Vathare', 'vatharenandkumar@gmail.com', 'Success'),
+(93, '33', 'pay_Q1czABt0J8lzpT', 19996, 'Chinmay Shettey', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '51', 'pay_Q1pjevzrOI0bBn', 15198, 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '53', 'pay_Q1pmSE00s5KIEX', 15098, 'Harshvardhan Vathare', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '58', 'pay_Q1poUfT2SMJgj6', 19497, 'Chinmay Shettey', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '61', 'pay_Q1woe3hZ73TFi8', 19138, 'Akshay Vathare', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '51', 'pay_Q1wRVYIIQm5oRi', 15198, 'Chinmay Shettey', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '58', 'pay_Q2izzwKcoweO0W', 19497, 'Vaibhav Neje', 'akshayvathare42@gmail.com', 'Success'),
+(93, '61', 'pay_Q4CKIKCXApQ4yk', 19138, 'Soham Mohite', 'harsh1234vathare@gmail.com', 'Success'),
+(93, '64', 'pay_Q6maBiQeG9HHZL', 26997, 'ankita patil', 'vatharenandkumar@gmail.com', 'Success'),
+(50, '55', 'pay_QIDwSCAK2DMR99', 35036, 'Ramesh Gupta', 'harsh1234vathare@gmail.com', 'Success');
 
 -- --------------------------------------------------------
 
@@ -344,7 +374,7 @@ CREATE TABLE `users` (
   `activation_code` varchar(255) NOT NULL,
   `status` varchar(20) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `user_type` varchar(20) DEFAULT 'user',
+  `user_type` varchar(20) DEFAULT NULL,
   `dob` varchar(50) NOT NULL,
   `Mobile_No` varchar(50) NOT NULL,
   `Address` varchar(200) NOT NULL
@@ -360,7 +390,7 @@ INSERT INTO `users` (`user_Id`, `fname`, `lname`, `email`, `password`, `otp`, `a
 (68, 'Chinmay', 'Shetty', 'shetechinmay0260@gmail.com', '1234', '', '7e3bab4c74b6f414f4247918a60dbfc1', 'active', '2024-08-13 14:16:02', 'user', '2020-02-10', ' 9595805740', '    Ramnager Korochi  in Kolhapur'),
 (83, 'swapnil', 'Shedsale', 'swapnil.shedsale@gmail.com', '3030', '', 'm1d54bconjef9klha64gi', 'active', '2024-09-12 11:40:49', 'user', '', '', ''),
 (93, 'Akshay', 'Vathare', 'akshayvathare42@gmail.com', '5619', '', 'ek1amfig89h3jldnb3co0', 'active', '2024-12-31 14:15:42', 'user', '2025-02-26', '123123123', '   Ramnager Rendal'),
-(94, 'Ramesh', 'Patil', 'vathare.harsh45@gmail.com', '7576', '', 'olmgckf4d73ia37hje8nb', 'active', '2025-02-19 13:31:49', 'user', '2003-02-10', '7972187168', '   Ramnager rendal');
+(95, 'ramesh', 'Gupte', 'ramesh@gmail.com', '1919', '', '6i2a6lch5b3f5jngdmeok', 'active', '2025-04-12 17:35:04', 'admin', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -428,7 +458,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
 
 --
 -- AUTO_INCREMENT for table `create_hotel`
@@ -440,7 +470,7 @@ ALTER TABLE `create_hotel`
 -- AUTO_INCREMENT for table `create_intern_package`
 --
 ALTER TABLE `create_intern_package`
-  MODIFY `CIPackage_Id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `CIPackage_Id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -452,7 +482,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `hotel_booking`
 --
 ALTER TABLE `hotel_booking`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tour_package`
@@ -464,7 +494,7 @@ ALTER TABLE `tour_package`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_Id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `user_Id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

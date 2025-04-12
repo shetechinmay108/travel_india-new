@@ -56,6 +56,7 @@ if (isset($_POST['submit'])) {
     $lname = $_POST['lname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $user_type = $_POST['user_type'];
 
     $_SESSION["fname"] = $fname;
 
@@ -65,7 +66,7 @@ if (isset($_POST['submit'])) {
     if (mysqli_num_rows($result) > 0) {
         echo "<script>alert('Email_Id Or Password already Exists..!')</script>";
     } else {
-        $sql = "INSERT INTO users (fname, lname, email, password, otp, activation_code) VALUES('$fname','$lname','$email','$password', '$otp','$activation_code')";
+        $sql = "INSERT INTO users (fname, lname, email, password, user_type ,otp, activation_code) VALUES('$fname','$lname','$email','$password','$user_type' , '$otp','$activation_code')";
         $qury = $conn->query($sql);
 
         if ($qury) {
@@ -354,6 +355,14 @@ if (isset($_POST['submit'])) {
              
           <label for="password" class="required">Password</label>
           <input type="password" name="password" placeholder="Password " required />
+
+          <!-- User Type Selection -->
+    <label for="user_type" class="required">User Type</label>
+    <select name="user_type" id="user_type" required>
+        <option value="">-- Select User Type --</option>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+    </select>
   
           <button class="button-part1" type="submit" name="submit">create account</button>
  
